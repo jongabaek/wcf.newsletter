@@ -8,8 +8,8 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 - `content/volXX.json` — 원고. **수정은 항상 여기서** 합니다.
 - `build.py` — 원고를 `emails/volXX.html`과 `newsletters.json`으로 변환. 모듈(M1–M10) 템플릿이 들어 있음.
 - `emails/volXX.html` — 빌드 결과(완성형 HTML, 미리보기용). 직접 고치지 않습니다.
-- `stibee/volXX.html` — 빌드 결과(스티비 **HTML 코드 상자**용 본문 조각). 코드 상자는 `<html> <head> <body> <style> <script> <iframe> <meta> <form> <input> <button>` 등을 저장하지 않으므로 이 태그들을 뺀 버전입니다. build.py가 금지 태그가 남으면 에러를 냅니다.
   예외: `emails/vol03.html`은 실제 발송된 원본이라 빌드 대상이 아니며 수정 금지.
+- `stibee/volXX.html` — 빌드 결과(스티비 **HTML 코드 상자**용 본문 조각). 코드 상자는 `<html> <head> <body> <style> <script> <iframe> <meta> <form> <input> <button>` 등을 저장하지 않으므로 이 태그들을 뺀 버전입니다. build.py가 금지 태그가 남으면 에러를 냅니다.
 - `index.html` — 미리보기 페이지. `dist/preview-standalone.html`은 공유용 단일 파일(빌드 시 생성, git 제외).
 
 ## 작업 순서 (매번)
