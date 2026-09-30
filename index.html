@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>월드커피포럼 뉴스레터 프리뷰</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 왼쪽 발송 일정 레일 + 오른쪽 원고 정보·메일 미리보기 스테이지 */
+:root{
+  --bg:#F4F2F8; --panel:#FFFFFF; --fg:#1B1530; --muted:#6B6480; --line:#E2DDEE;
+  --brand:#4004B0; --brand-ink:#FFFFFF; --lime:#99F637; --lime-ink:#10200A;
+  --stage:#E9E5F1; --mark:#FFF27A; --warn:#B4531A; --done:#2F7D32;
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#130F1F; --panel:#1C1729; --fg:#EEEAF7; --muted:#A39CB8; --line:#322A45;
+  --brand:#8B6CF0; --brand-ink:#0E0A1A; --stage:#0E0B17; --mark:#6B5E00; --warn:#F0A36B; --done:#7BCF7F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#130F1F; --panel:#1C1729; --fg:#EEEAF7; --muted:#A39CB8; --line:#322A45;
+  --brand:#8B6CF0; --brand-ink:#0E0A1A; --stage:#0E0B17; --mark:#6B5E00; --warn:#F0A36B; --done:#7BCF7F; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.6 var(--sans)}
+header{background:var(--brand);color:var(--brand-ink);padding:18px 24px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.2px}
+header p{margin:0;opacity:.85;font-size:13px}
+header .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--lime);margin-right:8px;vertical-align:1px}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:calc(100vh - 64px)}
+aside{background:var(--panel);border-right:1px solid var(--line);padding:18px 14px}
+.label{font:500 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 8px 6px}
+ol.rail{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.rail button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:52px minmax(0,1fr);gap:2px 10px;width:100%;padding:10px 10px;border-radius:8px}
+.rail button:hover{background:var(--bg)}
+.rail button:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
+.rail button[aria-current="true"]{background:var(--brand);color:var(--brand-ink)}
+.rail .date{font:500 12px/1.4 var(--mono);font-variant-numeric:tabular-nums;grid-row:span 2}
+.rail .date small{display:block;opacity:.7}
+.rail .t{font-weight:700;font-size:13.5px;line-height:1.4}
+.rail .s{display:flex;gap:6px;align-items:center;font-size:12px;opacity:.85;flex-wrap:wrap}
+.chip{font:500 10.5px var(--mono);padding:1px 7px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.chip.done{color:var(--done)} .chip.draft{color:var(--warn)}
+.rail button[aria-current="true"] .chip{color:inherit}
+.help{margin:18px 6px 0;font-size:12px;color:var(--muted);line-height:1.7}
+main{min-width:0;padding:20px 24px 40px;display:grid;gap:16px;align-content:start}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.btn{all:unset;box-sizing:border-box;cursor:pointer;padding:8px 13px;font-size:13px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:8px}
+.seg .btn{border:0;border-radius:0}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--panel)}
+.btn.primary{background:var(--lime);color:var(--lime-ink);border-color:var(--lime);font-weight:700}
+.btn:focus-visible{outline:2px solid var(--brand)}
+.toast{font-size:12.5px;color:var(--done)}
+.meta{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px 28px}
+.meta dl{margin:0;display:grid;gap:10px}
+.meta dt{font:500 11px var(--mono);letter-spacing:1.2px;color:var(--muted);text-transform:uppercase}
+.meta dd{margin:2px 0 0;font-size:14.5px}
+.meta dd.subject{font-size:16px;font-weight:700;text-wrap:balance}
+.todo{font-size:13px}
+.todo ul{margin:4px 0 0;padding-left:18px}
+.todo li{margin:2px 0}
+.stat{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.stat b{color:var(--warn);font-variant-numeric:tabular-nums}
+.links code{font:500 11.5px var(--mono);background:var(--bg);padding:1px 5px;border-radius:4px;margin-right:4px;display:inline-block;margin-top:3px}
+.stage{background:var(--stage);border-radius:12px;padding:24px 12px;overflow-x:auto}
+iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-width:100%;height:1400px;box-shadow:0 1px 3px rgba(20,10,40,.12)}
+.err{color:var(--warn);padding:20px;text-align:center}
+@media (max-width:860px){
+  .layout{display:block}
+  aside{border-right:0;border-bottom:1px solid var(--line)}
+  ol.rail{grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);overflow-x:auto;padding-bottom:6px}
+  .help{display:none}
+  main{padding:16px}
+  .meta{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><h1><span class="dot"></span>WORLD COFFEE FORUM 2026 · 뉴스레터</h1><p>Vol.3–11 발송 일정 · 스티비 발송용 HTML 미리보기</p></header>
+<div class="layout">
+  <aside>
+    <p class="label">발송 일정</p>
+    <ol class="rail" id="rail"></ol>
+    <p class="help">노란 형광 표시는 아직 채우지 않은 <b>[대괄호]</b> 자리, 보라 점선 상자는 교체할 이미지 자리입니다. 본문 링크는 미리보기에서 눌리지 않습니다.</p>
+  </aside>
+  <main>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="미리보기 폭">
+        <button class="btn" id="desk" aria-pressed="true">Desktop</button>
+        <button class="btn" id="mob" aria-pressed="false">Mobile</button>
+      </div>
+      <button class="btn" id="hl" aria-pressed="true">대괄호 강조</button>
+      <button class="btn primary" id="copy">HTML 복사</button>
+      <a class="btn" id="dl" download>HTML 파일</a>
+      <span class="toast" id="toast" role="status"></span>
+    </div>
+    <section class="meta" id="meta" aria-live="polite"></section>
+    <div class="stage"><iframe id="frame" title="뉴스레터 미리보기" sandbox="allow-same-origin"></iframe></div>
+  </main>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const bundled=window.__NEWSLETTERS__||null;   // 단일 파일 버전이면 원고가 페이지 안에 들어 있음
+  if(bundled) $('dl').hidden=true;
+  let list=[],cur=null,raw='',highlight=true,width=700;
+
+  async function load(){
+    if(bundled){list=bundled.list;return}
+    const r=await fetch('newsletters.json?t='+Date.now(),{cache:'no-store'});
+    list=await r.json();
+  }
+  async function getHtml(m){
+    if(bundled) return bundled.html[m.id]||'';
+    const r=await fetch(m.file+'?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error(m.file+' 를 불러오지 못했습니다');
+    return r.text();
+  }
+  function md(d){const [y,mo,da]=d.split('-');return (+mo)+'/'+(+da)}
+  function rail(){
+    $('rail').innerHTML=list.map(m=>`<li><button data-id="${m.id}" aria-current="${cur&&cur.id===m.id}">
+      <span class="date">${md(m.send_date)}<small>${esc(m.weekday)}</small></span>
+      <span class="t">Vol.${m.vol} ${esc(m.title)}</span>
+      <span class="s"><span class="chip ${m.status==='발송 완료'?'done':'draft'}">${esc(m.status)}</span>${esc(m.main||'')}</span>
+    </button></li>`).join('');
+  }
+  function stats(html){
+    const text=html.replace(/<[^>]+>/g,' ');
+    const br=(text.match(/\[[^\]\[]{1,80}\]/g)||[]).length;
+    const ph=(html.match(/class="ph"/g)||[]).length;
+    const links=[...new Set((html.match(/\{\{([A-Z0-9_]+)\}\}/g)||[]))];
+    return {br,ph,links};
+  }
+  function meta(m,s){
+    const assets=(m.assets||[]).map(a=>`<li>${esc(a)}</li>`).join('');
+    $('meta').innerHTML=`<dl>
+      <div><dt>발송일</dt><dd>${esc(m.send_date)} (${esc(m.weekday)}) · Vol.${m.vol}</dd></div>
+      <div><dt>Subject</dt><dd class="subject">${esc(m.subject)}</dd></div>
+      <div><dt>Preheader</dt><dd>${esc(m.preheader)}</dd></div>
+      <div class="stat"><span>채울 대괄호 <b>${s.br}</b></span><span>이미지 자리 <b>${s.ph}</b></span><span>미정 링크 <b>${s.links.length}</b></span></div>
+    </dl>
+    <div class="todo"><dt style="font:500 11px var(--mono);letter-spacing:1.2px;color:var(--muted)">작성 메모</dt>
+      <p style="margin:4px 0 10px">${esc(m.note||'')}</p>
+      ${assets?`<dt style="font:500 11px var(--mono);letter-spacing:1.2px;color:var(--muted)">필요 소재</dt><ul>${assets}</ul>`:''}
+      ${s.links.length?`<p class="links" style="margin:10px 0 0">${s.links.map(l=>`<code>${esc(l)}</code>`).join('')}</p>`:''}
+    </div>`;
+  }
+  function paint(){
+    let code=raw;
+    if(highlight){
+      code=code.replace(/>([^<]*)</g,(all,t)=>'>'+t.replace(/\[[^\]\[]{1,80}\]/g,x=>'<mark style="background:#FFF27A;color:inherit">'+x+'</mark>')+'<');
+    }
+    $('frame').srcdoc=code;
+  }
+  function fit(){try{const f=$('frame');f.style.height='200px';f.style.height=(f.contentDocument.documentElement.scrollHeight+4)+'px'}catch(e){}}
+  async function show(id){
+    cur=list.find(m=>m.id===id)||list[list.length-1];
+    rail();
+    const on=document.querySelector('.rail [aria-current="true"]');if(on&&window.innerWidth<860)on.scrollIntoView({block:'nearest',inline:'center'});
+    try{history.replaceState(null,'','#'+cur.id)}catch(e){}
+    try{raw=await getHtml(cur)}catch(e){raw=`<p class="err">${esc(e.message)}</p>`}
+    meta(cur,stats(raw));
+    $('dl').href=cur.file; $('dl').setAttribute('download',cur.id+'.html');
+    paint();
+  }
+  function setWidth(w){width=w;$('frame').style.width=w+'px';$('desk').setAttribute('aria-pressed',w===700);$('mob').setAttribute('aria-pressed',w===375);setTimeout(fit,150)}
+  function toast(t){$('toast').textContent=t;setTimeout(()=>$('toast').textContent='',2200)}
+
+  $('rail').addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(b)show(b.dataset.id)});
+  $('desk').onclick=()=>setWidth(700);
+  $('mob').onclick=()=>setWidth(375);
+  $('hl').onclick=()=>{highlight=!highlight;$('hl').setAttribute('aria-pressed',highlight);paint()};
+  $('copy').onclick=()=>{
+    navigator.clipboard.writeText(raw).then(()=>toast('복사했어요. 스티비 HTML 편집기에 붙여넣으세요.'),()=>{
+      const ta=document.createElement('textarea');ta.value=raw;document.body.append(ta);ta.select();
+      try{document.execCommand('copy');toast('복사했어요.')}catch(e){toast('복사가 막혔어요. HTML 파일 버튼을 이용하세요.')}ta.remove();
+    });
+  };
+  $('frame').addEventListener('load',fit);
+  window.addEventListener('resize',()=>{if(window.innerWidth<760&&width===700)fit()});
+
+  load().then(()=>{
+    const hash=(location.hash||'').slice(1);
+    const next=list.find(m=>m.status!=='발송 완료');
+    show(list.some(m=>m.id===hash)?hash:(next?next.id:list[0].id));
+  }).catch(e=>{$('meta').innerHTML=`<p class="err">목록을 불러오지 못했습니다. build.py를 먼저 실행했는지 확인하세요. (${esc(e.message)})</p>`});
+})();
+</script>
+</body>
+</html>

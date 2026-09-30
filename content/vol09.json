@@ -1,0 +1,30 @@
+{
+  "id": "vol09",
+  "vol": 9,
+  "send_date": "2026-11-09",
+  "weekday": "월",
+  "title": "개막 D-2",
+  "main": "날짜별 하이라이트",
+  "status": "초안",
+  "subject": "[Vol.9] 이틀 뒤, 월드커피포럼이 열립니다",
+  "preheader": "날짜별 하이라이트와 놓치면 아쉬운 세션만 골랐어요 ✨",
+  "note": "일자별 카드 4장(11/11~11/14)에 각 날의 대표 세션·프로그램 1~2개와 시간을 넣습니다. Vol.8 참관 가이드를 다시 연결해 준비를 마무리하게 합니다.",
+  "assets": ["D-2 카운트다운 비주얼 (630px)", "일자별 대표 이미지 4장 (285px)", "최종 타임테이블 (PDF 또는 페이지)", "일자별 하이라이트 선정"],
+  "blocks": [
+    {"type": "header"},
+    {"type": "image", "placeholder": "M2 · D-2 카운트다운 비주얼 (630×400)", "h": 400, "link": "HOME"},
+    {"type": "text", "text": "드디어 이틀 뒤, 월드커피포럼이 문을 엽니다 ✨\n4일 동안 무엇을 봐야 할지, 날짜별로 골라봤어요."},
+    {"type": "spacer", "h": 20},
+    {"type": "image", "placeholder": "M3 · 섹션 타이틀 배너 'DAILY HIGHLIGHTS' (630×120)", "h": 120},
+    {"type": "card", "placeholder": "DAY 1 대표 이미지", "title": "DAY 1 · 11.11(수)", "text": "[시간] [세션/프로그램명]\n[시간] [세션/프로그램명]", "cta": "DAY 1 일정 보기", "link": "{{TIMETABLE_URL}}"},
+    {"type": "card", "placeholder": "DAY 2 대표 이미지", "title": "DAY 2 · 11.12(목)", "text": "[시간] [세션/프로그램명]\n[시간] [세션/프로그램명]", "cta": "DAY 2 일정 보기", "link": "{{TIMETABLE_URL}}"},
+    {"type": "card", "placeholder": "DAY 3 대표 이미지", "title": "DAY 3 · 11.13(금)", "text": "[시간] [세션/프로그램명]\n[시간] [세션/프로그램명]", "cta": "DAY 3 일정 보기", "link": "{{TIMETABLE_URL}}"},
+    {"type": "card", "placeholder": "DAY 4 대표 이미지", "title": "DAY 4 · 11.14(토)", "text": "[시간] [세션/프로그램명]\n[시간] [세션/프로그램명]", "cta": "DAY 4 일정 보기", "link": "{{TIMETABLE_URL}}"},
+    {"type": "body_cta", "text": "전체 타임테이블과 찾아오는 길, 입장 방법은 참관 가이드에서 한 번 더 확인하세요.", "cta": "참관 가이드 다시 보기", "link": "{{GUIDE_URL}}", "color": "purple", "align": "center"},
+    {"type": "ticket", "headline": "아직 늦지 않았어요", "banner": false, "cta": "티켓 예매 바로가기"},
+    {"type": "divider", "style": "divider_top"},
+    {"type": "closing", "text": "💌 곧 현장에서 만나요!\n\n행사 기간에는 인스타그램 [[@wcf_coffeeforum]]에서 실시간 소식을 전해드려요.\n\n그럼, 11월 11일에 뵙겠습니다 ☕"},
+    {"type": "divider", "style": "divider_mid"},
+    {"type": "footer"}
+  ]
+}
