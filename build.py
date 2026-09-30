@@ -14,7 +14,8 @@ import re
 
 ROOT = pathlib.Path(__file__).parent
 CONTENT = ROOT / "content"
-EMAILS = ROOT / "emails"
+EMAILS = ROOT / "emails"      # 완성형 HTML (미리보기용)
+STIBEE = ROOT / "stibee"      # 스티비 코드 상자 붙여넣기용 본문 조각
 
 # ── 브랜드 토큰 (Vol.3 기준) ─────────────────────────────────────────────
 LIME = "#99F637"      # 핵심 전환 CTA (홈페이지·예매)
@@ -252,16 +253,48 @@ def render(vol):
 """
 
 
+# 스티비 'HTML 코드 상자'가 저장하지 않는 태그 (편집기 안내 문구 기준)
+STIBEE_FORBIDDEN = ["html", "head", "body", "style", "script", "iframe", "audio", "video",
+                    "embed", "object", "noscript", "meta", "form", "input", "button", "title", "link"]
+
+
+def stibee_snippet(full_html):
+    """완성형 메일 HTML → 스티비 코드 상자에 붙여넣을 수 있는 본문 조각.
+
+    - <body> 안쪽만 남기고 금지 태그(<style>, <meta> 등)와 주석을 제거
+    - 숨김 프리헤더 제거 (스티비 '프리헤더' 입력란에 따로 넣음)
+    - 바깥 여백은 스티비가 주므로 0으로
+    """
+    m = re.search(r"<body[^>]*>(.*)</body>", full_html, flags=re.S | re.I)
+    s = m.group(1) if m else full_html
+    s = re.sub(r"<!--.*?-->", "", s, flags=re.S)
+    for tag in ("style", "script", "title", "noscript"):
+        s = re.sub(rf"<{tag}\b.*?</{tag}>", "", s, flags=re.S | re.I)
+    s = re.sub(r"</?(?:meta|link|html|head|body)\b[^>]*>", "", s, flags=re.I)
+    s = re.sub(r'<div style="[^"]*display:\s*none[^"]*">.*?</div>', "", s, count=1, flags=re.S)
+    s = s.replace("padding:40px 0;", "padding:0;").replace("width:94%;max-width:630px",
+                                                             "width:100%;max-width:630px")
+    s = s.strip() + "\n"
+    bad = [t for t in STIBEE_FORBIDDEN if re.search(rf"<{t}\b", s, flags=re.I)]
+    if bad:
+        raise SystemExit(f"스티비 금지 태그가 남아 있습니다: {bad}")
+    return s
+
+
 def main():
     EMAILS.mkdir(exist_ok=True)
+    STIBEE.mkdir(exist_ok=True)
     manifest = []
     for path in sorted(CONTENT.glob("vol*.json")):
         vol = json.loads(path.read_text(encoding="utf-8"))
         entry = {k: v for k, v in vol.items() if k != "blocks"}
+        full = EMAILS / f"{vol['id']}.html"
         if vol.get("blocks"):
-            out = EMAILS / f"{vol['id']}.html"
-            out.write_text(render(vol), encoding="utf-8")
+            full.write_text(render(vol), encoding="utf-8")
+        (STIBEE / f"{vol['id']}.html").write_text(
+            stibee_snippet(full.read_text(encoding="utf-8")), encoding="utf-8")
         entry["file"] = f"emails/{vol['id']}.html"
+        entry["stibee"] = f"stibee/{vol['id']}.html"
         manifest.append(entry)
         print(f"  {vol['id']}  {vol.get('send_date', '')}  {vol['subject']}")
     (ROOT / "newsletters.json").write_text(
@@ -274,7 +307,9 @@ def build_standalone(manifest):
     """메일로 공유하거나 Claude 아티팩트로 올릴 수 있는 단일 파일 미리보기."""
     bundle = {"list": manifest,
               "html": {m["id"]: (ROOT / m["file"]).read_text(encoding="utf-8")
-                       for m in manifest if (ROOT / m["file"]).exists()}}
+                       for m in manifest if (ROOT / m["file"]).exists()},
+              "stibee": {m["id"]: (ROOT / m["stibee"]).read_text(encoding="utf-8")
+                         for m in manifest}}
     data = json.dumps(bundle, ensure_ascii=False).replace("</", "<\\/")
     page = (ROOT / "index.html").read_text(encoding="utf-8")
     for tag in (r"<!doctype html>", r"<html[^>]*>", r"</html>", r"</?head>", r"</?body>"):

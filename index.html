@@ -85,7 +85,7 @@ iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-widt
   <aside>
     <p class="label">발송 일정</p>
     <ol class="rail" id="rail"></ol>
-    <p class="help">노란 형광 표시는 아직 채우지 않은 <b>[대괄호]</b> 자리, 보라 점선 상자는 교체할 이미지 자리입니다. 본문 링크는 미리보기에서 눌리지 않습니다.</p>
+    <p class="help">노란 형광 표시는 아직 채우지 않은 <b>[대괄호]</b> 자리, 보라 점선 상자는 교체할 이미지 자리입니다. 본문 링크는 미리보기에서 눌리지 않습니다.<br><br><b>스티비용 복사</b>는 코드 상자가 받지 않는 태그(&lt;html&gt;, &lt;style&gt; 등)를 뺀 본문만 복사합니다. 스티비에서 <b>HTML 코드 상자</b>를 추가해 붙여넣고, 프리헤더는 스티비 설정란에 따로 입력하세요.</p>
   </aside>
   <main>
     <div class="toolbar">
@@ -94,8 +94,8 @@ iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-widt
         <button class="btn" id="mob" aria-pressed="false">Mobile</button>
       </div>
       <button class="btn" id="hl" aria-pressed="true">대괄호 강조</button>
-      <button class="btn primary" id="copy">HTML 복사</button>
-      <a class="btn" id="dl" download>HTML 파일</a>
+      <button class="btn primary" id="copy">스티비용 복사</button>
+      <a class="btn" id="dl" download>스티비용 파일</a>
       <span class="toast" id="toast" role="status"></span>
     </div>
     <section class="meta" id="meta" aria-live="polite"></section>
@@ -108,12 +108,18 @@ iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-widt
   const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const bundled=window.__NEWSLETTERS__||null;   // 단일 파일 버전이면 원고가 페이지 안에 들어 있음
   if(bundled) $('dl').hidden=true;
-  let list=[],cur=null,raw='',highlight=true,width=700;
+  let list=[],cur=null,raw='',snippet='',highlight=true,width=700;
 
   async function load(){
     if(bundled){list=bundled.list;return}
     const r=await fetch('newsletters.json?t='+Date.now(),{cache:'no-store'});
     list=await r.json();
+  }
+  async function getSnippet(m){
+    if(bundled) return bundled.stibee[m.id]||'';
+    const r=await fetch(m.stibee+'?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error(m.stibee+' 를 불러오지 못했습니다');
+    return r.text();
   }
   async function getHtml(m){
     if(bundled) return bundled.html[m.id]||'';
@@ -163,9 +169,9 @@ iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-widt
     rail();
     const on=document.querySelector('.rail [aria-current="true"]');if(on&&window.innerWidth<860)on.scrollIntoView({block:'nearest',inline:'center'});
     try{history.replaceState(null,'','#'+cur.id)}catch(e){}
-    try{raw=await getHtml(cur)}catch(e){raw=`<p class="err">${esc(e.message)}</p>`}
+    try{raw=await getHtml(cur);snippet=await getSnippet(cur)}catch(e){raw=`<p class="err">${esc(e.message)}</p>`;snippet=''}
     meta(cur,stats(raw));
-    $('dl').href=cur.file; $('dl').setAttribute('download',cur.id+'.html');
+    $('dl').href=cur.stibee; $('dl').setAttribute('download',cur.id+'.html');
     paint();
   }
   function setWidth(w){width=w;$('frame').style.width=w+'px';$('desk').setAttribute('aria-pressed',w===700);$('mob').setAttribute('aria-pressed',w===375);setTimeout(fit,150)}
@@ -176,9 +182,9 @@ iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-widt
   $('mob').onclick=()=>setWidth(375);
   $('hl').onclick=()=>{highlight=!highlight;$('hl').setAttribute('aria-pressed',highlight);paint()};
   $('copy').onclick=()=>{
-    navigator.clipboard.writeText(raw).then(()=>toast('복사했어요. 스티비 HTML 편집기에 붙여넣으세요.'),()=>{
-      const ta=document.createElement('textarea');ta.value=raw;document.body.append(ta);ta.select();
-      try{document.execCommand('copy');toast('복사했어요.')}catch(e){toast('복사가 막혔어요. HTML 파일 버튼을 이용하세요.')}ta.remove();
+    navigator.clipboard.writeText(snippet).then(()=>toast('복사했어요. 스티비 HTML 코드 상자에 붙여넣으세요.'),()=>{
+      const ta=document.createElement('textarea');ta.value=snippet;document.body.append(ta);ta.select();
+      try{document.execCommand('copy');toast('복사했어요.')}catch(e){toast('복사가 막혔어요. 스티비용 파일 버튼을 이용하세요.')}ta.remove();
     });
   };
   $('frame').addEventListener('load',fit);

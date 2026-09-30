@@ -11,7 +11,8 @@
     "preheader": "티저부터 화려한 연사 1차 라인업, 커피 퓨처스 챌린지까지 한눈에 보기 👀",
     "note": "발송된 원본(스티비 HTML). 레이아웃 기준본으로만 사용하고 수정하지 않습니다. 메일 제목은 원본과 다를 수 있으니 확인하세요.",
     "assets": [],
-    "file": "emails/vol03.html"
+    "file": "emails/vol03.html",
+    "stibee": "stibee/vol03.html"
   },
   {
     "id": "vol04",
@@ -31,7 +32,8 @@
       "더 스테이지 타임테이블",
       "Vol.4 섹션 타이틀 배너 (LINE-UP / NEWS)"
     ],
-    "file": "emails/vol04.html"
+    "file": "emails/vol04.html",
+    "stibee": "stibee/vol04.html"
   },
   {
     "id": "vol05",
@@ -51,7 +53,8 @@
       "섹션 타이틀 배너: CHAMPION / ORIGIN / NEWS",
       "대표 비주얼 (두 프로그램 키비주얼 630px)"
     ],
-    "file": "emails/vol05.html"
+    "file": "emails/vol05.html",
+    "stibee": "stibee/vol05.html"
   },
   {
     "id": "vol06",
@@ -70,7 +73,8 @@
       "트랙 분류와 트랙별 대표 연사",
       "세션 시간표"
     ],
-    "file": "emails/vol06.html"
+    "file": "emails/vol06.html",
+    "stibee": "stibee/vol06.html"
   },
   {
     "id": "vol07",
@@ -89,7 +93,8 @@
       "요약 카드용 이미지 3장 (Vol.4·5·6 대표 이미지 재사용)",
       "티켓 가격표·할인율"
     ],
-    "file": "emails/vol07.html"
+    "file": "emails/vol07.html",
+    "stibee": "stibee/vol07.html"
   },
   {
     "id": "vol08",
@@ -109,7 +114,8 @@
       "입장·티켓 확인 절차",
       "추천 동선(반나절/하루) 코스"
     ],
-    "file": "emails/vol08.html"
+    "file": "emails/vol08.html",
+    "stibee": "stibee/vol08.html"
   },
   {
     "id": "vol09",
@@ -128,7 +134,8 @@
       "최종 타임테이블 (PDF 또는 페이지)",
       "일자별 하이라이트 선정"
     ],
-    "file": "emails/vol09.html"
+    "file": "emails/vol09.html",
+    "stibee": "stibee/vol09.html"
   },
   {
     "id": "vol10",
@@ -147,7 +154,8 @@
       "금·토 세션 이미지 2~3장",
       "잔여석 현황 · 현장 구매 정보"
     ],
-    "file": "emails/vol10.html"
+    "file": "emails/vol10.html",
+    "stibee": "stibee/vol10.html"
   },
   {
     "id": "vol11",
@@ -166,6 +174,7 @@
       "참가자 설문 링크",
       "다시보기/사진 앨범 공개 일정"
     ],
-    "file": "emails/vol11.html"
+    "file": "emails/vol11.html",
+    "stibee": "stibee/vol11.html"
   }
 ]
