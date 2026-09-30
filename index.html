@@ -4,103 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>월드커피포럼 뉴스레터 프리뷰</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
 <style>
-/* Layout: 왼쪽 발송 일정 레일 + 오른쪽 원고 정보·메일 미리보기 스테이지 */
+/* Layout: 노션식 문서 — 회색 사이드바(회차 목록) + 가운데 좁은 본문(속성 표 · 메모 · 메일 미리보기) */
 :root{
-  --bg:#F4F2F8; --panel:#FFFFFF; --fg:#1B1530; --muted:#6B6480; --line:#E2DDEE;
-  --brand:#4004B0; --brand-ink:#FFFFFF; --lime:#99F637; --lime-ink:#10200A;
-  --stage:#E9E5F1; --mark:#FFF27A; --warn:#B4531A; --done:#2F7D32;
-  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --bg:#FFFFFF; --side:#F7F7F5; --fg:#37352F; --muted:#787774; --faint:#A5A29A;
+  --line:#EDEDEB; --hover:rgba(55,53,47,.06); --active:rgba(55,53,47,.09);
+  --accent:#2383E2; --accent-ink:#FFFFFF; --callout:#F1F1EF; --mark:#FBF3DB;
+  --tag-draft-bg:#FBECDD; --tag-draft:#8A4B14; --tag-done-bg:#DBEDDB; --tag-done:#2B593F;
+  --code:#EB5757; --code-bg:rgba(135,131,120,.15); --stage:#F7F7F5; --shadow:rgba(15,15,15,.1);
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",Helvetica,Arial,sans-serif;
+  --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#130F1F; --panel:#1C1729; --fg:#EEEAF7; --muted:#A39CB8; --line:#322A45;
-  --brand:#8B6CF0; --brand-ink:#0E0A1A; --stage:#0E0B17; --mark:#6B5E00; --warn:#F0A36B; --done:#7BCF7F; color-scheme:dark}}
+  --bg:#191919; --side:#202020; --fg:#E6E6E4; --muted:#9B9B98; --faint:#6F6F6C;
+  --line:#2F2F2F; --hover:rgba(255,255,255,.055); --active:rgba(255,255,255,.09);
+  --accent:#2F8FEA; --callout:#252525; --mark:#4A3F1C;
+  --tag-draft-bg:#4A3320; --tag-draft:#F2C08F; --tag-done-bg:#253D2E; --tag-done:#9CD3AE;
+  --code:#FF7369; --code-bg:rgba(255,255,255,.08); --stage:#202020; --shadow:rgba(0,0,0,.5); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#130F1F; --panel:#1C1729; --fg:#EEEAF7; --muted:#A39CB8; --line:#322A45;
-  --brand:#8B6CF0; --brand-ink:#0E0A1A; --stage:#0E0B17; --mark:#6B5E00; --warn:#F0A36B; --done:#7BCF7F; color-scheme:dark}
+  --bg:#191919; --side:#202020; --fg:#E6E6E4; --muted:#9B9B98; --faint:#6F6F6C;
+  --line:#2F2F2F; --hover:rgba(255,255,255,.055); --active:rgba(255,255,255,.09);
+  --accent:#2F8FEA; --callout:#252525; --mark:#4A3F1C;
+  --tag-draft-bg:#4A3320; --tag-draft:#F2C08F; --tag-done-bg:#253D2E; --tag-done:#9CD3AE;
+  --code:#FF7369; --code-bg:rgba(255,255,255,.08); --stage:#202020; --shadow:rgba(0,0,0,.5); color-scheme:dark}
 *{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--fg);font:14px/1.6 var(--sans)}
-header{background:var(--brand);color:var(--brand-ink);padding:18px 24px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
-header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.2px}
-header p{margin:0;opacity:.85;font-size:13px}
-header .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--lime);margin-right:8px;vertical-align:1px}
-.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:calc(100vh - 64px)}
-aside{background:var(--panel);border-right:1px solid var(--line);padding:18px 14px}
-.label{font:500 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 8px 6px}
-ol.rail{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.rail button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:52px minmax(0,1fr);gap:2px 10px;width:100%;padding:10px 10px;border-radius:8px}
-.rail button:hover{background:var(--bg)}
-.rail button:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
-.rail button[aria-current="true"]{background:var(--brand);color:var(--brand-ink)}
-.rail .date{font:500 12px/1.4 var(--mono);font-variant-numeric:tabular-nums;grid-row:span 2}
-.rail .date small{display:block;opacity:.7}
-.rail .t{font-weight:700;font-size:13.5px;line-height:1.4}
-.rail .s{display:flex;gap:6px;align-items:center;font-size:12px;opacity:.85;flex-wrap:wrap}
-.chip{font:500 10.5px var(--mono);padding:1px 7px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
-.chip.done{color:var(--done)} .chip.draft{color:var(--warn)}
-.rail button[aria-current="true"] .chip{color:inherit}
-.help{margin:18px 6px 0;font-size:12px;color:var(--muted);line-height:1.7}
-main{min-width:0;padding:20px 24px 40px;display:grid;gap:16px;align-content:start}
-.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
-.btn{all:unset;box-sizing:border-box;cursor:pointer;padding:8px 13px;font-size:13px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:8px}
-.seg .btn{border:0;border-radius:0}
-.btn[aria-pressed="true"]{background:var(--fg);color:var(--panel)}
-.btn.primary{background:var(--lime);color:var(--lime-ink);border-color:var(--lime);font-weight:700}
-.btn:focus-visible{outline:2px solid var(--brand)}
-.toast{font-size:12.5px;color:var(--done)}
-.meta{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px 28px}
-.meta dl{margin:0;display:grid;gap:10px}
-.meta dt{font:500 11px var(--mono);letter-spacing:1.2px;color:var(--muted);text-transform:uppercase}
-.meta dd{margin:2px 0 0;font-size:14.5px}
-.meta dd.subject{font-size:16px;font-weight:700;text-wrap:balance}
-.todo{font-size:13px}
-.todo ul{margin:4px 0 0;padding-left:18px}
-.todo li{margin:2px 0}
-.stat{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
-.stat b{color:var(--warn);font-variant-numeric:tabular-nums}
-.links code{font:500 11.5px var(--mono);background:var(--bg);padding:1px 5px;border-radius:4px;margin-right:4px;display:inline-block;margin-top:3px}
-.stage{background:var(--stage);border-radius:12px;padding:24px 12px;overflow-x:auto}
-iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-width:100%;height:1400px;box-shadow:0 1px 3px rgba(20,10,40,.12)}
-.err{color:var(--warn);padding:20px;text-align:center}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+.app{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100%}
+
+/* 사이드바 */
+aside{background:var(--side);border-right:1px solid var(--line);padding:14px 8px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.ws{display:flex;align-items:center;gap:8px;padding:4px 10px 14px;font-size:14px;font-weight:600}
+.ws i{width:20px;height:20px;border-radius:4px;background:var(--fg);color:var(--bg);font:700 11px/20px var(--sans);text-align:center;font-style:normal}
+.sec{font-size:12px;color:var(--muted);padding:6px 10px 4px}
+ol.rail{list-style:none;margin:0;padding:0;display:grid;gap:1px}
+ol.rail>li{min-width:0}
+.rail button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:8px;width:100%;padding:5px 10px;border-radius:6px;font-size:14px;color:var(--fg)}
+.rail button:hover{background:var(--hover)}
+.rail button[aria-current="true"]{background:var(--active);font-weight:600}
+.rail button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.rail .dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--tag-draft)}
+.rail .dot.done{background:var(--tag-done)}
+.rail .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail .d{flex:none;font:12px var(--mono);color:var(--faint);font-variant-numeric:tabular-nums}
+.foot{margin:18px 10px 0;font-size:12px;line-height:1.7;color:var(--muted)}
+
+/* 본문 */
+main{min-width:0;padding:56px 24px 96px}
+.page{max-width:760px;margin:0 auto}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:28px}
+h1{font-size:32px;line-height:1.25;font-weight:700;margin:0 0 20px;text-wrap:balance;letter-spacing:-.01em}
+.props{display:grid;grid-template-columns:132px minmax(0,1fr);row-gap:2px;font-size:14px;margin-bottom:18px}
+.props dt{color:var(--muted);padding:5px 0}
+.props dd{margin:0;padding:5px 6px;border-radius:4px;display:flex;align-items:flex-start;gap:6px;min-width:0}
+.props dd .v{min-width:0;overflow-wrap:anywhere}
+.tag{display:inline-block;padding:0 7px;border-radius:4px;font-size:13px;line-height:22px}
+.tag.draft{background:var(--tag-draft-bg);color:var(--tag-draft)}
+.tag.done{background:var(--tag-done-bg);color:var(--tag-done)}
+.mini{all:unset;cursor:pointer;flex:none;font-size:12px;color:var(--faint);padding:0 6px;border-radius:4px;line-height:22px}
+.mini:hover{background:var(--hover);color:var(--fg)}
+.mini:focus-visible{outline:2px solid var(--accent)}
+.counts{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted)}
+.counts b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}
+.counts b.zero{color:var(--tag-done)}
+hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+.actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.btn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:6px;font-size:14px;color:var(--fg);border:1px solid var(--line);background:var(--bg)}
+.btn:hover{background:var(--hover)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.ghost{border-color:transparent;color:var(--muted)}
+.btn[aria-pressed="true"].ghost{color:var(--fg);background:var(--active)}
+.btn svg{width:14px;height:14px;flex:none}
+.toast{font-size:13px;color:var(--tag-done);margin-left:4px}
+.callout{display:flex;gap:10px;background:var(--callout);border-radius:6px;padding:14px 16px;margin:18px 0 8px;font-size:14.5px}
+.callout .ic{flex:none;font-size:16px;line-height:1.5;color:var(--muted)}
+h2{font-size:17px;font-weight:600;margin:26px 0 6px}
+ul.todo{list-style:none;margin:0;padding:0;font-size:14.5px}
+ul.todo li{display:flex;gap:9px;align-items:flex-start;padding:3px 0}
+ul.todo li::before{content:"";flex:none;width:14px;height:14px;margin-top:4px;border:1.5px solid var(--faint);border-radius:3px}
+code{font:13px var(--mono);color:var(--code);background:var(--code-bg);padding:1px 5px;border-radius:4px}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.stage{margin-top:10px;border:1px solid var(--line);border-radius:8px;background:var(--stage);padding:20px 12px;overflow-x:auto}
+.stage iframe{display:block;border:0;margin:0 auto;background:#fff;width:640px;max-width:100%;height:1200px;border-radius:2px;box-shadow:0 0 0 1px var(--shadow)}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.err{color:var(--code)}
+
+/* 팝업이 막혔을 때 쓰는 페이지 안 미리보기 창 */
+.modal{position:fixed;inset:0;background:rgba(15,15,15,.55);display:flex;align-items:flex-start;justify-content:center;padding:calc(24px + env(safe-area-inset-top,0px)) 16px 24px;z-index:10;overflow-y:auto}
+.win{background:var(--bg);border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden;max-width:100%}
+.win header{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.win header b{color:var(--fg);font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.win iframe{display:block;border:0;background:#fff;max-width:100%;height:78vh}
+
 @media (max-width:860px){
-  .layout{display:block}
-  aside{border-right:0;border-bottom:1px solid var(--line)}
-  ol.rail{grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);overflow-x:auto;padding-bottom:6px}
-  .help{display:none}
-  main{padding:16px}
-  .meta{grid-template-columns:1fr}
+  .app{display:block}
+  aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px 8px}
+  ol.rail{display:flex;overflow-x:auto;gap:4px;padding-bottom:4px}
+  .rail button{width:auto;white-space:nowrap}
+  .rail .t{overflow:visible}
+  .foot,.sec{display:none}
+  main{padding:28px 16px 64px}
+  .props{grid-template-columns:96px minmax(0,1fr)}
+  h1{font-size:26px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<header><h1><span class="dot"></span>WORLD COFFEE FORUM 2026 · 뉴스레터</h1><p>Vol.3–11 발송 일정 · 스티비 발송용 HTML 미리보기</p></header>
-<div class="layout">
+<div class="app">
   <aside>
-    <p class="label">발송 일정</p>
+    <div class="ws"><i>W</i>WCF 뉴스레터 2026</div>
+    <div class="sec">발송 일정</div>
     <ol class="rail" id="rail"></ol>
-    <p class="help">노란 형광 표시는 아직 채우지 않은 <b>[대괄호]</b> 자리, 보라 점선 상자는 교체할 이미지 자리입니다. 본문 링크는 미리보기에서 눌리지 않습니다.<br><br><b>스티비용 복사</b>는 코드 상자가 받지 않는 태그(&lt;html&gt;, &lt;style&gt; 등)를 뺀 본문만 복사합니다. 스티비에서 <b>HTML 코드 상자</b>를 추가해 붙여넣고, 프리헤더는 스티비 설정란에 따로 입력하세요.</p>
+    <p class="foot">원고는 저장소의 <code>content/</code> 폴더에서 관리합니다. push하면 1~2분 뒤 이 페이지에 반영돼요.</p>
   </aside>
   <main>
-    <div class="toolbar">
-      <div class="seg" role="group" aria-label="미리보기 폭">
-        <button class="btn" id="desk" aria-pressed="true">Desktop</button>
-        <button class="btn" id="mob" aria-pressed="false">Mobile</button>
+    <article class="page" id="page">
+      <div class="crumb" id="crumb">뉴스레터</div>
+      <h1 id="title">불러오는 중…</h1>
+      <dl class="props" id="props"></dl>
+      <div class="actions">
+        <button class="btn" id="popDesk" title="실제 메일 폭(640px)으로 새 창에서 보기">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1.5" y="2.5" width="13" height="9" rx="1"/><path d="M5.5 14h5M8 11.5V14"/></svg>데스크톱 미리보기</button>
+        <button class="btn" id="popMob" title="휴대폰 폭(375px)으로 새 창에서 보기">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4.5" y="1.5" width="7" height="13" rx="1.5"/><path d="M7 12.5h2"/></svg>모바일 미리보기</button>
+        <button class="btn primary" id="copy">스티비용 복사</button>
+        <a class="btn" id="dl" download>스티비용 파일</a>
+        <button class="btn ghost" id="hl" aria-pressed="true">[대괄호] 강조</button>
+        <span class="toast" id="toast" role="status"></span>
       </div>
-      <button class="btn" id="hl" aria-pressed="true">대괄호 강조</button>
-      <button class="btn primary" id="copy">스티비용 복사</button>
-      <a class="btn" id="dl" download>스티비용 파일</a>
-      <span class="toast" id="toast" role="status"></span>
-    </div>
-    <section class="meta" id="meta" aria-live="polite"></section>
-    <div class="stage"><iframe id="frame" title="뉴스레터 미리보기" sandbox="allow-same-origin"></iframe></div>
+      <div id="notes"></div>
+      <h2>메일 본문</h2>
+      <p class="hint">노란색은 아직 채우지 않은 [대괄호], 점선 상자는 교체할 이미지 자리입니다. 스티비에는 <b>HTML 코드 상자</b>를 추가해 붙여넣고, 제목·프리헤더는 설정란에 따로 입력하세요.</p>
+      <div class="stage"><iframe id="frame" title="메일 본문 미리보기" sandbox="allow-same-origin"></iframe></div>
+    </article>
   </main>
+</div>
+<div class="modal" id="modal" hidden>
+  <div class="win" id="win">
+    <header><b id="winTitle"></b><span id="winSize"></span><button class="mini" id="winClose">닫기</button></header>
+    <iframe id="winFrame" title="메일 미리보기 창" sandbox="allow-same-origin"></iframe>
+  </div>
 </div>
 <script>
 (function(){
@@ -108,93 +156,123 @@ iframe{display:block;border:0;margin:0 auto;background:#fff;width:700px;max-widt
   const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const bundled=window.__NEWSLETTERS__||null;   // 단일 파일 버전이면 원고가 페이지 안에 들어 있음
   if(bundled) $('dl').hidden=true;
-  let list=[],cur=null,raw='',snippet='',highlight=true,width=700;
+  let list=[],cur=null,raw='',snippet='',highlight=true;
 
   async function load(){
     if(bundled){list=bundled.list;return}
     const r=await fetch('newsletters.json?t='+Date.now(),{cache:'no-store'});
     list=await r.json();
   }
-  async function getSnippet(m){
-    if(bundled) return bundled.stibee[m.id]||'';
-    const r=await fetch(m.stibee+'?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok) throw new Error(m.stibee+' 를 불러오지 못했습니다');
+  async function fetchText(path){
+    const r=await fetch(path+'?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error(path+' 를 불러오지 못했습니다');
     return r.text();
   }
-  async function getHtml(m){
-    if(bundled) return bundled.html[m.id]||'';
-    const r=await fetch(m.file+'?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok) throw new Error(m.file+' 를 불러오지 못했습니다');
-    return r.text();
-  }
-  function md(d){const [y,mo,da]=d.split('-');return (+mo)+'/'+(+da)}
+  const getHtml=m=>bundled?Promise.resolve(bundled.html[m.id]||''):fetchText(m.file);
+  const getSnippet=m=>bundled?Promise.resolve(bundled.stibee[m.id]||''):fetchText(m.stibee);
+  const md=d=>{const [,mo,da]=d.split('-');return (+mo)+'/'+(+da)};
+  const done=m=>m.status==='발송 완료';
+
   function rail(){
-    $('rail').innerHTML=list.map(m=>`<li><button data-id="${m.id}" aria-current="${cur&&cur.id===m.id}">
-      <span class="date">${md(m.send_date)}<small>${esc(m.weekday)}</small></span>
-      <span class="t">Vol.${m.vol} ${esc(m.title)}</span>
-      <span class="s"><span class="chip ${m.status==='발송 완료'?'done':'draft'}">${esc(m.status)}</span>${esc(m.main||'')}</span>
+    $('rail').innerHTML=list.map(m=>`<li><button data-id="${m.id}" aria-current="${cur&&cur.id===m.id}" title="${esc(m.subject)}">
+      <span class="dot ${done(m)?'done':''}"></span><span class="t">Vol.${m.vol} ${esc(m.title)}</span><span class="d">${md(m.send_date)}</span>
     </button></li>`).join('');
   }
   function stats(html){
     const text=html.replace(/<[^>]+>/g,' ');
-    const br=(text.match(/\[[^\]\[]{1,80}\]/g)||[]).length;
-    const ph=(html.match(/class="ph"/g)||[]).length;
-    const links=[...new Set((html.match(/\{\{([A-Z0-9_]+)\}\}/g)||[]))];
-    return {br,ph,links};
+    return {
+      br:(text.match(/\[[^\]\[]{1,80}\]/g)||[]).length,
+      ph:(html.match(/class="ph"/g)||[]).length,
+      links:[...new Set(html.match(/\{\{[A-Z0-9_]+\}\}/g)||[])]
+    };
   }
-  function meta(m,s){
+  const n=(v,label)=>`<span>${label} <b class="${v?'':'zero'}">${v}</b></span>`;
+  function render(m,s){
+    $('crumb').textContent='뉴스레터 / Vol.'+m.vol;
+    $('title').textContent=`Vol.${m.vol} ${m.title}`;
+    document.title=`Vol.${m.vol} ${m.title} · WCF 뉴스레터`;
+    $('props').innerHTML=`
+      <dt>발송일</dt><dd><span class="v">${esc(m.send_date)} (${esc(m.weekday)})</span></dd>
+      <dt>상태</dt><dd><span class="tag ${done(m)?'done':'draft'}">${esc(m.status)}</span></dd>
+      <dt>메인</dt><dd><span class="v">${esc(m.main||'')}</span></dd>
+      <dt>메일 제목</dt><dd><span class="v">${esc(m.subject)}</span><button class="mini" data-copy="subject">복사</button></dd>
+      <dt>프리헤더</dt><dd><span class="v">${esc(m.preheader)}</span><button class="mini" data-copy="preheader">복사</button></dd>
+      <dt>남은 작업</dt><dd><span class="counts">${n(s.br,'대괄호')}${n(s.ph,'이미지')}${n(s.links.length,'미정 링크')}</span></dd>`;
     const assets=(m.assets||[]).map(a=>`<li>${esc(a)}</li>`).join('');
-    $('meta').innerHTML=`<dl>
-      <div><dt>발송일</dt><dd>${esc(m.send_date)} (${esc(m.weekday)}) · Vol.${m.vol}</dd></div>
-      <div><dt>Subject</dt><dd class="subject">${esc(m.subject)}</dd></div>
-      <div><dt>Preheader</dt><dd>${esc(m.preheader)}</dd></div>
-      <div class="stat"><span>채울 대괄호 <b>${s.br}</b></span><span>이미지 자리 <b>${s.ph}</b></span><span>미정 링크 <b>${s.links.length}</b></span></div>
-    </dl>
-    <div class="todo"><dt style="font:500 11px var(--mono);letter-spacing:1.2px;color:var(--muted)">작성 메모</dt>
-      <p style="margin:4px 0 10px">${esc(m.note||'')}</p>
-      ${assets?`<dt style="font:500 11px var(--mono);letter-spacing:1.2px;color:var(--muted)">필요 소재</dt><ul>${assets}</ul>`:''}
-      ${s.links.length?`<p class="links" style="margin:10px 0 0">${s.links.map(l=>`<code>${esc(l)}</code>`).join('')}</p>`:''}
-    </div>`;
+    $('notes').innerHTML=
+      (m.note?`<div class="callout"><span class="ic">✎</span><div>${esc(m.note)}</div></div>`:'')+
+      (assets?`<h2>필요 소재</h2><ul class="todo">${assets}</ul>`:'')+
+      (s.links.length?`<h2>채워야 할 링크</h2><div class="links">${s.links.map(l=>`<code>${esc(l)}</code>`).join('')}</div>`:'');
   }
-  function paint(){
-    let code=raw;
-    if(highlight){
-      code=code.replace(/>([^<]*)</g,(all,t)=>'>'+t.replace(/\[[^\]\[]{1,80}\]/g,x=>'<mark style="background:#FFF27A;color:inherit">'+x+'</mark>')+'<');
-    }
-    $('frame').srcdoc=code;
+  function marked(){
+    if(!highlight) return raw;
+    const i=Math.max(0,raw.search(/<body[^>]*>/i));   // <title> 등 head는 건드리지 않음
+    return raw.slice(0,i)+raw.slice(i).replace(/>([^<]*)</g,(a,t)=>'>'+t.replace(/\[[^\]\[]{1,80}\]/g,x=>'<mark style="background:#FBF3DB;color:inherit;border-radius:2px">'+x+'</mark>')+'<');
   }
-  function fit(){try{const f=$('frame');f.style.height='200px';f.style.height=(f.contentDocument.documentElement.scrollHeight+4)+'px'}catch(e){}}
+  function paint(){$('frame').srcdoc=marked()}
+  function fit(f){try{f.style.height='200px';f.style.height=(f.contentDocument.documentElement.scrollHeight+4)+'px'}catch(e){}}
+
   async function show(id){
     cur=list.find(m=>m.id===id)||list[list.length-1];
     rail();
-    const on=document.querySelector('.rail [aria-current="true"]');if(on&&window.innerWidth<860)on.scrollIntoView({block:'nearest',inline:'center'});
+    const on=document.querySelector('.rail [aria-current="true"]');
+    if(on&&window.innerWidth<860)on.scrollIntoView({block:'nearest',inline:'center'});
     try{history.replaceState(null,'','#'+cur.id)}catch(e){}
-    try{raw=await getHtml(cur);snippet=await getSnippet(cur)}catch(e){raw=`<p class="err">${esc(e.message)}</p>`;snippet=''}
-    meta(cur,stats(raw));
-    $('dl').href=cur.stibee; $('dl').setAttribute('download',cur.id+'.html');
+    try{[raw,snippet]=await Promise.all([getHtml(cur),getSnippet(cur)])}
+    catch(e){raw=`<p class="err">${esc(e.message)}</p>`;snippet=''}
+    render(cur,stats(raw));
+    $('dl').href=cur.stibee||cur.file; $('dl').setAttribute('download',cur.id+'.html');
     paint();
   }
-  function setWidth(w){width=w;$('frame').style.width=w+'px';$('desk').setAttribute('aria-pressed',w===700);$('mob').setAttribute('aria-pressed',w===375);setTimeout(fit,150)}
-  function toast(t){$('toast').textContent=t;setTimeout(()=>$('toast').textContent='',2200)}
+
+  // 새 창 미리보기: 실제 메일 수신 화면처럼 보낸 사람·제목·프리헤더 + 본문
+  function popupDoc(w){
+    const head=`<div style="font:13px/1.5 -apple-system,'Segoe UI','Apple SD Gothic Neo',sans-serif;padding:14px 16px;border-bottom:1px solid #eee;background:#fafafa;color:#37352f">
+      <div style="font-weight:600;font-size:15px">${esc(cur.subject)}</div>
+      <div style="color:#787774">World Coffee Forum &lt;info@wclforum.org&gt; · ${esc(cur.send_date)}</div>
+      <div style="color:#a5a29a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(cur.preheader)}</div></div>`;
+    return marked().replace(/<body([^>]*)>/i,`<body$1>${head}`).replace(/<title>[^<]*<\/title>/i,`<title>${esc(cur.subject)} · ${w}px</title>`);
+  }
+  function openPreview(w){
+    if(!cur) return;
+    let win=null;
+    if(!bundled){
+      try{win=window.open('','wcf-preview-'+w,`popup=yes,width=${w+(w>400?40:0)},height=${w>400?900:780},scrollbars=yes`)}catch(e){win=null}
+    }
+    if(win&&win.document){
+      win.document.open();win.document.write(popupDoc(w));win.document.close();win.focus();return;
+    }
+    // 팝업이 막힌 경우: 페이지 안 창으로 대신 보여줌
+    $('winTitle').textContent=cur.subject;
+    $('winSize').textContent=(w>400?'데스크톱':'모바일')+' · '+w+'px';
+    const f=$('winFrame');f.style.width=w+'px';f.srcdoc=popupDoc(w);
+    $('modal').hidden=false;$('winClose').focus();
+  }
+  function closeModal(){$('modal').hidden=true;$('winFrame').srcdoc=''}
+  function toast(t){$('toast').textContent=t;clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').textContent='',2400)}
+  function copyText(text,okMsg){
+    const fallback=()=>{const ta=document.createElement('textarea');ta.value=text;document.body.append(ta);ta.select();
+      try{document.execCommand('copy');toast(okMsg)}catch(e){toast('복사가 막혔어요. 스티비용 파일 버튼을 이용하세요.')}ta.remove()};
+    if(navigator.clipboard) navigator.clipboard.writeText(text).then(()=>toast(okMsg),fallback); else fallback();
+  }
 
   $('rail').addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(b)show(b.dataset.id)});
-  $('desk').onclick=()=>setWidth(700);
-  $('mob').onclick=()=>setWidth(375);
+  $('props').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b&&cur)copyText(cur[b.dataset.copy],b.dataset.copy==='subject'?'메일 제목을 복사했어요.':'프리헤더를 복사했어요.')});
+  $('popDesk').onclick=()=>openPreview(640);
+  $('popMob').onclick=()=>openPreview(375);
   $('hl').onclick=()=>{highlight=!highlight;$('hl').setAttribute('aria-pressed',highlight);paint()};
-  $('copy').onclick=()=>{
-    navigator.clipboard.writeText(snippet).then(()=>toast('복사했어요. 스티비 HTML 코드 상자에 붙여넣으세요.'),()=>{
-      const ta=document.createElement('textarea');ta.value=snippet;document.body.append(ta);ta.select();
-      try{document.execCommand('copy');toast('복사했어요.')}catch(e){toast('복사가 막혔어요. 스티비용 파일 버튼을 이용하세요.')}ta.remove();
-    });
-  };
-  $('frame').addEventListener('load',fit);
-  window.addEventListener('resize',()=>{if(window.innerWidth<760&&width===700)fit()});
+  $('copy').onclick=()=>copyText(snippet,'복사했어요. 스티비 HTML 코드 상자에 붙여넣으세요.');
+  $('frame').addEventListener('load',()=>fit($('frame')));
+  $('winClose').onclick=closeModal;
+  $('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('modal').hidden)closeModal()});
+  window.addEventListener('resize',()=>fit($('frame')));
 
   load().then(()=>{
     const hash=(location.hash||'').slice(1);
-    const next=list.find(m=>m.status!=='발송 완료');
+    const next=list.find(m=>!done(m));
     show(list.some(m=>m.id===hash)?hash:(next?next.id:list[0].id));
-  }).catch(e=>{$('meta').innerHTML=`<p class="err">목록을 불러오지 못했습니다. build.py를 먼저 실행했는지 확인하세요. (${esc(e.message)})</p>`});
+  }).catch(e=>{$('title').textContent='목록을 불러오지 못했습니다';$('props').innerHTML=`<p class="err">build.py를 먼저 실행했는지 확인하세요. (${esc(e.message)})</p>`});
 })();
 </script>
 </body>
