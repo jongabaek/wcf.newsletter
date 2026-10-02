@@ -78,8 +78,8 @@ def row(inner, pad="0"):
 
 
 def two_col(left, right, pad="15px"):
-    cell = ('<div class="col" style="display:inline-block;vertical-align:top;width:100%;'
-            f'max-width:315px;box-sizing:border-box;padding:{pad};text-align:left;">')
+    cell = ('<div class="col" style="display:inline-block;vertical-align:top;width:50%;'
+            f'min-width:280px;max-width:315px;box-sizing:border-box;padding:{pad};text-align:left;">')
     return (f'<tr><td style="font-size:0;text-align:center;font-family:{FONT};color:{TEXT};">'
             f'{cell}{left}</div>{cell}{right}</div></td></tr>\n')
 
@@ -252,7 +252,7 @@ def m_speaker(b):         # 연사 소개 (사진 + 발표 제목 + 하이라이
     for d in b.get("details", []):
         txt += p("font-size:12px;line-height:1.7;color:#777777;",
                  html.escape(f"{d} |" if right else f"| {d}"))
-    cell = ('<div style="display:inline-block;vertical-align:middle;width:100%;max-width:315px;'
+    cell = ('<div style="display:inline-block;vertical-align:middle;width:50%;min-width:280px;max-width:315px;'
             'box-sizing:border-box;padding:{pad};text-align:{al};">')
     pic = cell.format(pad="20px 15px", al="center") + picture(b, 285, 285) + "</div>"
     body = cell.format(pad="20px 18px", al=align) + txt + "</div>"
