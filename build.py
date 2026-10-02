@@ -21,6 +21,7 @@ STIBEE = ROOT / "stibee"      # 스티비 코드 상자 붙여넣기용 본문 �
 LIME = "#99F637"      # 핵심 전환 CTA (홈페이지·예매)
 PURPLE = "#4004b0"    # 개별 소식 CTA, 카드 제목
 TEXT = "#000000"
+SPEAKER_GREEN = "#2FA51F"  # 연사 이름 (연두는 흰 배경에서 안 읽혀 진한 초록 사용)
 GRAY = "#747579"
 FONT = ("AppleSDGothic, apple sd gothic neo, noto sans korean, noto sans korean regular, "
         "noto sans cjk kr, noto sans cjk, nanum gothic, malgun gothic, dotum, arial, "
@@ -227,11 +228,45 @@ def m_notice(b):          # 강조 박스 (긴급 공지·마감 안내)
                f'{paragraphs(b["text"], "left", 15)}</div>', "10px 15px")
 
 
+def m_band(b):            # 보라 섹션 타이틀 띠 (이미지 배너가 없을 때)
+    return row(f'<div style="background:{PURPLE};padding:16px 15px;text-align:center;font-size:20px;'
+               f'line-height:1.4;color:#ffffff;"><b>{html.escape(b["text"])}</b></div>', "10px 0")
+
+
+def m_speaker(b):         # 연사 소개 (사진 + 발표 제목 + 하이라이트 태그 + 이름 + 약력)
+    right = bool(b.get("reverse"))            # true면 사진이 오른쪽, 글은 오른쪽 정렬
+    align = "right" if right else "left"
+    bg = "#F2F2F2" if b.get("shade") else "#FFFFFF"
+    p = lambda css, inner: f'<p style="margin:0;text-align:{align};{css}">{inner}</p>'
+    txt = ""
+    if b.get("headline"):
+        txt += p("margin-bottom:12px;font-size:18px;line-height:1.45;color:#111111;",
+                 "<b>" + "<br>".join(rich(b["headline"])) + "</b>")
+    if b.get("tag"):
+        txt += p("margin-bottom:10px;", f'<span style="display:inline-block;background:{LIME};padding:4px 10px;'
+                 f'font-size:13px;line-height:1.5;color:#111111;"><b>{html.escape(b["tag"])}</b></span>')
+    txt += p(f"margin-bottom:8px;font-size:22px;line-height:1.3;color:{SPEAKER_GREEN};",
+             f'<b>{html.escape(b["name"])}</b>')
+    if b.get("desc"):
+        txt += p("margin-bottom:8px;font-size:13px;line-height:1.65;color:#444444;", "<br>".join(rich(b["desc"])))
+    for d in b.get("details", []):
+        txt += p("font-size:12px;line-height:1.7;color:#777777;",
+                 html.escape(f"{d} |" if right else f"| {d}"))
+    cell = ('<div style="display:inline-block;vertical-align:middle;width:100%;max-width:315px;'
+            'box-sizing:border-box;padding:{pad};text-align:{al};">')
+    pic = cell.format(pad="20px 15px", al="center") + picture(b, 285, 285) + "</div>"
+    body = cell.format(pad="20px 18px", al=align) + txt + "</div>"
+    inner = body + pic if right else pic + body
+    return (f'<tr><td style="background:{bg};font-size:0;text-align:center;font-family:{FONT};'
+            f'color:{TEXT};word-break:keep-all;">{inner}</td></tr>\n')
+
+
 MODULES = {
     "header": m_header, "image": m_image, "text": m_text, "spacer": m_spacer,
     "story": m_story, "body_cta": m_body_cta, "card": m_card, "ticket": m_ticket,
     "divider": m_divider, "closing": m_closing, "footer": m_footer,
     "qa": m_qa, "stats": m_stats, "notice": m_notice,
+    "band": m_band, "speaker": m_speaker,
 }
 
 

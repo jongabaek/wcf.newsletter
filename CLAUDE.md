@@ -45,6 +45,8 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | qa | 무물 Q&A | `items: [{q, a}]` |
 | stats | 숫자 타일 | `items: [{value, label}]` |
 | notice | 강조 박스(긴급 공지) | `text` |
+| band | 보라 섹션 타이틀 띠(배너 이미지 대용) | `text` |
+| speaker | 연사 소개(사진+발표 제목+연두 태그+이름+약력) | `headline`, `tag`, `name`, `desc`, `details[]`, `src`/`placeholder`, `reverse`(사진 오른쪽), `shade`(회색 배경) |
 
 이미지가 준비되면 `placeholder`를 지우고 `"src": "https://img2.stibee.com/..."`를 넣습니다
 (스티비에 이미지를 먼저 업로드해 URL을 받습니다).
