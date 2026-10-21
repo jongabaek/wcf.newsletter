@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -r index.html newsletters.json emails stibee dist _site/
+          if [ -d assets ]; then cp -r assets _site/; fi
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
