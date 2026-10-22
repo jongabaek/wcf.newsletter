@@ -305,22 +305,22 @@ def m_sessions(b):        # 날짜별 세션 시간표 (Vol.5 연사 카드와 �
                  f'font-size:13px;line-height:1.3;color:#ffffff;"><b>{html.escape(day["label"])}</b></span></td></tr>')
         for i, it in enumerate(day["items"]):
             border = f"border-top:1px solid {LINE};" if i else ""
-            if it.get("logo"):
-                logo = (f'<img src="{html.escape(url(it["logo"]))}" width="112" alt="{html.escape(it.get("alt", ""))}" '
-                        'style="display:block;width:112px;height:auto;border:0;border-radius:10px;'
-                        'box-shadow:0 4px 12px rgba(24,8,90,0.10);">')
+            if it.get("logo"):      # 배경 없는 로고(투명 PNG, 240×120 캔버스) — 보라 세로선과 짝
+                logo = (f'<img src="{html.escape(url(it["logo"]))}" width="110" alt="{html.escape(it.get("alt", ""))}" '
+                        'style="display:block;width:110px;height:auto;border:0;margin:0 auto;">')
             else:
-                logo = (f'<div class="ph" style="width:108px;height:52px;line-height:52px;background:#ffffff;'
-                        f'border:1.5px dashed #B7A4F0;border-radius:10px;text-align:center;font-size:11px;color:{PURPLE};">'
+                logo = (f'<div class="ph" style="width:100px;height:48px;line-height:48px;margin:0 auto;'
+                        f'border:1.5px dashed #B7A4F0;border-radius:8px;text-align:center;font-size:11px;color:{PURPLE};">'
                         f'{html.escape(it.get("logo_placeholder", "로고"))}</div>')
             sub = (f'<p style="margin:3px 0 0;font-size:13px;line-height:1.5;color:#333333;">'
                    f'{"<br>".join(rich(it["sub"]))}</p>') if it.get("sub") else ""
-            rows += (f'<tr><td width="126" style="width:126px;padding:12px 14px 12px 0;vertical-align:middle;{border}">{logo}</td>'
+            rows += (f'<tr><td width="116" style="width:116px;padding:12px 12px 12px 0;vertical-align:middle;{border}">{logo}</td>'
                      f'<td style="padding:12px 0;vertical-align:middle;{border}font-family:{FONT};color:{TEXT};word-break:keep-all;">'
+                     f'<div style="border-left:2px solid {PURPLE};padding:2px 0 2px 14px;">'
                      f'<span style="display:inline-block;background:{LIME};padding:2px 8px;font-size:12px;line-height:1.5;'
                      f'color:#111111;"><b>{html.escape(it["time"])}</b></span>'
                      f'<p style="margin:6px 0 0;font-size:16px;line-height:1.4;color:#111111;"><b>'
-                     f'{"<br>".join(rich(it["name"]))}</b></p>{sub}</td></tr>')
+                     f'{"<br>".join(rich(it["name"]))}</b></p>{sub}</div></td></tr>')
     return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:14px 18px 8px;">'
                f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></div>',
                "10px 15px 10px")

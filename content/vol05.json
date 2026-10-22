@@ -75,15 +75,15 @@
               "time": "10:30 – 12:30",
               "name": "Coffee Board of India",
               "sub": "인도",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_coffee_board_india.png",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
               "alt": "Coffee Board of India"
             },
             {
               "time": "13:30 – 15:30",
               "name": "엘 인헤르또 X 커피명가",
               "sub": "Arturo Aguirre Saenz\nCEO & Producer, Finca El Injerto | Guatemala",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_injerto_myungga.png",
-              "alt": "Finca El Injerto X 커피명가"
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_injerto_c.png",
+              "alt": "Finca El Injerto"
             }
           ]
         },
@@ -94,7 +94,7 @@
               "time": "10:30 – 12:30 · 307호",
               "name": "IWCA South Korea",
               "sub": "커핑 리더 이경선 · 8개국 IWCA 챕터 커핑 & 디스커션",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_korea.png",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_c.png",
               "alt": "IWCA South Korea"
             },
             {
@@ -107,7 +107,7 @@
               "time": "16:00 – 18:00",
               "name": "Coffee Board of India",
               "sub": "인도",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_coffee_board_india.png",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
               "alt": "Coffee Board of India"
             }
           ]
