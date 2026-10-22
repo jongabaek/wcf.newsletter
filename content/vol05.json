@@ -41,10 +41,10 @@
       "alt": "스푼 하나로 떠나는 산지 여행"
     },
     {
-      "type": "pill",
-      "text": "산지의 풍미를 직접 맛보고 싶다면?",
-      "title": "오리진 디스커버리 | Origin Discovery",
-      "sub": "11.11(수) – 11.12(목) · 코엑스 컨퍼런스룸 300호"
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/info_origin.png",
+      "link": "TICKET",
+      "alt": "오리진 디스커버리 · 11. 11(수)–12(목) · 코엑스 컨퍼런스룸 300호"
     },
     {
       "type": "photos",
@@ -134,10 +134,10 @@
       "alt": "세계 챔피언의 손끝에서 완성되는 한 잔"
     },
     {
-      "type": "pill",
-      "text": "챔피언의 레시피가 궁금하다면?",
-      "title": "챔피언 라이브 | Champion Live",
-      "sub": "11.14(토) · 코엑스 컨퍼런스룸 318호"
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/info_champion.png",
+      "link": "TICKET",
+      "alt": "챔피언 라이브 · 11. 14(토) · 코엑스 컨퍼런스룸 318호"
     },
     {
       "type": "photos",
