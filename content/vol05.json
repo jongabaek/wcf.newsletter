@@ -36,8 +36,9 @@
       "h": 20
     },
     {
-      "type": "band",
-      "text": "#ORIGIN DISCOVERY 스푼 하나로 떠나는 산지 여행"
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/band_origin.png",
+      "alt": "스푼 하나로 떠나는 산지 여행"
     },
     {
       "type": "pill",
@@ -128,8 +129,9 @@
       "h": 20
     },
     {
-      "type": "band",
-      "text": "#CHAMPION LIVE 세계 챔피언의 한 잔"
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/band_champion.png",
+      "alt": "세계 챔피언의 손끝에서 완성되는 한 잔"
     },
     {
       "type": "pill",
