@@ -11,6 +11,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
   예외: `emails/vol03.html`은 실제 발송된 원본이라 빌드 대상이 아니며 수정 금지.
   예외: `emails/vol04_en.html`은 발송된 국문 Vol.4 원본을 번역한 영문판(손으로 관리). 원고 JSON에 blocks가 없어 빌드 대상이 아니고, 문구는 이 파일에서 직접 고칩니다.
 - `assets/` — 저장소에서 호스팅하는 이미지(예: `assets/en/vol04/` 영문판 이미지, `assets/vol05/` 로고·연사 사진). Pages 주소 `https://jongabaek.github.io/wcf.newsletter/assets/...`로 연결됩니다.
+- `tools/make_blind_champion.py` — Vol.5 '두 번째 챔피언' 블라인드 이미지 생성기. 문구(TITLE/TAGS/BAR)를 고친 뒤 `python3 tools/make_blind_champion.py <Pretendard 폰트 폴더>`로 다시 만듭니다(폰트: `npm pack pretendard` → `package/dist/public/static`).
 - `stibee/volXX.html` — 빌드 결과(스티비 **HTML 코드 상자**용 본문 조각). 코드 상자는 `<html> <head> <body> <style> <script> <iframe> <meta> <form> <input> <button>` 등을 저장하지 않으므로 이 태그들을 뺀 버전입니다. build.py가 금지 태그가 남으면 에러를 냅니다.
 - `index.html` — 미리보기 페이지. `dist/preview-standalone.html`은 공유용 단일 파일(빌드 시 생성, git 제외).
 
@@ -66,4 +67,5 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 - 보라 `#4004b0` 버튼 = 개별 소식 상세. 카드 제목도 보라
 - 톤: 대화체("~했습니다", "~만나보세요"), 이모지는 문단당 1개 이내
 - Vol.4–10은 티켓 블록 필수, Vol.11은 제외
+- 스폰서 배너: Vol.4 발송본 기준으로 본문 메인 CTA 다음·NEWS 앞에 600px 폭 이미지(`image` + `inset: true` + `link`), 바로 뒤에 `divider_top`
 - 일정 전제: 개막 11/11(수)~11/14(토), 얼리버드 마감 10/30(금)
