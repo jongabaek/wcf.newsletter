@@ -140,15 +140,16 @@
       "type": "photos",
       "items": [
         {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_stage.jpg",
-          "alt": "월드 브루어스 컵 무대 위의 나스 자파"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_2025_pour.jpg",
+          "alt": "지난해 챔피언 라이브 현장 브루잉"
+        },
+        {
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_2025_live.jpg",
+          "alt": "지난해 챔피언 라이브 현장"
         },
         {
           "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_brewing.jpg",
           "alt": "브루잉 시연 중인 나스 자파"
-        },
-        {
-          "placeholder": "챔피언 라이브 예시 ③ 관객 테이스팅"
         }
       ]
     },
