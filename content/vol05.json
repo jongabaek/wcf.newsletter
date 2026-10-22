@@ -8,7 +8,7 @@
   "status": "초안",
   "subject": "[Vol.5] 산지의 풍경부터 챔피언의 레시피까지, 한 잔의 여정",
   "preheader": "스푼 하나로 떠나는 산지 여행과 세계 챔피언의 라이브 브루잉을 소개합니다 ☕",
-  "note": "레이아웃: 질문형 캡슐 → 체험 예시 사진 3장 → 소개문 → 세션 시간표(로고) 순으로 두 프로그램을 같은 틀로 반복. 로고·나스 자파 사진은 저장소 assets/vol05/에 올려 Pages 주소로 연결(스티비 업로드 후 img2.stibee.com 주소로 바꿔도 됨). 오리진 체험 사진 3장, 온두라스 로고, 미정이던 장소·참여 방식·11/11 16:00 세션은 10/22 요청으로 삭제. 두 번째 챔피언(Jack Simpson, 논의 중)은 10/22 요청으로 블라인드 이미지·시간표 줄 모두 삭제(필요하면 tools/make_blind_champion.py로 다시 생성). 스폰서 배너 자리는 Vol.4와 같이 챔피언 섹션 뒤·NEWS 앞({{SPONSOR_URL}}). 홍보영상은 NEWS 첫 카드(유튜브 썸네일 직접 연결). NEWS 카드 2개는 초안 그대로라 발송 전 확인 필요(퓨처스 챌린지는 Vol.4 기준 이미 마감됐을 수 있음). 연두 버튼은 예매 1개. [10/22 받은 자료] 엘 인헤르또 X 커피명가 콜라보 세션, 나스 자파 X Falcon Coffees 콜라보 세션. 연사: Arturo Aguirre Saenz — CEO & Producer, Finca El Injerto | Guatemala. 4세대 전통, Pacamara·Geisha·Bourbon 생산, 재배~가공·품질관리·로스팅·수출 통합 관리, 정밀 농업, 산지 로스팅·직접거래. 세션 내용: COE 1위·세계 100대 카페 선정 엘 인헤르또의 핵심가치 / 대표 품종과 실험적 가공 프로세스 / 옥션 커피 커핑. 카드 이미지에는 연사 사진만, 체리·COE 트로피 같은 예시 사진은 뉴스레터 설명 파트에 사용. 한글 표기는 받은 문구 기준(엘 인헤르또). [IWCA 10/22] 강연 없음 → 커핑 세션 + 오픈 디스커션. 11/12(목) 10:30, COEX 컨퍼런스룸 307호. 8개 챕터(인도네시아·케냐·과테말라·온두라스·브라질·페루·에콰도르·우간다, 변경 가능) 회원 생산 스페셜티 랏, 다양한 가공, 일부 생산자 현장 참석 예정. 커핑 리더 이경선: 카페게더 대표/게더커피랩 교수, IWCA 한국 챕터 부회장, ORO그룹 한국 대표, COE 국제 심사관(2024 브라질·2025 온두라스·2026 코스타리카), Q-Instructor, AST, CVA Trainer 등. IWCA가 발행 전 문구 확인 요청 → IWCA 관련 문구는 승인 후 발송.",
+  "note": "레이아웃: 질문형 캡슐 → 체험 예시 사진 3장 → 소개문 → 세션 시간표(로고) 순으로 두 프로그램을 같은 틀로 반복. 로고·나스 자파 사진은 저장소 assets/vol05/에 올려 Pages 주소로 연결(스티비 업로드 후 img2.stibee.com 주소로 바꿔도 됨). 오리진 체험 사진 3장, 온두라스 로고, 미정이던 장소·참여 방식·11/11 16:00 세션은 10/22 요청으로 삭제. 두 번째 챔피언(Jack Simpson, 논의 중)은 10/22 요청으로 블라인드 이미지·시간표 줄 모두 삭제(필요하면 tools/make_blind_champion.py로 다시 생성). 스폰서 배너 자리는 Vol.4와 같이 챔피언 섹션 뒤·NEWS 앞({{SPONSOR_URL}}). 홍보영상은 NEWS 첫 카드(유튜브 썸네일 직접 연결). NEWS 카드 2개는 초안 그대로라 발송 전 확인 필요(퓨처스 챌린지는 Vol.4 기준 이미 마감됐을 수 있음). 연두 버튼은 예매 1개. [10/22 받은 자료] 엘 인헤르또 X 커피명가 콜라보 세션, 나스 자파 X Falcon Coffees 콜라보 세션. 연사: Arturo Aguirre Saenz — CEO & Producer, Finca El Injerto | Guatemala. 4세대 전통, Pacamara·Geisha·Bourbon 생산, 재배~가공·품질관리·로스팅·수출 통합 관리, 정밀 농업, 산지 로스팅·직접거래. 세션 내용: COE 1위·세계 100대 카페 선정 엘 인헤르또의 핵심가치 / 대표 품종과 실험적 가공 프로세스 / 옥션 커피 커핑. 카드 이미지에는 연사 사진만, 체리·COE 트로피 같은 예시 사진은 뉴스레터 설명 파트에 사용. 한글 표기는 받은 문구 기준(엘 인헤르또). [IWCA 10/22] 강연 없음 → 커핑 세션 + 오픈 디스커션. 11/12(목) 10:30, COEX 컨퍼런스룸 307호. 8개 챕터(인도네시아·케냐·과테말라·온두라스·브라질·페루·에콰도르·우간다, 변경 가능) 회원 생산 스페셜티 랏, 다양한 가공, 일부 생산자 현장 참석 예정. 커핑 리더 이경선: 카페게더 대표/게더커피랩 교수, IWCA 한국 챕터 부회장, ORO그룹 한국 대표, COE 국제 심사관(2024 브라질·2025 온두라스·2026 코스타리카), Q-Instructor, AST, CVA Trainer 등. IWCA가 발행 전 문구 확인 요청 → IWCA 관련 문구는 승인 후 발송. [10/22 17시] 오리진은 처음 HTML 구성(캡슐·사진·소개·시간표) 유지하고 시간표를 카드 톤(연보라 패널·보라 요일 라벨·연두 시간 태그)으로 통일. 나스 자파는 디자인 보드의 연사 카드 이미지(assets/vol05/card_champion.png) 사용. IWCA 줄은 IWCA 문구 승인 전.",
   "assets": [
     "스폰서 배너 (600px 폭) + 링크",
     "대표 비주얼 630×400 (오리진 디스커버리 × 챔피언 라이브)",
@@ -43,25 +43,27 @@
       "type": "pill",
       "text": "산지의 풍미를 직접 맛보고 싶다면?",
       "title": "오리진 디스커버리 | Origin Discovery",
-      "sub": "11.11(수) – 11.12(목)"
+      "sub": "11.11(수) – 11.12(목) · 코엑스 컨퍼런스룸 300호"
     },
     {
       "type": "photos",
       "items": [
         {
-          "placeholder": "오리진 체험 예시 ① 커핑 테이블"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/injerto_cherries.jpg",
+          "alt": "엘 인헤르또 농장의 커피 체리"
         },
         {
-          "placeholder": "오리진 체험 예시 ② 스푼 테이스팅"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/injerto_awards.jpg",
+          "alt": "엘 인헤르또의 Cup of Excellence 트로피"
         },
         {
-          "placeholder": "오리진 체험 예시 ③ 산지 소개"
+          "placeholder": "오리진 체험 예시 ③ 커핑 테이블"
         }
       ]
     },
     {
       "type": "text",
-      "text": "인도, 과테말라, 온두라스까지.\n각 산지를 대표하는 기관과 농장이 들려주는 이야기를 들으며\n스푼 하나로 산지의 다채로운 풍미를 비교해 보세요. ✈️"
+      "text": "인도, 과테말라, 온두라스부터 IWCA 챕터의 커피까지.\n각 산지를 대표하는 기관과 농장, 생산자의 이야기를 들으며\n스푼 하나로 산지의 다채로운 풍미를 비교해 보세요. ✈️"
     },
     {
       "type": "sessions",
@@ -78,10 +80,10 @@
             },
             {
               "time": "13:30 – 15:30",
-              "name": "Finca El Injerto",
-              "sub": "Arturo Aguirre Saenz · 과테말라",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_el_injerto.png",
-              "alt": "Finca El Injerto"
+              "name": "엘 인헤르또 X 커피명가",
+              "sub": "Arturo Aguirre Saenz\nCEO & Producer, Finca El Injerto | Guatemala",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_injerto_myungga.png",
+              "alt": "Finca El Injerto X 커피명가"
             }
           ]
         },
@@ -89,11 +91,11 @@
           "label": "11.12 (목)",
           "items": [
             {
-              "time": "10:30 – 12:30",
+              "time": "10:30 – 12:30 · 307호",
               "name": "IWCA South Korea",
-              "sub": "이경선 (Lora Lee)",
+              "sub": "커핑 리더 이경선 · 8개국 IWCA 챕터 커핑 & 디스커션",
               "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_korea.png",
-              "alt": "International Women's Coffee Alliance South Korea"
+              "alt": "IWCA South Korea"
             },
             {
               "time": "13:30 – 15:30",
@@ -132,7 +134,7 @@
       "type": "pill",
       "text": "챔피언의 레시피가 궁금하다면?",
       "title": "챔피언 라이브 | Champion Live",
-      "sub": "11.14(토)"
+      "sub": "11.14(토) · 코엑스 컨퍼런스룸 318호"
     },
     {
       "type": "photos",
@@ -155,17 +157,10 @@
       "text": "세계 무대를 사로잡은 레시피는 어떻게 만들어질까요?\n챔피언이 직접 커피를 해석하고 추출하는 과정을 눈앞에서 보고,\n그 한 잔을 함께 맛보는 시간입니다. 🏆"
     },
     {
-      "type": "speaker",
-      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_speaker.jpg",
-      "alt": "나스 자파",
-      "headline": "Resistance,\n세계를 사로잡은 한 잔",
-      "tag": "11.14(토) 10:30 – 12:30",
-      "name": "나스 자파 / Nas Jaafar",
-      "desc": "브루잉과 생두를 오가며 쌓은 경험으로\n세계 무대에 선 그가, 우승 레시피에 담긴 생각을 들려줍니다.",
-      "details": [
-        "2026 World Brewers Cup Champion",
-        "Falcon Coffees"
-      ]
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/card_champion.png",
+      "alt": "나스 자파 X Falcon Coffees · 11.14(토) 10:30–12:30",
+      "inset": true
     },
     {
       "type": "steps",
@@ -182,23 +177,6 @@
         {
           "title": "Brewing & Tasting Together",
           "text": "Falcon Korea의 현재 라인업 중 한 가지 커피를 골라\n추출 방향을 잡는 과정을 설명하고, 라이브 브루잉과\n가이드 테이스팅, 관객과의 대화로 이어집니다."
-        }
-      ]
-    },
-    {
-      "type": "sessions",
-      "days": [
-        {
-          "label": "11.14 (토)",
-          "items": [
-            {
-              "time": "10:30 – 12:30",
-              "name": "Nas Jaafar",
-              "sub": "2026 World Brewers Cup Champion · with Falcon Coffees",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_falcon_coffees.png",
-              "alt": "Falcon Coffees"
-            }
-          ]
         }
       ]
     },

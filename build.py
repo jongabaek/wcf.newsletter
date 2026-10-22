@@ -295,31 +295,35 @@ def m_photos(b):          # 체험 예시 사진 3장 가로 배열 (모바일�
     return f'<tr><td style="font-size:0;text-align:center;padding:16px 11px 4px;">{cells}</td></tr>\n'
 
 
-def m_sessions(b):        # 날짜별 세션 시간표 (로고 + 시간 + 기관/연사)
+def m_sessions(b):        # 날짜별 세션 시간표 (Vol.5 연사 카드와 같은 톤: 연보라 패널 · 보라 요일 라벨 · 연두 시간 태그)
+    LINE = "#DCD8E8"
     rows = ""
-    for day in b["days"]:
-        rows += (f'<tr><td colspan="2" style="padding:18px 0 8px;font-family:{FONT};font-size:15px;line-height:1.4;'
-                 f'color:{PURPLE};border-bottom:2px solid {PURPLE};"><b>{html.escape(day["label"])}</b></td></tr>')
-        for it in day["items"]:
+    for n, day in enumerate(b["days"]):
+        top = "4px" if n == 0 else "22px"
+        rows += (f'<tr><td colspan="2" style="padding:{top} 0 10px;font-family:{FONT};">'
+                 f'<span style="display:inline-block;background:{PURPLE};border-radius:500px;padding:5px 14px;'
+                 f'font-size:13px;line-height:1.3;color:#ffffff;"><b>{html.escape(day["label"])}</b></span></td></tr>')
+        for i, it in enumerate(day["items"]):
+            border = f"border-top:1px solid {LINE};" if i else ""
             if it.get("logo"):
-                logo = (f'<img src="{html.escape(url(it["logo"]))}" width="120" alt="{html.escape(it.get("alt", ""))}" '
-                        'style="display:block;width:120px;height:auto;border:1px solid #E6E6E6;border-radius:8px;">')
+                logo = (f'<img src="{html.escape(url(it["logo"]))}" width="112" alt="{html.escape(it.get("alt", ""))}" '
+                        'style="display:block;width:112px;height:auto;border:0;border-radius:10px;'
+                        'box-shadow:0 4px 12px rgba(24,8,90,0.10);">')
             else:
-                logo = (f'<div class="ph" style="width:118px;height:58px;line-height:58px;background:#F1ECFF;'
-                        f'border:1px dashed #B7A4F0;border-radius:8px;text-align:center;font-size:11px;color:{PURPLE};">'
+                logo = (f'<div class="ph" style="width:108px;height:52px;line-height:52px;background:#ffffff;'
+                        f'border:1.5px dashed #B7A4F0;border-radius:10px;text-align:center;font-size:11px;color:{PURPLE};">'
                         f'{html.escape(it.get("logo_placeholder", "로고"))}</div>')
-            sub = (f'<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#666666;">'
+            sub = (f'<p style="margin:3px 0 0;font-size:13px;line-height:1.5;color:#333333;">'
                    f'{"<br>".join(rich(it["sub"]))}</p>') if it.get("sub") else ""
-            rows += (f'<tr><td width="132" style="width:132px;padding:12px 12px 12px 0;vertical-align:middle;'
-                     f'border-bottom:1px solid #EEEEEE;">{logo}</td>'
-                     f'<td style="padding:12px 0;vertical-align:middle;border-bottom:1px solid #EEEEEE;'
-                     f'font-family:{FONT};color:{TEXT};word-break:keep-all;">'
-                     f'<p style="margin:0 0 2px;font-size:13px;line-height:1.4;color:{SPEAKER_GREEN};"><b>'
-                     f'{html.escape(it["time"])}</b></p>'
-                     f'<p style="margin:0;font-size:16px;line-height:1.45;color:#111111;"><b>'
+            rows += (f'<tr><td width="126" style="width:126px;padding:12px 14px 12px 0;vertical-align:middle;{border}">{logo}</td>'
+                     f'<td style="padding:12px 0;vertical-align:middle;{border}font-family:{FONT};color:{TEXT};word-break:keep-all;">'
+                     f'<span style="display:inline-block;background:{LIME};padding:2px 8px;font-size:12px;line-height:1.5;'
+                     f'color:#111111;"><b>{html.escape(it["time"])}</b></span>'
+                     f'<p style="margin:6px 0 0;font-size:16px;line-height:1.4;color:#111111;"><b>'
                      f'{"<br>".join(rich(it["name"]))}</b></p>{sub}</td></tr>')
-    return row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table>',
-               "0 15px 10px")
+    return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:14px 18px 8px;">'
+               f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></div>',
+               "10px 15px 10px")
 
 
 def m_steps(b):           # 세션 진행 순서 (01·02·03 번호 + 제목 + 설명)
@@ -335,7 +339,7 @@ def m_steps(b):           # 세션 진행 순서 (01·02·03 번호 + 제목 + �
                  f'</td></tr>')
     title = (f'<p style="margin:0 0 6px;font-size:15px;line-height:1.5;color:#111111;"><b>'
              f'{html.escape(b["title"])}</b></p>') if b.get("title") else ""
-    return row(f'<div style="background:#F2F2F2;border-radius:12px;padding:16px 18px;">{title}'
+    return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:16px 18px;">{title}'
                f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></div>',
                "6px 15px 10px")
 
