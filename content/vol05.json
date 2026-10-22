@@ -49,15 +49,16 @@
       "type": "photos",
       "items": [
         {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/injerto_cherries.jpg",
-          "alt": "엘 인헤르또 농장의 커피 체리"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_cupping.jpg",
+          "alt": "지난해 오리진 디스커버리 커핑 현장"
         },
         {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/injerto_awards.jpg",
-          "alt": "엘 인헤르또의 Cup of Excellence 트로피"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_pour.jpg",
+          "alt": "지난해 오리진 디스커버리 커핑 준비"
         },
         {
-          "placeholder": "오리진 체험 예시 ③ 커핑 테이블"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_producers.jpg",
+          "alt": "지난해 오리진 디스커버리에 참여한 과테말라 생산자들"
         }
       ]
     },
