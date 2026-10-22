@@ -3,30 +3,77 @@
   "vol": 5,
   "send_date": "2026-10-14",
   "weekday": "수",
-  "title": "프로그램 소개 - 챔피언, 오리진",
-  "main": "챔피언 · 오리진",
+  "title": "프로그램 소개 - 오리진 디스커버리, 챔피언 라이브",
+  "main": "오리진 디스커버리 · 챔피언 라이브",
   "status": "초안",
-  "subject": "[Vol.5] 챔피언의 한 잔, 오리진의 이야기",
-  "preheader": "월드커피포럼에서만 만날 수 있는 두 프로그램을 소개합니다 ☕",
-  "note": "두 프로그램을 같은 틀(무엇을 · 누구와 · 어떻게 참여)로 나란히 보여줍니다. 사전신청이 필요한 프로그램이면 해당 버튼을 연두(lime)로 바꾸고, 대신 예매 외 연두 버튼이 2개를 넘지 않게 조정하세요.",
-  "assets": ["챔피언 대표 사진 (285px)", "오리진 대표 사진 (285px)", "프로그램별 개요·참여 방식·일시·장소", "섹션 타이틀 배너: CHAMPION / ORIGIN / NEWS", "대표 비주얼 (두 프로그램 키비주얼 630px)"],
+  "subject": "[Vol.5] 산지의 풍경부터 챔피언의 레시피까지, 한 잔의 여정",
+  "preheader": "스푼 하나로 떠나는 산지 여행과 세계 챔피언의 라이브 브루잉을 소개합니다 ☕",
+  "note": "레이아웃: 질문형 캡슐 → 체험 예시 사진 3장 → 소개문 → 세션 시간표(로고) 순으로 두 프로그램을 같은 틀로 반복. 로고·나스 자파 사진은 저장소 assets/vol05/에 올려 Pages 주소로 연결(스티비 업로드 후 img2.stibee.com 주소로 바꿔도 됨). 오리진 체험 사진 3장, 온두라스 로고, 11/11 16:00 세션, 장소·참여 방식은 미정. Jack Simpson은 논의 중이라 이름 대신 '공개 예정'으로 둠. NEWS 카드 2개는 초안 그대로라 발송 전 확인 필요(퓨처스 챌린지는 Vol.4 기준 이미 마감됐을 수 있음). 연두 버튼은 예매 1개.",
+  "assets": [
+    "대표 비주얼 630×400 (오리진 디스커버리 × 챔피언 라이브)",
+    "오리진 디스커버리 체험 예시 사진 3장 (정사각)",
+    "Café de Honduras 로고",
+    "챔피언 라이브 시음 체험 예시 사진 1장 (정사각)",
+    "로고 4종·나스 자파 사진 3장 — assets/vol05/ 반영 완료"
+  ],
   "blocks": [
     {"type": "header"},
-    {"type": "image", "placeholder": "M2 · 챔피언 × 오리진 키비주얼 (630×400)", "h": 400, "link": "HOME"},
-    {"type": "text", "text": "무대 위의 이야기만큼 가까이에서 보고, 맛보고, 묻는 시간.\n월드커피포럼의 두 프로그램, [[챔피언]]과 [[오리진]]을 소개합니다 🏆🌱"},
+    {"type": "image", "placeholder": "M2 · 오리진 디스커버리 × 챔피언 라이브 키비주얼 (630×400)", "h": 400, "link": "HOME"},
+    {"type": "text", "text": "**한 잔의 커피가 우리에게 오기까지.**\n\n햇살과 바람이 머문 산지의 풍경부터\n수많은 연습과 고민 끝에 탄생한 챔피언의 레시피까지.\n\n우리가 마시는 커피 한 잔에는 저마다의 시간과 이야기가 담겨 있습니다.\n\n스푼 하나로 전세계 산지의 다채로운 풍미를 탐험하고,\n세계 챔피언의 손끝에서 완성되는 특별한 한 잔을 만나는 시간.\n\n[[<오리진 디스커버리>]]와 [[<챔피언 라이브>]]를 통해\n커피 한 잔에 담긴 특별한 여정을 함께 떠나보세요. ☕"},
     {"type": "spacer", "h": 20},
-    {"type": "image", "placeholder": "M3 · 섹션 타이틀 배너 'CHAMPION' (630×120)", "h": 120},
-    {"type": "story", "placeholder": "챔피언 대표 사진 (285×285)", "title": "챔피언 | [한 줄 정의]", "text": "**무엇을** [프로그램 내용 한두 문장]\n**누구와** [참여 챔피언/바리스타]\n**어떻게** [관람 / 체험 / 사전신청]\n**언제·어디서** 11.[○](○) [시간] · [장소]"},
-    {"type": "body_cta", "text": "[챔피언 프로그램의 관전 포인트 한 문장]", "cta": "챔피언 자세히 보기", "link": "{{CHAMPION_URL}}", "color": "purple", "align": "center"},
-    {"type": "image", "placeholder": "M3 · 섹션 타이틀 배너 'ORIGIN' (630×120)", "h": 120},
-    {"type": "story", "reverse": true, "placeholder": "오리진 대표 사진 (285×285)", "title": "오리진 | [한 줄 정의]", "text": "**무엇을** [프로그램 내용 한두 문장]\n**누구와** [참여 생산자/산지]\n**어떻게** [관람 / 체험 / 사전신청]\n**언제·어디서** 11.[○](○) [시간] · [장소]"},
-    {"type": "body_cta", "text": "[오리진 프로그램의 관전 포인트 한 문장]", "cta": "오리진 자세히 보기", "link": "{{ORIGIN_URL}}", "color": "purple", "align": "center"},
-    {"type": "image", "placeholder": "M3 · 섹션 타이틀 배너 'NEWS' (630×120)", "h": 120},
+
+    {"type": "band", "text": "#ORIGIN DISCOVERY 스푼 하나로 떠나는 산지 여행"},
+    {"type": "pill", "text": "산지의 풍미를 직접 맛보고 싶다면?", "title": "오리진 디스커버리 | Origin Discovery", "sub": "11.11(수) – 11.12(목) · [장소]"},
+    {"type": "photos", "items": [
+      {"placeholder": "오리진 체험 예시 ① 커핑 테이블"},
+      {"placeholder": "오리진 체험 예시 ② 스푼 테이스팅"},
+      {"placeholder": "오리진 체험 예시 ③ 산지 소개"}
+    ]},
+    {"type": "text", "text": "인도, 과테말라, 온두라스까지.\n각 산지를 대표하는 기관과 농장이 들려주는 이야기를 들으며\n스푼 하나로 산지의 다채로운 풍미를 비교해 보세요. ✈️\n\n**참여 방식** [현장 참여 / 사전신청]"},
+    {"type": "sessions", "days": [
+      {"label": "11.11 (수)", "items": [
+        {"time": "10:30 – 12:30", "name": "Coffee Board of India", "sub": "인도", "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_coffee_board_india.png", "alt": "Coffee Board of India"},
+        {"time": "13:30 – 15:30", "name": "Finca El Injerto", "sub": "Arturo Aguirre Saenz · 과테말라", "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_el_injerto.png", "alt": "Finca El Injerto"},
+        {"time": "16:00 – 18:00", "name": "[세션 공개 예정]", "logo_placeholder": "로고 미정"}
+      ]},
+      {"label": "11.12 (목)", "items": [
+        {"time": "10:30 – 12:30", "name": "IWCA South Korea", "sub": "이경선 (Lora Lee)", "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_korea.png", "alt": "International Women's Coffee Alliance South Korea"},
+        {"time": "13:30 – 15:30", "name": "Café de Honduras", "sub": "온두라스", "logo_placeholder": "온두라스 로고"},
+        {"time": "16:00 – 18:00", "name": "Coffee Board of India", "sub": "인도", "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_coffee_board_india.png", "alt": "Coffee Board of India"}
+      ]}
+    ]},
+    {"type": "body_cta", "text": "", "cta": "오리진 디스커버리 자세히 보기", "link": "https://wclforum.org/kr/program/origin.asp", "color": "purple", "align": "center"},
+    {"type": "spacer", "h": 20},
+
+    {"type": "band", "text": "#CHAMPION LIVE 세계 챔피언의 한 잔"},
+    {"type": "pill", "text": "챔피언의 레시피가 궁금하다면?", "title": "챔피언 라이브 | Champion Live", "sub": "11.14(토) · [장소]"},
+    {"type": "photos", "items": [
+      {"src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_stage.jpg", "alt": "월드 브루어스 컵 무대 위의 나스 자파"},
+      {"src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_brewing.jpg", "alt": "브루잉 시연 중인 나스 자파"},
+      {"placeholder": "챔피언 라이브 예시 ③ 관객 테이스팅"}
+    ]},
+    {"type": "text", "text": "세계 무대를 사로잡은 레시피는 어떻게 만들어질까요?\n챔피언이 직접 커피를 해석하고 추출하는 과정을 눈앞에서 보고,\n그 한 잔을 함께 맛보는 시간입니다. 🏆\n\n**참여 방식** [현장 참여 / 사전신청]"},
+    {"type": "speaker", "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_speaker.jpg", "alt": "나스 자파", "headline": "Resistance,\n세계를 사로잡은 한 잔", "tag": "11.14(토) 10:30 – 12:30", "name": "나스 자파 / Nas Jaafar", "desc": "브루잉과 생두를 오가며 쌓은 경험으로\n세계 무대에 선 그가, 우승 레시피에 담긴 생각을 들려줍니다.", "details": ["2026 World Brewers Cup Champion", "Falcon Coffees"]},
+    {"type": "steps", "title": "세션은 이렇게 진행돼요", "items": [
+      {"title": "The Journey & Coffee", "text": "커피를 시작한 이야기와 Falcon Coffees에서의 일,\n브루잉과 생두를 함께 다룬 경험이 대회 여정에 미친 영향."},
+      {"title": "Inside the World Brewers Cup", "text": "우승 프레젠테이션의 콘셉트 'Resistance'에 담긴 생각,\n세계 무대를 위한 준비 과정과 그 경험에서 얻은 가장 큰 배움."},
+      {"title": "Brewing & Tasting Together", "text": "Falcon Korea의 현재 라인업 중 한 가지 커피를 골라\n추출 방향을 잡는 과정을 설명하고, 라이브 브루잉과\n가이드 테이스팅, 관객과의 대화로 이어집니다."}
+    ]},
+    {"type": "sessions", "days": [
+      {"label": "11.14 (토)", "items": [
+        {"time": "10:30 – 12:30", "name": "Nas Jaafar", "sub": "2026 World Brewers Cup Champion · with Falcon Coffees", "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_falcon_coffees.png", "alt": "Falcon Coffees"},
+        {"time": "13:30 – 15:30", "name": "[두 번째 챔피언 공개 예정]", "logo_placeholder": "로고 미정"}
+      ]}
+    ]},
+    {"type": "body_cta", "text": "", "cta": "챔피언 라이브 자세히 보기", "link": "https://wclforum.org/kr/program/champion.asp", "color": "purple", "align": "center"},
+    {"type": "spacer", "h": 20},
+
+    {"type": "image", "src": "https://img2.stibee.com/14802_3595437_1789433158097518353.png", "alt": "#NEWS 놓치지 말아야 할 소식"},
     {"type": "card", "placeholder": "더 스테이지 인기 세션 이미지 (285×285)", "title": "지금 가장 주목받는 더 스테이지 세션", "text": "최종 라인업 공개 후 가장 많은 관심을 받은 세션은 [세션명]이었어요. 좌석이 한정되어 있으니 서둘러 주세요 🎤", "cta": "라인업 보러가기", "link": "{{LINEUP_URL}}"},
     {"type": "card", "placeholder": "퓨처스 챌린지 이미지 (285×285)", "title": "커피 퓨처스 챌린지 마감 임박", "text": "접수 마감까지 [○]일 남았습니다. 여러분의 아이디어를 기다려요 🏆", "cta": "공고 확인하기", "link": "{{CHALLENGE_URL}}"},
-    {"type": "ticket", "cta": "2차 얼리버드 티켓 예매 바로가기", "text": "얼리버드 할인은 [10월 30일(금)]까지만 적용됩니다."},
+    {"type": "ticket", "cta": "2차 얼리버드 티켓 예매 바로가기", "text": "산지의 한 잔부터 챔피언의 한 잔까지, 현장에서 직접 만나보세요.\n얼리버드 할인은 [10월 30일(금)]까지만 적용됩니다."},
     {"type": "divider", "style": "divider_top"},
-    {"type": "closing", "text": "💌 오늘의 소식, 어떠셨나요?\n\n챔피언과 오리진, 어느 쪽이 더 궁금해지셨나요?\n\n다음 주에는 커피를 넘어 디저트·브랜딩·AI까지, [[더 세션즈]]의 전체 라인업을 들고 올게요! ☕"},
+    {"type": "closing", "text": "💌 오늘의 소식, 어떠셨나요?\n\n산지의 풍경과 챔피언의 레시피,\n어느 쪽 여정이 더 궁금해지셨나요?\n\n다음 주에는 커피를 넘어 디저트·브랜딩·AI까지, [[더 세션즈]]의 전체 라인업을 들고 올게요! ☕"},
     {"type": "divider", "style": "divider_mid"},
     {"type": "footer"}
   ]

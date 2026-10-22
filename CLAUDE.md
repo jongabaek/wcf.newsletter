@@ -10,7 +10,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 - `emails/volXX.html` — 빌드 결과(완성형 HTML, 미리보기용). 직접 고치지 않습니다.
   예외: `emails/vol03.html`은 실제 발송된 원본이라 빌드 대상이 아니며 수정 금지.
   예외: `emails/vol04_en.html`은 발송된 국문 Vol.4 원본을 번역한 영문판(손으로 관리). 원고 JSON에 blocks가 없어 빌드 대상이 아니고, 문구는 이 파일에서 직접 고칩니다.
-- `assets/` — 저장소에서 호스팅하는 이미지(예: `assets/en/vol04/` 영문판 이미지). Pages 주소 `https://jongabaek.github.io/wcf.newsletter/assets/...`로 연결됩니다.
+- `assets/` — 저장소에서 호스팅하는 이미지(예: `assets/en/vol04/` 영문판 이미지, `assets/vol05/` 로고·연사 사진). Pages 주소 `https://jongabaek.github.io/wcf.newsletter/assets/...`로 연결됩니다.
 - `stibee/volXX.html` — 빌드 결과(스티비 **HTML 코드 상자**용 본문 조각). 코드 상자는 `<html> <head> <body> <style> <script> <iframe> <meta> <form> <input> <button>` 등을 저장하지 않으므로 이 태그들을 뺀 버전입니다. build.py가 금지 태그가 남으면 에러를 냅니다.
 - `index.html` — 미리보기 페이지. `dist/preview-standalone.html`은 공유용 단일 파일(빌드 시 생성, git 제외).
 
@@ -49,6 +49,10 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | notice | 강조 박스(긴급 공지) | `text` |
 | band | 보라 섹션 타이틀 띠(배너 이미지 대용) | `text` |
 | speaker | 연사 소개(사진+발표 제목+연두 태그+이름+약력) | `headline`, `tag`, `name`, `desc`, `details[]`, `src`/`placeholder`, `reverse`(사진 오른쪽), `shade`(회색 배경) |
+| pill | 질문형 캡슐 + 프로그램 제목 + 한 줄 설명 (Vol.5 체험 섹션 머리) | `text`, `title`, `sub` |
+| photos | 체험 예시 사진 3장 가로 배열(둥근 모서리, 모바일에서도 3장 유지) | `items: [{src 또는 placeholder, alt}]`, `h` |
+| sessions | 날짜별 세션 시간표(로고 + 시간 + 기관/연사) | `days: [{label, items: [{time, name, sub, logo 또는 logo_placeholder, alt}]}]` |
+| steps | 세션 진행 순서(연두 원 번호 01·02·03 + 제목 + 설명) | `title`, `items: [{title, text}]` |
 
 이미지가 준비되면 `placeholder`를 지우고 `"src": "https://img2.stibee.com/..."`를 넣습니다
 (스티비에 이미지를 먼저 업로드해 URL을 받습니다).

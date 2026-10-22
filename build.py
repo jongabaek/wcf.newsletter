@@ -74,7 +74,7 @@ def paragraphs(text, align="left", size=16):
 # ── 블록 뼈대 ──────────────────────────────────────────────────────────
 def row(inner, pad="0"):
     return (f'<tr><td style="padding:{pad};font-family:{FONT};color:{TEXT};'
-            f'word-break:break-word;">{inner}</td></tr>\n')
+            f'word-break:keep-all;overflow-wrap:break-word;">{inner}</td></tr>\n')
 
 
 def two_col(left, right, pad="15px"):
@@ -145,7 +145,7 @@ def m_story(b):           # M4 2단 스토리 (reverse=true면 텍스트가 왼�
 
 
 def m_body_cta(b):        # M5 1단 본문 + 메인 CTA
-    out = row(paragraphs(b["text"], b.get("align", "left")), "15px 15px 0")
+    out = row(paragraphs(b["text"], b.get("align", "left")), "15px 15px 0") if b.get("text") else ""
     if b.get("cta"):
         out += row(button(b["cta"], b.get("link"), b.get("color", "lime")), "20px 15px 15px")
     return out
@@ -261,12 +261,92 @@ def m_speaker(b):         # 연사 소개 (사진 + 발표 제목 + 하이라이
             f'color:{TEXT};word-break:keep-all;">{inner}</td></tr>\n')
 
 
+def m_pill(b):            # 질문형 캡슐 + 프로그램 제목 + 한 줄 설명 (Vol.5 체험 섹션 머리)
+    out = row(f'<table role="presentation" align="center" cellpadding="0" cellspacing="0" '
+              f'style="margin:0 auto;border-collapse:separate;width:90%;max-width:420px;"><tr>'
+              f'<td style="border:2px solid {PURPLE};border-radius:500px;padding:11px 16px;text-align:center;'
+              f'font-family:{FONT};font-size:16px;line-height:1.4;color:#111111;">'
+              f'<b>{html.escape(b["text"])}</b>&nbsp;&nbsp;<span style="color:{PURPLE};">&#9654;</span>'
+              f'</td></tr></table>', "20px 15px 6px")
+    if b.get("title"):
+        out += row(f'<p style="margin:0;text-align:center;font-size:20px;line-height:1.5;color:{PURPLE};">'
+                   f'<b>{html.escape(b["title"])}</b></p>', "12px 15px 0")
+    if b.get("sub"):
+        out += row(f'<p style="margin:0;text-align:center;font-size:13px;line-height:1.6;color:#444444;">'
+                   f'{"<br>".join(rich(b["sub"]))}</p>', "4px 15px 0")
+    return out
+
+
+def m_photos(b):          # 체험 예시 사진 3장 가로 배열 (모바일에서도 3장 유지, 폭 비례 축소)
+    cell = ('<div style="display:inline-block;vertical-align:top;width:33.33%;box-sizing:border-box;'
+            'padding:0 4px;">')
+    cells = ""
+    for it in b["items"]:
+        if it.get("src"):
+            pic = (f'<img src="{html.escape(url(it["src"]))}" width="192" alt="{html.escape(it.get("alt", ""))}" '
+                   'style="display:block;width:100%;height:auto;border:0;border-radius:12px;">')
+        else:
+            pic = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>'
+                   f'<td class="ph" height="{b.get("h", 192)}" style="height:{b.get("h", 192)}px;background:#F1ECFF;'
+                   f'border:2px dashed #B7A4F0;border-radius:12px;text-align:center;vertical-align:middle;'
+                   f'font-family:{FONT};font-size:11px;line-height:1.5;color:{PURPLE};padding:6px;">'
+                   f'<b>IMAGE</b><br>{html.escape(it.get("placeholder", "사진"))}</td></tr></table>')
+        cells += cell + pic + "</div>"
+    return f'<tr><td style="font-size:0;text-align:center;padding:16px 11px 4px;">{cells}</td></tr>\n'
+
+
+def m_sessions(b):        # 날짜별 세션 시간표 (로고 + 시간 + 기관/연사)
+    rows = ""
+    for day in b["days"]:
+        rows += (f'<tr><td colspan="2" style="padding:18px 0 8px;font-family:{FONT};font-size:15px;line-height:1.4;'
+                 f'color:{PURPLE};border-bottom:2px solid {PURPLE};"><b>{html.escape(day["label"])}</b></td></tr>')
+        for it in day["items"]:
+            if it.get("logo"):
+                logo = (f'<img src="{html.escape(url(it["logo"]))}" width="120" alt="{html.escape(it.get("alt", ""))}" '
+                        'style="display:block;width:120px;height:auto;border:1px solid #E6E6E6;border-radius:8px;">')
+            else:
+                logo = (f'<div class="ph" style="width:118px;height:58px;line-height:58px;background:#F1ECFF;'
+                        f'border:1px dashed #B7A4F0;border-radius:8px;text-align:center;font-size:11px;color:{PURPLE};">'
+                        f'{html.escape(it.get("logo_placeholder", "로고"))}</div>')
+            sub = (f'<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#666666;">'
+                   f'{"<br>".join(rich(it["sub"]))}</p>') if it.get("sub") else ""
+            rows += (f'<tr><td width="132" style="width:132px;padding:12px 12px 12px 0;vertical-align:middle;'
+                     f'border-bottom:1px solid #EEEEEE;">{logo}</td>'
+                     f'<td style="padding:12px 0;vertical-align:middle;border-bottom:1px solid #EEEEEE;'
+                     f'font-family:{FONT};color:{TEXT};word-break:keep-all;">'
+                     f'<p style="margin:0 0 2px;font-size:13px;line-height:1.4;color:{SPEAKER_GREEN};"><b>'
+                     f'{html.escape(it["time"])}</b></p>'
+                     f'<p style="margin:0;font-size:16px;line-height:1.45;color:#111111;"><b>'
+                     f'{"<br>".join(rich(it["name"]))}</b></p>{sub}</td></tr>')
+    return row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table>',
+               "0 15px 10px")
+
+
+def m_steps(b):           # 세션 진행 순서 (01·02·03 번호 + 제목 + 설명)
+    rows = ""
+    for i, it in enumerate(b["items"], 1):
+        rows += (f'<tr><td width="52" style="width:52px;padding:12px 0;vertical-align:top;">'
+                 f'<div style="width:40px;height:40px;line-height:40px;border-radius:50%;background:{LIME};'
+                 f'text-align:center;font-family:{FONT};font-size:15px;color:#111111;"><b>{i:02d}</b></div></td>'
+                 f'<td style="padding:12px 0;vertical-align:top;font-family:{FONT};word-break:keep-all;">'
+                 f'<p style="margin:0 0 4px;font-size:16px;line-height:1.45;color:{PURPLE};"><b>'
+                 f'{html.escape(it["title"])}</b></p>'
+                 f'<p style="margin:0;font-size:14px;line-height:1.7;color:#333333;">{"<br>".join(rich(it["text"]))}</p>'
+                 f'</td></tr>')
+    title = (f'<p style="margin:0 0 6px;font-size:15px;line-height:1.5;color:#111111;"><b>'
+             f'{html.escape(b["title"])}</b></p>') if b.get("title") else ""
+    return row(f'<div style="background:#F2F2F2;border-radius:12px;padding:16px 18px;">{title}'
+               f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></div>',
+               "6px 15px 10px")
+
+
 MODULES = {
     "header": m_header, "image": m_image, "text": m_text, "spacer": m_spacer,
     "story": m_story, "body_cta": m_body_cta, "card": m_card, "ticket": m_ticket,
     "divider": m_divider, "closing": m_closing, "footer": m_footer,
     "qa": m_qa, "stats": m_stats, "notice": m_notice,
     "band": m_band, "speaker": m_speaker,
+    "pill": m_pill, "photos": m_photos, "sessions": m_sessions, "steps": m_steps,
 }
 
 
