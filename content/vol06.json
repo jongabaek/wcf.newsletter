@@ -1,30 +1,187 @@
 {
   "id": "vol06",
   "vol": 6,
-  "send_date": "2026-10-21",
-  "weekday": "수",
-  "title": "프로그램 소개 - 더 세션즈",
-  "main": "더 세션즈",
+  "send_date": "2026-10-30",
+  "weekday": "금",
+  "title": "프로그램 소개 - 오리진 디스커버리 (+ 두 번째 챔피언) · 얼리버드 오늘 마감",
+  "main": "오리진 디스커버리",
   "status": "초안",
-  "subject": "[Vol.6] 커피를 넘어, 더 세션즈 전체 라인업",
-  "preheader": "디저트·브랜딩·AI까지, 현장에서 바로 쓰는 인사이트 💡",
-  "note": "Vol.3에서 예고한 '디저트·브랜딩·AI' 키워드를 트랙으로 묶어 카드 1장 = 1트랙. 트랙 수가 다르면 카드를 늘리거나 줄이세요. 티켓 블록에 '얼리버드 마감 D-9'를 붙여 Vol.7 마감 호를 예열합니다.",
-  "assets": ["더 세션즈 키비주얼 (630px)", "트랙별 대표 이미지 3~4장 (285px)", "트랙 분류와 트랙별 대표 연사", "세션 시간표"],
+  "subject": "[Vol.6] 스푼 하나로 떠나는 산지 여행 ✈️ 얼리버드는 오늘까지",
+  "preheader": "인도·과테말라·IWCA 커피를 한자리에서, 2차 얼리버드 20% 할인 오늘 마감",
+  "note": "10/26 일정 조정으로 이전 Vol.5의 오리진 파트를 옮겨 옴. 남은 것: 온두라스 세션·로고 확정, 두 번째 챔피언(Jack Simpson 논의 중) 확정 시 연사 카드 추가(미확정이면 블록 삭제), IWCA 문구 승인, 얼리버드 마감 시각. 발송일이 얼리버드 마감 당일이라 상단에 마감 띠.",
+  "assets": [
+    "대표 비주얼 630×400 (오리진 디스커버리)",
+    "Café de Honduras 로고",
+    "두 번째 챔피언 연사 카드 (확정 시)",
+    "스폰서 배너 (600px 폭) + 링크"
+  ],
   "blocks": [
-    {"type": "header"},
-    {"type": "image", "placeholder": "M2 · 더 세션즈 전체 라인업 키비주얼 (630×460)", "h": 460, "link": "{{SESSIONS_URL}}"},
-    {"type": "text", "text": "커피만 이야기하진 않습니다 💡\n더 세션즈의 전체 라인업을 [○]개 트랙으로 정리했어요."},
-    {"type": "spacer", "h": 20},
-    {"type": "image", "placeholder": "M3 · 섹션 타이틀 배너 'THE SESSIONS' (630×120)", "h": 120},
-    {"type": "story", "placeholder": "더 세션즈 현장/연사 이미지 (285×285)", "title": "더 세션즈는 이런 자리예요", "text": "[더 세션즈 한 줄 정의. 예) 카페를 운영하고, 만들고, 키우는 사람들이 내일 바로 적용할 수 있는 이야기를 나누는 실전형 세션입니다.]\n\n이런 분께 추천해요: [대상]"},
-    {"type": "card", "placeholder": "트랙 1 · 디저트 (285×285)", "title": "TRACK 1 · 디저트", "text": "[대표 연사명]([소속])이 들려주는 [세션 주제].\n이런 분께 추천: [대상 한 줄]", "cta": "세션 보기", "link": "{{SESSIONS_URL}}"},
-    {"type": "card", "placeholder": "트랙 2 · 브랜딩 (285×285)", "title": "TRACK 2 · 브랜딩", "text": "[대표 연사명]([소속])이 들려주는 [세션 주제].\n이런 분께 추천: [대상 한 줄]", "cta": "세션 보기", "link": "{{SESSIONS_URL}}"},
-    {"type": "card", "placeholder": "트랙 3 · AI (285×285)", "title": "TRACK 3 · AI", "text": "[대표 연사명]([소속])이 들려주는 [세션 주제].\n이런 분께 추천: [대상 한 줄]", "cta": "세션 보기", "link": "{{SESSIONS_URL}}"},
-    {"type": "body_cta", "text": "트랙별 시간표와 연사 소개를 한 페이지에 모아 두었어요.\n듣고 싶은 세션을 미리 골라두세요! 👇", "cta": "더 세션즈 전체 시간표 보기", "link": "{{SESSIONS_URL}}", "color": "lime"},
-    {"type": "ticket", "headline": "얼리버드 마감까지 D-9", "cta": "2차 얼리버드 티켓 예매 바로가기", "text": "[10월 30일(금)] 이후에는 정가로 전환됩니다."},
-    {"type": "divider", "style": "divider_top"},
-    {"type": "closing", "text": "💌 오늘의 소식, 어떠셨나요?\n\n더 스테이지, 챔피언·오리진, 그리고 더 세션즈까지. 이제 월드커피포럼의 모든 프로그램이 공개됐어요.\n\n다음 소식은 [[얼리버드 마감]] 안내입니다. 놓치지 마세요! ☕"},
-    {"type": "divider", "style": "divider_mid"},
-    {"type": "footer"}
+    {
+      "type": "header"
+    },
+    {
+      "type": "notice",
+      "text": "⏰ **2차 얼리버드 20% 할인, 오늘 [23:59] 마감!**"
+    },
+    {
+      "type": "image",
+      "placeholder": "M2 · 오리진 디스커버리 키비주얼 (630×400)",
+      "h": 400,
+      "link": "HOME"
+    },
+    {
+      "type": "text",
+      "text": "**한 잔의 커피가 우리에게 오기까지.**\n\n햇살과 바람이 머문 산지의 풍경,\n그 땅을 일궈 온 농장과 생산자의 이야기.\n\n스푼 하나로 전세계 산지의 다채로운 풍미를 탐험하는\n[[<오리진 디스커버리>]]에서 커피 한 잔에 담긴 여정을 함께 떠나보세요. ☕"
+    },
+    {
+      "type": "spacer",
+      "h": 20
+    },
+    {
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/band_origin.png",
+      "alt": "스푼 하나로 떠나는 산지 여행"
+    },
+    {
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/info_origin.png",
+      "link": "TICKET",
+      "alt": "오리진 디스커버리 · 11. 11(수)–12(목) · 코엑스 컨퍼런스룸 300호"
+    },
+    {
+      "type": "photos",
+      "items": [
+        {
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_cupping.jpg",
+          "alt": "지난해 오리진 디스커버리 커핑 현장"
+        },
+        {
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_pour.jpg",
+          "alt": "지난해 오리진 디스커버리 커핑 준비"
+        },
+        {
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_producers.jpg",
+          "alt": "지난해 오리진 디스커버리에 참여한 과테말라 생산자들"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "인도, 과테말라, 온두라스부터 IWCA 챕터의 커피까지.\n각 산지를 대표하는 기관과 농장, 생산자의 이야기를 들으며\n스푼 하나로 산지의 다채로운 풍미를 비교해 보세요. ✈️"
+    },
+    {
+      "type": "sessions",
+      "days": [
+        {
+          "label": "11.11 (수)",
+          "items": [
+            {
+              "time": "10:30 – 12:30",
+              "name": "Coffee Board of India",
+              "sub": "인도",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
+              "alt": "Coffee Board of India"
+            },
+            {
+              "time": "13:30 – 15:30",
+              "name": "엘 인헤르또 X 커피명가",
+              "sub": "Arturo Aguirre Saenz\nCEO & Producer, Finca El Injerto | Guatemala",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_injerto_c.png",
+              "alt": "Finca El Injerto"
+            }
+          ]
+        },
+        {
+          "label": "11.12 (목)",
+          "items": [
+            {
+              "time": "10:30 – 12:30 · 307호",
+              "name": "IWCA South Korea",
+              "sub": "커핑 리더 이경선 · 8개국 IWCA 챕터 커핑 & 디스커션",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_c.png",
+              "alt": "IWCA South Korea"
+            },
+            {
+              "time": "13:30 – 15:30",
+              "name": "Café de Honduras",
+              "sub": "온두라스",
+              "logo_placeholder": "온두라스 로고"
+            },
+            {
+              "time": "16:00 – 18:00",
+              "name": "Coffee Board of India",
+              "sub": "인도",
+              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
+              "alt": "Coffee Board of India"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "body_cta",
+      "text": "",
+      "cta": "오리진 디스커버리 자세히 보기",
+      "link": "https://wclforum.org/kr/program/origin.asp",
+      "color": "purple",
+      "align": "center"
+    },
+    {
+      "type": "spacer",
+      "h": 20
+    },
+    {
+      "type": "image",
+      "placeholder": "[두 번째 챔피언 연사 카드 — 확정되면 공개, 미확정이면 이 블록 삭제] (630×243)",
+      "h": 243,
+      "inset": true
+    },
+    {
+      "type": "image",
+      "inset": true,
+      "placeholder": "스폰서 배너 (600px 폭, Vol.4와 같은 위치)",
+      "h": 200,
+      "link": "{{SPONSOR_URL}}"
+    },
+    {
+      "type": "divider",
+      "style": "divider_top"
+    },
+    {
+      "type": "image",
+      "src": "https://img2.stibee.com/14802_3595437_1789433158097518353.png",
+      "alt": "#NEWS 놓치지 말아야 할 소식"
+    },
+    {
+      "type": "card",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_speaker.jpg",
+      "alt": "나스 자파",
+      "title": "챔피언 라이브, 나스 자파",
+      "text": "2026 월드 브루어스 컵 챔피언의 라이브 브루잉, 11월 14일(토)에 만나요 🏆",
+      "cta": "챔피언 라이브 보기",
+      "link": "https://wclforum.org/kr/program/champion.asp"
+    },
+    {
+      "type": "ticket",
+      "banner": false,
+      "headline": "얼리버드 마지막 날",
+      "text": "2차 얼리버드 20% 할인은 오늘 [23:59]까지예요.\n[마감 이후에는 정가로 전환됩니다.]",
+      "cta": "오늘 마감, 20% 할인 받고 예매하기"
+    },
+    {
+      "type": "divider",
+      "style": "divider_top"
+    },
+    {
+      "type": "closing",
+      "text": "💌 오늘의 소식, 어떠셨나요?\n\n산지의 풍경, 어느 나라의 한 잔이 가장 궁금해지셨나요?\n\n다음 주에는 커피를 넘어 디저트·브랜딩·AI까지, [[더 세션즈]]의 전체 라인업을 들고 올게요! ☕"
+    },
+    {
+      "type": "divider",
+      "style": "divider_mid"
+    },
+    {
+      "type": "footer"
+    }
   ]
 }

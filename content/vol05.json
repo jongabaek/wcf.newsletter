@@ -1,21 +1,18 @@
 {
   "id": "vol05",
   "vol": 5,
-  "send_date": "2026-10-14",
-  "weekday": "수",
-  "title": "프로그램 소개 - 오리진 디스커버리, 챔피언 라이브",
-  "main": "오리진 디스커버리 · 챔피언 라이브",
+  "send_date": "2026-10-27",
+  "weekday": "화",
+  "title": "챔피언 라이브 - 나스 자파 공개 + 얼리버드 마감 D-3",
+  "main": "챔피언 라이브 · Last Chance",
   "status": "초안",
-  "subject": "[Vol.5] 산지의 풍경부터 챔피언의 레시피까지, 한 잔의 여정",
-  "preheader": "스푼 하나로 떠나는 산지 여행과 세계 챔피언의 라이브 브루잉을 소개합니다 ☕",
-  "note": "레이아웃: 질문형 캡슐 → 체험 예시 사진 3장 → 소개문 → 세션 시간표(로고) 순으로 두 프로그램을 같은 틀로 반복. 로고·나스 자파 사진은 저장소 assets/vol05/에 올려 Pages 주소로 연결(스티비 업로드 후 img2.stibee.com 주소로 바꿔도 됨). 오리진 체험 사진 3장, 온두라스 로고, 미정이던 장소·참여 방식·11/11 16:00 세션은 10/22 요청으로 삭제. 두 번째 챔피언(Jack Simpson, 논의 중)은 10/22 요청으로 블라인드 이미지·시간표 줄 모두 삭제(필요하면 tools/make_blind_champion.py로 다시 생성). 스폰서 배너 자리는 Vol.4와 같이 챔피언 섹션 뒤·NEWS 앞({{SPONSOR_URL}}). 홍보영상은 NEWS 첫 카드(유튜브 썸네일 직접 연결). NEWS 카드 2개는 초안 그대로라 발송 전 확인 필요(퓨처스 챌린지는 Vol.4 기준 이미 마감됐을 수 있음). 연두 버튼은 예매 1개. [10/22 받은 자료] 엘 인헤르또 X 커피명가 콜라보 세션, 나스 자파 X Falcon Coffees 콜라보 세션. 연사: Arturo Aguirre Saenz — CEO & Producer, Finca El Injerto | Guatemala. 4세대 전통, Pacamara·Geisha·Bourbon 생산, 재배~가공·품질관리·로스팅·수출 통합 관리, 정밀 농업, 산지 로스팅·직접거래. 세션 내용: COE 1위·세계 100대 카페 선정 엘 인헤르또의 핵심가치 / 대표 품종과 실험적 가공 프로세스 / 옥션 커피 커핑. 카드 이미지에는 연사 사진만, 체리·COE 트로피 같은 예시 사진은 뉴스레터 설명 파트에 사용. 한글 표기는 받은 문구 기준(엘 인헤르또). [IWCA 10/22] 강연 없음 → 커핑 세션 + 오픈 디스커션. 11/12(목) 10:30, COEX 컨퍼런스룸 307호. 8개 챕터(인도네시아·케냐·과테말라·온두라스·브라질·페루·에콰도르·우간다, 변경 가능) 회원 생산 스페셜티 랏, 다양한 가공, 일부 생산자 현장 참석 예정. 커핑 리더 이경선: 카페게더 대표/게더커피랩 교수, IWCA 한국 챕터 부회장, ORO그룹 한국 대표, COE 국제 심사관(2024 브라질·2025 온두라스·2026 코스타리카), Q-Instructor, AST, CVA Trainer 등. IWCA가 발행 전 문구 확인 요청 → IWCA 관련 문구는 승인 후 발송. [10/22 17시] 오리진은 처음 HTML 구성(캡슐·사진·소개·시간표) 유지하고 시간표를 카드 톤(연보라 패널·보라 요일 라벨·연두 시간 태그)으로 통일. 나스 자파는 디자인 보드의 연사 카드 이미지(assets/vol05/card_champion.png) 사용. IWCA 줄은 IWCA 문구 승인 전.",
+  "subject": "[Vol.5] 올해, 세계를 사로잡은 챔피언의 한 잔 🏆 얼리버드 마감 D-3",
+  "preheader": "2026 월드 브루어스 컵 챔피언 나스 자파의 라이브 브루잉, 20% 얼리버드는 이번 주 금요일까지",
+  "note": "10/26 일정 조정: 원래 Vol.5(챔피언·오리진)와 Vol.7(Last Chance)을 나눠, 10/27에는 확정된 챔피언 나스 자파 + 얼리버드 마감을 먼저 보냄. 오리진 디스커버리와 미확정 세션(두 번째 챔피언, 온두라스)은 10/30 Vol.6으로. 연두 버튼은 상단·하단 예매 2개. 얼리버드 마감일은 국문 10/30(금), 영문 페이지 10/31 — 확인 전이라 [대괄호]. 이전 Vol.5 원고의 메모: 레이아웃: 질문형 캡슐 → 체험 예시 사진 3장 → 소개문 → 세션 시간표(로고) 순으로 두 프로그램을 같은 틀로 반복. 로고·나스 자파 사진은 저장소 assets/vol05/에 올려 Pages 주소로 연결(스티비 업로드 후 img2.stibee.com 주소로 바꿔도 됨). 오리진 체험 사진 3장, 온두라스 로고, 미정이던 장소·참여 방식·11/11 16:00 세션은 10/22 요청으로 삭제. 두 번째 챔피언(Jack Simpson, 논의 중)은 10/22 요청으로 블라인드 이미지·시간표 줄 모두 삭제(필요하면 tools/make_blind_champion.py로 다시 생성). 스폰서 배너 자리는 Vol.4와 같이 챔피언 섹션 뒤·NEWS 앞({{SPONSOR_URL}}). 홍보영상은 NEWS 첫 카드(유튜브 썸네일 직접 연결). NEWS 카드 2개는 초안 그대로라 발송 전 확인 필요(퓨처스 챌린지는 Vol.4 기준 이미 마감됐을 수 있음). 연두 버튼은 예매 1개. [10/22 받은 자료] 엘 인헤르또 X 커피명가 콜라보 세션, 나스 자파 X Falcon Coffees 콜라보 세션. 연사: Arturo Aguirre Saenz — CEO & Producer, Finca El Injerto | Guatemala. 4세대 전통, Pacamara·Geisha·Bourbon 생산, 재배~가공·품질관리·로스팅·수출 통합 관리, 정밀 농업, 산지 로스팅·직접거래. 세션 내용: COE 1위·세계 100대 카페 선정 엘 인헤르또의 핵심가치 / 대표 품종과 실험적 가공 프로세스 / 옥션 커피 커핑. 카드 이미지에는 연사 사진만, 체리·COE 트로피 같은 예시 사진은 뉴스레터 설명 파트에 사용. 한글 표기는 받은 문구 기준(엘 인헤르또). [IWCA 10/22] 강연 없음 → 커핑 세션 + 오픈 디스커션. 11/12(목) 10:30, COEX 컨퍼런스룸 307호. 8개 챕터(인도네시아·케냐·과테말라·온두라스·브라질·페루·에콰도르·우간다, 변경 가능) 회원 생산 스페셜티 랏, 다양한 가공, 일부 생산자 현장 참석 예정. 커핑 리더 이경선: 카페게더 대표/게더커피랩 교수, IWCA 한국 챕터 부회장, ORO그룹 한국 대표, COE 국제 심사관(2024 브라질·2025 온두라스·2026 코스타리카), Q-Instructor, AST, CVA Trainer 등. IWCA가 발행 전 문구 확인 요청 → IWCA 관련 문구는 승인 후 발송. [10/22 17시] 오리진은 처음 HTML 구성(캡슐·사진·소개·시간표) 유지하고 시간표를 카드 톤(연보라 패널·보라 요일 라벨·연두 시간 태그)으로 통일. 나스 자파는 디자인 보드의 연사 카드 이미지(assets/vol05/card_champion.png) 사용. IWCA 줄은 IWCA 문구 승인 전.",
   "assets": [
+    "대표 비주얼 630×400 (나스 자파 × 얼리버드 마감 D-3)",
     "스폰서 배너 (600px 폭) + 링크",
-    "대표 비주얼 630×400 (오리진 디스커버리 × 챔피언 라이브)",
-    "오리진 디스커버리 체험 예시 사진 3장 (정사각)",
-    "Café de Honduras 로고",
-    "챔피언 라이브 시음 체험 예시 사진 1장 (정사각)",
-    "로고 4종·나스 자파 사진 3장 — assets/vol05/ 반영 완료"
+    "더 스테이지 라인업 카드 이미지 (285×285, Vol.4 이미지 재사용)"
   ],
   "blocks": [
     {
@@ -23,106 +20,20 @@
     },
     {
       "type": "image",
-      "placeholder": "M2 · 오리진 디스커버리 × 챔피언 라이브 키비주얼 (630×400)",
+      "placeholder": "M2 · 챔피언 라이브 나스 자파 × 얼리버드 마감 D-3 키비주얼 (630×400)",
       "h": 400,
-      "link": "HOME"
+      "link": "TICKET"
     },
     {
       "type": "text",
-      "text": "**한 잔의 커피가 우리에게 오기까지.**\n\n햇살과 바람이 머문 산지의 풍경부터\n수많은 연습과 고민 끝에 탄생한 챔피언의 레시피까지.\n\n우리가 마시는 커피 한 잔에는 저마다의 시간과 이야기가 담겨 있습니다.\n\n스푼 하나로 전세계 산지의 다채로운 풍미를 탐험하고,\n세계 챔피언의 손끝에서 완성되는 특별한 한 잔을 만나는 시간.\n\n[[<오리진 디스커버리>]]와 [[<챔피언 라이브>]]를 통해\n커피 한 잔에 담긴 특별한 여정을 함께 떠나보세요. ☕"
+      "text": "**올해, 세계를 사로잡은 챔피언의 한 잔.**\n\n2026 월드 브루어스 컵 챔피언 [[나스 자파(Nas Jaafar)]]가\n월드커피포럼 [[<챔피언 라이브>]] 무대에 오릅니다.\n\n세계 무대를 사로잡은 레시피는 어떻게 만들어졌을까요?\n우승 무대 뒤의 이야기부터 눈앞에서 내려주는 라이브 브루잉까지,\n챔피언의 한 잔을 직접 맛보는 시간이에요. 🏆\n\n그리고 이 한 잔을 가장 좋은 가격으로 만날 수 있는\n**2차 얼리버드는 [10월 30일(금)]이면 끝나요.**"
     },
     {
-      "type": "spacer",
-      "h": 20
-    },
-    {
-      "type": "image",
-      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/band_origin.png",
-      "alt": "스푼 하나로 떠나는 산지 여행"
-    },
-    {
-      "type": "image",
-      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/info_origin.png",
-      "link": "TICKET",
-      "alt": "오리진 디스커버리 · 11. 11(수)–12(목) · 코엑스 컨퍼런스룸 300호"
-    },
-    {
-      "type": "photos",
-      "items": [
-        {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_cupping.jpg",
-          "alt": "지난해 오리진 디스커버리 커핑 현장"
-        },
-        {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_pour.jpg",
-          "alt": "지난해 오리진 디스커버리 커핑 준비"
-        },
-        {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/origin_2025_producers.jpg",
-          "alt": "지난해 오리진 디스커버리에 참여한 과테말라 생산자들"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "인도, 과테말라, 온두라스부터 IWCA 챕터의 커피까지.\n각 산지를 대표하는 기관과 농장, 생산자의 이야기를 들으며\n스푼 하나로 산지의 다채로운 풍미를 비교해 보세요. ✈️"
-    },
-    {
-      "type": "sessions",
-      "days": [
-        {
-          "label": "11.11 (수)",
-          "items": [
-            {
-              "time": "10:30 – 12:30",
-              "name": "Coffee Board of India",
-              "sub": "인도",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
-              "alt": "Coffee Board of India"
-            },
-            {
-              "time": "13:30 – 15:30",
-              "name": "엘 인헤르또 X 커피명가",
-              "sub": "Arturo Aguirre Saenz\nCEO & Producer, Finca El Injerto | Guatemala",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_injerto_c.png",
-              "alt": "Finca El Injerto"
-            }
-          ]
-        },
-        {
-          "label": "11.12 (목)",
-          "items": [
-            {
-              "time": "10:30 – 12:30 · 307호",
-              "name": "IWCA South Korea",
-              "sub": "커핑 리더 이경선 · 8개국 IWCA 챕터 커핑 & 디스커션",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_c.png",
-              "alt": "IWCA South Korea"
-            },
-            {
-              "time": "13:30 – 15:30",
-              "name": "Café de Honduras",
-              "sub": "온두라스",
-              "logo_placeholder": "온두라스 로고"
-            },
-            {
-              "time": "16:00 – 18:00",
-              "name": "Coffee Board of India",
-              "sub": "인도",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
-              "alt": "Coffee Board of India"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "body_cta",
-      "text": "",
-      "cta": "오리진 디스커버리 자세히 보기",
-      "link": "https://wclforum.org/kr/program/origin.asp",
-      "color": "purple",
-      "align": "center"
+      "type": "ticket",
+      "banner": false,
+      "headline": "마지막 얼리버드 찬스, D-3\n[10월 30일(금)]까지 20% 할인",
+      "text": "[마감 이후에는 정가로 전환돼요.]",
+      "cta": "20% 할인 받고 예매하기"
     },
     {
       "type": "spacer",
@@ -158,7 +69,7 @@
     },
     {
       "type": "text",
-      "text": "세계 무대를 사로잡은 레시피는 어떻게 만들어질까요?\n챔피언이 직접 커피를 해석하고 추출하는 과정을 눈앞에서 보고,\n그 한 잔을 함께 맛보는 시간입니다. 🏆"
+      "text": "챔피언이 직접 커피를 해석하고 추출하는 과정을 눈앞에서 보고,\n그 한 잔을 함께 맛보는 시간입니다. ☕"
     },
     {
       "type": "image",
@@ -219,25 +130,18 @@
     },
     {
       "type": "card",
-      "placeholder": "더 스테이지 인기 세션 이미지 (285×285)",
-      "title": "지금 가장 주목받는 더 스테이지 세션",
-      "text": "최종 라인업 공개 후 가장 많은 관심을 받은 세션은 [세션명]이었어요. 좌석이 한정되어 있으니 서둘러 주세요 🎤",
+      "placeholder": "더 스테이지 라인업 이미지 (285×285, Vol.4 이미지 재사용)",
+      "title": "더 스테이지 최종 라인업, 다시 보기",
+      "text": "지난 호에 공개한 더 스테이지 연사 라인업, 아직 못 보셨다면 지금 확인해 보세요 🎤",
       "cta": "라인업 보러가기",
       "link": "{{LINEUP_URL}}"
     },
     {
-      "type": "card",
-      "placeholder": "퓨처스 챌린지 이미지 (285×285)",
-      "title": "커피 퓨처스 챌린지 마감 임박",
-      "text": "접수 마감까지 [○]일 남았습니다. 여러분의 아이디어를 기다려요 🏆",
-      "cta": "공고 확인하기",
-      "link": "{{CHALLENGE_URL}}"
-    },
-    {
       "type": "ticket",
-      "cta": "2차 얼리버드 티켓 예매 바로가기",
-      "text": "산지의 한 잔부터 챔피언의 한 잔까지, 현장에서 직접 만나보세요.\n얼리버드 할인은 [10월 30일(금)]까지만 적용됩니다.",
-      "banner": false
+      "banner": false,
+      "headline": "세계 챔피언의 한 잔, 놓치지 마세요",
+      "text": "2차 얼리버드 20% 할인은 [10월 30일(금)]까지만 적용됩니다.",
+      "cta": "얼리버드 티켓 예매하기"
     },
     {
       "type": "divider",
@@ -245,7 +149,7 @@
     },
     {
       "type": "closing",
-      "text": "💌 오늘의 소식, 어떠셨나요?\n\n산지의 풍경과 챔피언의 레시피,\n어느 쪽 여정이 더 궁금해지셨나요?\n\n다음 주에는 커피를 넘어 디저트·브랜딩·AI까지, [[더 세션즈]]의 전체 라인업을 들고 올게요! ☕"
+      "text": "💌 오늘의 소식, 어떠셨나요?\n\n세계 챔피언의 한 잔, 벌써 기대되시죠?\n\n이번 주 금요일에는 스푼 하나로 떠나는 산지 여행, [[오리진 디스커버리]]와 [또 한 명의 챔피언] 소식을 들고 올게요! ☕"
     },
     {
       "type": "divider",
