@@ -277,13 +277,14 @@ def m_pill(b):            # 질문형 캡슐 + 프로그램 제목 + 한 줄 설
     return out
 
 
-def m_photos(b):          # 체험 예시 사진 3장 가로 배열 (모바일에서도 3장 유지, 폭 비례 축소)
-    cell = ('<div style="display:inline-block;vertical-align:top;width:33.33%;box-sizing:border-box;'
+def m_photos(b):          # 체험 예시 사진 2~3장 가로 배열 (모바일에서도 한 줄 유지, 폭 비례 축소) + 선택 캡션
+    n = len(b["items"])
+    cell = (f'<div style="display:inline-block;vertical-align:top;width:{100 / n:.2f}%;box-sizing:border-box;'
             'padding:0 4px;">')
     cells = ""
     for it in b["items"]:
         if it.get("src"):
-            pic = (f'<img src="{html.escape(url(it["src"]))}" width="192" alt="{html.escape(it.get("alt", ""))}" '
+            pic = (f'<img src="{html.escape(url(it["src"]))}" width="{580 // n}" alt="{html.escape(it.get("alt", ""))}" '
                    'style="display:block;width:100%;height:auto;border:0;border-radius:12px;">')
         else:
             pic = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>'
@@ -291,6 +292,9 @@ def m_photos(b):          # 체험 예시 사진 3장 가로 배열 (모바일�
                    f'border:2px dashed #B7A4F0;border-radius:12px;text-align:center;vertical-align:middle;'
                    f'font-family:{FONT};font-size:11px;line-height:1.5;color:{PURPLE};padding:6px;">'
                    f'<b>IMAGE</b><br>{html.escape(it.get("placeholder", "사진"))}</td></tr></table>')
+        if it.get("caption"):
+            pic += (f'<p style="margin:8px 2px 0;font-family:{FONT};font-size:12px;line-height:1.5;color:#444444;'
+                    f'text-align:left;word-break:keep-all;">{"<br>".join(rich(it["caption"]))}</p>')
         cells += cell + pic + "</div>"
     return f'<tr><td style="font-size:0;text-align:center;padding:16px 11px 4px;">{cells}</td></tr>\n'
 

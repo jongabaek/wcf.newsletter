@@ -54,16 +54,14 @@
       "type": "photos",
       "items": [
         {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_2025_pour.jpg",
-          "alt": "지난해 챔피언 라이브 현장 브루잉"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_george.jpg",
+          "alt": "2025 WBrC 챔피언 조지 진양 펭",
+          "caption": "**2025 WBrC 챔피언**\n조지 진양 펭(George Jinyang Peng)"
         },
         {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_2025_live.jpg",
-          "alt": "지난해 챔피언 라이브 현장"
-        },
-        {
-          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/nas_brewing.jpg",
-          "alt": "브루잉 시연 중인 나스 자파"
+          "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_mikael.jpg",
+          "alt": "2024 챔피언 미카엘 자신",
+          "caption": "**2024 챔피언**\n미카엘 자신(Mikael Jasin)"
         }
       ]
     },
