@@ -310,7 +310,7 @@ def m_photos(b):          # 체험 예시 사진 2~3장 가로 배열 (모바일
             pic += (f'<p style="margin:8px 2px 0;font-family:{FONT};font-size:12px;line-height:1.5;color:#444444;'
                     f'text-align:left;word-break:keep-all;">{"<br>".join(rich(it["caption"]))}</p>')
         cells += cell + pic + "</div>"
-    return f'<tr><td style="font-size:0;text-align:center;padding:16px 11px 4px;">{cells}</td></tr>\n'
+    return f'<tr><td style="font-size:0;text-align:center;padding:16px 10px 4px;">{cells}</td></tr>\n'
 
 
 def m_sessions(b):        # 날짜별 세션 시간표 (Vol.5 연사 카드와 같은 톤: 연보라 패널 · 보라 요일 라벨 · 연두 시간 태그)
@@ -366,7 +366,7 @@ def m_steps(b):           # 세션 진행 순서 — Vol.4 카드 톤(연보라 
                 f'<div style="width:28px;height:2px;background:{PURPLE};margin:10px 0 2px;"></div>')
     return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:22px 22px 8px;">{head}'
                f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></div>',
-               "6px 15px 10px")
+               "6px 14px 10px")
 
 
 def m_explain(b):         # 설명 캡션 박스 (연보라 패널 + 연두 라벨 제목 + 본문) — 용어·프로그램 설명용
