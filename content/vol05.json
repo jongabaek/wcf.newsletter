@@ -125,7 +125,7 @@
     },
     {
       "type": "card",
-      "src": "https://i.ytimg.com/vi/FS19CjEag2I/maxresdefault.jpg",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/news_film.png",
       "alt": "제15회 월드커피포럼 공식 홍보영상",
       "title": "제15회 월드커피포럼 공식 홍보영상 공개",
       "text": "올해 월드커피포럼이 담아낸 이야기, 영상으로 먼저 만나보세요 🎬",
@@ -134,11 +134,12 @@
     },
     {
       "type": "card",
-      "placeholder": "더 스테이지 라인업 이미지 (285×285, Vol.4 이미지 재사용)",
       "title": "더 스테이지 최종 라인업, 다시 보기",
       "text": "지난 호에 공개한 더 스테이지 연사 라인업, 아직 못 보셨다면 지금 확인해 보세요 🎤",
       "cta": "라인업 보러가기",
-      "link": "https://www.wclforum.org/kr/speaker/speaker.asp"
+      "link": "https://www.wclforum.org/kr/speaker/speaker.asp",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/news_stage.png",
+      "alt": "더 스테이지 최종 라인업 다시 보기"
     },
     {
       "type": "ticket",
