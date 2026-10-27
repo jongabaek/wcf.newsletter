@@ -344,20 +344,27 @@ def m_sessions(b):        # 날짜별 세션 시간표 (Vol.5 연사 카드와 �
                "10px 15px 10px")
 
 
-def m_steps(b):           # 세션 진행 순서 (01·02·03 번호 + 제목 + 설명)
+def m_steps(b):           # 세션 진행 순서 — Vol.4 카드 톤(연보라 패널 · 연두 STEP 태그 · 보라 제목 · 회색 영문 · 보라 세로선)
+    LINE = "#DCD8E8"
     rows = ""
     for i, it in enumerate(b["items"], 1):
-        rows += (f'<tr><td width="52" style="width:52px;padding:12px 0;vertical-align:top;">'
-                 f'<div style="width:40px;height:40px;line-height:40px;border-radius:50%;background:{LIME};'
-                 f'text-align:center;font-family:{FONT};font-size:15px;color:#111111;"><b>{i:02d}</b></div></td>'
-                 f'<td style="padding:12px 0;vertical-align:top;font-family:{FONT};word-break:keep-all;">'
-                 f'<p style="margin:0 0 4px;font-size:16px;line-height:1.45;color:{PURPLE};"><b>'
-                 f'{html.escape(it["title"])}</b></p>'
-                 f'<p style="margin:0;font-size:14px;line-height:1.7;color:#333333;">{"<br>".join(rich(it["text"]))}</p>'
-                 f'</td></tr>')
-    title = (f'<p style="margin:0 0 6px;font-size:15px;line-height:1.5;color:#111111;"><b>'
-             f'{html.escape(b["title"])}</b></p>') if b.get("title") else ""
-    return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:16px 18px;">{title}'
+        top = f"border-top:1px solid {LINE};" if i > 1 else ""
+        en = (f'<p style="margin:2px 0 0;font-size:12.5px;line-height:1.4;color:#777777;">{html.escape(it["en"])}</p>'
+              if it.get("en") else "")
+        rows += (f'<tr><td style="padding:16px 0;{top}font-family:{FONT};word-break:keep-all;">'
+                 f'<div style="border-left:2px solid {PURPLE};padding-left:14px;">'
+                 f'<span style="display:inline-block;background:{LIME};padding:2px 8px;font-size:12px;line-height:1.5;'
+                 f'color:#111111;"><b>STEP {i:02d}</b></span>'
+                 f'<p style="margin:8px 0 0;font-size:17px;line-height:1.4;color:{PURPLE};"><b>{html.escape(it["title"])}</b></p>'
+                 f'{en}'
+                 f'<p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:#333333;">{"<br>".join(rich(it["text"]))}</p>'
+                 f'</div></td></tr>')
+    head = ""
+    if b.get("title"):
+        head = (f'<p style="margin:0 0 2px;font-family:{FONT};font-size:18px;line-height:1.4;color:#111111;"><b>'
+                f'{html.escape(b["title"])}</b></p>'
+                f'<div style="width:28px;height:2px;background:{PURPLE};margin:10px 0 2px;"></div>')
+    return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:22px 22px 8px;">{head}'
                f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></div>',
                "6px 15px 10px")
 

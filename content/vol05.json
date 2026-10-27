@@ -83,16 +83,19 @@
       "title": "세션은 이렇게 진행돼요",
       "items": [
         {
-          "title": "The Journey & Coffee",
-          "text": "커피를 시작한 이야기와 Falcon Coffees에서의 일,\n브루잉과 생두를 함께 다룬 경험이 대회 여정에 미친 영향."
+          "title": "나스 자파의 커피 여정",
+          "en": "The Journey & Coffee",
+          "text": "Falcon Coffees에서 브루잉과 생두를 함께 다뤄 온 경험이 세계 무대까지 이어진 이야기를 들려드려요."
         },
         {
-          "title": "Inside the World Brewers Cup",
-          "text": "우승 프레젠테이션의 콘셉트 'Resistance'에 담긴 생각,\n세계 무대를 위한 준비 과정과 그 경험에서 얻은 가장 큰 배움."
+          "title": "우승 무대의 안쪽",
+          "en": "Inside the World Brewers Cup",
+          "text": "우승 프레젠테이션의 콘셉트 'Resistance'에 담긴 생각과 세계 무대를 준비하며 얻은 배움을 나눠요."
         },
         {
-          "title": "Brewing & Tasting Together",
-          "text": "Falcon Korea의 현재 라인업 중 한 가지 커피를 골라\n추출 방향을 잡는 과정을 설명하고, 라이브 브루잉과\n가이드 테이스팅, 관객과의 대화로 이어집니다."
+          "title": "함께 내리고, 함께 맛보기",
+          "en": "Brewing & Tasting Together",
+          "text": "Falcon Korea의 커피 한 가지로 추출 방향을 잡는 과정부터 라이브 브루잉, 가이드 테이스팅까지 함께해요."
         }
       ]
     },

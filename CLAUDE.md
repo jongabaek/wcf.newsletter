@@ -54,7 +54,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | photos | 사진 2~3장 가로 배열(둥근 모서리, 모바일에서도 한 줄 유지). `tag`/`name`을 주면 연보라 패널 + 연두 태그 + 보라 세로선 카드형 캡션 | `items: [{src 또는 placeholder, alt, tag, name, sub}]`, `h` |
 | sessions | 날짜별 세션 시간표(로고 + 시간 + 기관/연사) | `days: [{label, items: [{time, name, sub, logo 또는 logo_placeholder, alt}]}]` |
 | explain | 설명 캡션 박스(연보라 패널 + 연두 라벨 제목 + 본문). 용어·프로그램 설명용 | `title`, `text`, `align` |
-| steps | 세션 진행 순서(연두 원 번호 01·02·03 + 제목 + 설명) | `title`, `items: [{title, text}]` |
+| steps | 세션 진행 순서(Vol.4 카드 톤: 연보라 패널, 연두 STEP 태그, 보라 제목, 회색 영문, 보라 세로선) | `title`, `items: [{title, en, text}]` |
 
 이미지가 준비되면 `placeholder`를 지우고 `"src": "https://img2.stibee.com/..."`를 넣습니다
 (스티비에 이미지를 먼저 업로드해 URL을 받습니다).
