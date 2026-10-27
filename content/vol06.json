@@ -8,7 +8,7 @@
   "status": "초안",
   "subject": "(광고)스푼 하나로 떠나는 산지 여행. 오리진 디스커버리 공개 & 얼리버드 마감 D-1!",
   "preheader": "인도·과테말라·IWCA 커피를 한자리에서, 2차 얼리버드 20% 할인 내일 마감",
-  "note": "10/26 일정 조정으로 이전 Vol.5의 오리진 파트를 옮겨 옴. 남은 것: 온두라스 세션·로고 확정, 두 번째 챔피언(Jack Simpson 논의 중) 확정 시 연사 카드 추가(미확정이면 블록 삭제), IWCA 문구 승인, 얼리버드 마감 시각(23:59 여부). 발송일이 얼리버드 마감 전날(마감 10/31 토)이라 상단에 D-1 띠.",
+  "note": "10/26 일정 조정으로 이전 Vol.5의 오리진 파트를 옮겨 옴. 남은 것: 온두라스 세션·로고 확정, 두 번째 챔피언(Jack Simpson 논의 중) 확정 시 연사 카드 추가(미확정이면 블록 삭제), IWCA 문구 승인, 얼리버드 마감 시각(23:59 여부). 발송일이 얼리버드 마감 전날(마감 10/31 토)이라 상단에 D-1 띠. [10/27] 오리진 참가사 시간표·로고 삭제 → 프로그램 설명(공식 커핑 프로그램) + 커핑 설명 캡션 박스(explain 블록)로 교체.",
   "assets": [
     "대표 비주얼 630×400 (오리진 디스커버리)",
     "Café de Honduras 로고",
@@ -67,56 +67,12 @@
     },
     {
       "type": "text",
-      "text": "인도, 과테말라, 온두라스부터 IWCA 챕터의 커피까지.\n각 산지를 대표하는 기관과 농장, 생산자의 이야기를 들으며\n스푼 하나로 산지의 다채로운 풍미를 비교해 보세요. ✈️"
+      "text": "오리진 디스커버리는 세계 각국의 산지와 커피 브랜드가 직접 참여해\n함께 커핑(Cupping)하는 월드커피포럼의 **공식 커핑 프로그램**이에요. ☕"
     },
     {
-      "type": "sessions",
-      "days": [
-        {
-          "label": "11.11 (수)",
-          "items": [
-            {
-              "time": "10:30 – 12:30",
-              "name": "Coffee Board of India",
-              "sub": "인도",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
-              "alt": "Coffee Board of India"
-            },
-            {
-              "time": "13:30 – 15:30",
-              "name": "엘 인헤르또 X 커피명가",
-              "sub": "Arturo Aguirre Saenz\nCEO & Producer, Finca El Injerto | Guatemala",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_injerto_c.png",
-              "alt": "Finca El Injerto"
-            }
-          ]
-        },
-        {
-          "label": "11.12 (목)",
-          "items": [
-            {
-              "time": "10:30 – 12:30 · 307호",
-              "name": "IWCA South Korea",
-              "sub": "커핑 리더 이경선 · 8개국 IWCA 챕터 커핑 & 디스커션",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_iwca_c.png",
-              "alt": "IWCA South Korea"
-            },
-            {
-              "time": "13:30 – 15:30",
-              "name": "Café de Honduras",
-              "sub": "온두라스",
-              "logo_placeholder": "온두라스 로고"
-            },
-            {
-              "time": "16:00 – 18:00",
-              "name": "Coffee Board of India",
-              "sub": "인도",
-              "logo": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/logo_india_c.png",
-              "alt": "Coffee Board of India"
-            }
-          ]
-        }
-      ]
+      "type": "explain",
+      "title": "커핑(Cupping)이 뭔가요?",
+      "text": "커핑은 커피의 객관적인 맛과 향, 품질을 평가하기 위해 표준화된 방식으로 우려내고 시음하는 과정이에요.\n\n커핑이 처음이어도 괜찮아요! 전문가들의 안내에 따라 누구나 쉽게 참여할 수 있어요. **월드커피포럼에서 첫 커핑, 환영합니다!** 🙌"
     },
     {
       "type": "body_cta",

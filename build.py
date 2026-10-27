@@ -344,13 +344,22 @@ def m_steps(b):           # 세션 진행 순서 (01·02·03 번호 + 제목 + �
                "6px 15px 10px")
 
 
+def m_explain(b):         # 설명 캡션 박스 (연보라 패널 + 연두 라벨 제목 + 본문) — 용어·프로그램 설명용
+    title = (f'<span style="display:inline-block;background:{LIME};padding:3px 10px;font-size:14px;line-height:1.5;'
+             f'color:#111111;"><b>{html.escape(b["title"])}</b></span>') if b.get("title") else ""
+    body = "".join(f'<p style="margin:12px 0 0;font-size:15px;line-height:1.75;color:#222222;">{p}</p>'
+                   for p in rich(b["text"]))
+    return row(f'<div style="background:#F6F5FA;border-radius:18px;padding:20px 22px 22px;text-align:{b.get("align", "left")};'
+               f'word-break:keep-all;">{title}{body}</div>', "6px 15px 10px")
+
+
 MODULES = {
     "header": m_header, "image": m_image, "text": m_text, "spacer": m_spacer,
     "story": m_story, "body_cta": m_body_cta, "card": m_card, "ticket": m_ticket,
     "divider": m_divider, "closing": m_closing, "footer": m_footer,
     "qa": m_qa, "stats": m_stats, "notice": m_notice,
     "band": m_band, "speaker": m_speaker,
-    "pill": m_pill, "photos": m_photos, "sessions": m_sessions, "steps": m_steps,
+    "pill": m_pill, "explain": m_explain, "photos": m_photos, "sessions": m_sessions, "steps": m_steps,
 }
 
 

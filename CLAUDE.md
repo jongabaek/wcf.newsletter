@@ -53,6 +53,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | pill | 질문형 캡슐 + 프로그램 제목 + 한 줄 설명 (Vol.5 체험 섹션 머리) | `text`, `title`, `sub` |
 | photos | 체험 예시 사진 3장 가로 배열(둥근 모서리, 모바일에서도 3장 유지) | `items: [{src 또는 placeholder, alt}]`, `h` |
 | sessions | 날짜별 세션 시간표(로고 + 시간 + 기관/연사) | `days: [{label, items: [{time, name, sub, logo 또는 logo_placeholder, alt}]}]` |
+| explain | 설명 캡션 박스(연보라 패널 + 연두 라벨 제목 + 본문). 용어·프로그램 설명용 | `title`, `text`, `align` |
 | steps | 세션 진행 순서(연두 원 번호 01·02·03 + 제목 + 설명) | `title`, `items: [{title, text}]` |
 
 이미지가 준비되면 `placeholder`를 지우고 `"src": "https://img2.stibee.com/..."`를 넣습니다
