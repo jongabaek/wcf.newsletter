@@ -51,7 +51,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | band | 보라 섹션 타이틀 띠(배너 이미지 대용) | `text` |
 | speaker | 연사 소개(사진+발표 제목+연두 태그+이름+약력) | `headline`, `tag`, `name`, `desc`, `details[]`, `src`/`placeholder`, `reverse`(사진 오른쪽), `shade`(회색 배경) |
 | pill | 질문형 캡슐 + 프로그램 제목 + 한 줄 설명 (Vol.5 체험 섹션 머리) | `text`, `title`, `sub` |
-| photos | 체험 예시 사진 3장 가로 배열(둥근 모서리, 모바일에서도 3장 유지) | `items: [{src 또는 placeholder, alt}]`, `h` |
+| photos | 사진 2~3장 가로 배열(둥근 모서리, 모바일에서도 한 줄 유지). `tag`/`name`을 주면 연보라 패널 + 연두 태그 + 보라 세로선 카드형 캡션 | `items: [{src 또는 placeholder, alt, tag, name, sub}]`, `h` |
 | sessions | 날짜별 세션 시간표(로고 + 시간 + 기관/연사) | `days: [{label, items: [{time, name, sub, logo 또는 logo_placeholder, alt}]}]` |
 | explain | 설명 캡션 박스(연보라 패널 + 연두 라벨 제목 + 본문). 용어·프로그램 설명용 | `title`, `text`, `align` |
 | steps | 세션 진행 순서(연두 원 번호 01·02·03 + 제목 + 설명) | `title`, `items: [{title, text}]` |

@@ -56,12 +56,16 @@
         {
           "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_george.jpg",
           "alt": "2025 WBrC 챔피언 조지 진양 펭",
-          "caption": "**2025 WBrC 챔피언**\n조지 진양 펭(George Jinyang Peng)"
+          "tag": "2025 WBrC 챔피언",
+          "name": "조지 진양 펭",
+          "sub": "George Jinyang Peng"
         },
         {
           "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol05/champion_mikael.jpg",
-          "alt": "2024 챔피언 미카엘 자신",
-          "caption": "**2024 챔피언**\n미카엘 자신(Mikael Jasin)"
+          "alt": "2024 WBC 챔피언 미카엘 자신",
+          "tag": "2024 WBC 챔피언",
+          "name": "미카엘 자신",
+          "sub": "Mikael Jasin"
         }
       ]
     },

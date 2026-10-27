@@ -292,7 +292,21 @@ def m_photos(b):          # 체험 예시 사진 2~3장 가로 배열 (모바일
                    f'border:2px dashed #B7A4F0;border-radius:12px;text-align:center;vertical-align:middle;'
                    f'font-family:{FONT};font-size:11px;line-height:1.5;color:{PURPLE};padding:6px;">'
                    f'<b>IMAGE</b><br>{html.escape(it.get("placeholder", "사진"))}</td></tr></table>')
-        if it.get("caption"):
+        if it.get("tag") or it.get("name"):   # 카드형 캡션: 연보라 패널 + 연두 태그 + 이름 + 영문명 (연사 카드와 같은 톤)
+            cap = ""
+            if it.get("tag"):
+                cap += (f'<span style="display:inline-block;background:{LIME};padding:2px 8px;font-size:12px;'
+                        f'line-height:1.5;color:#111111;"><b>{html.escape(it["tag"])}</b></span>')
+            if it.get("name"):
+                cap += (f'<p style="margin:7px 0 0;font-size:16px;line-height:1.35;color:#111111;"><b>'
+                        f'{html.escape(it["name"])}</b></p>')
+            if it.get("sub"):
+                cap += (f'<p style="margin:2px 0 0;font-size:12px;line-height:1.4;color:#555555;">'
+                        f'{html.escape(it["sub"])}</p>')
+            pic = (f'<div style="background:#F6F5FA;border-radius:18px;padding:8px 8px 14px;text-align:left;'
+                   f'font-family:{FONT};word-break:keep-all;">{pic}<div style="padding:12px 8px 0;">'
+                   f'<div style="border-left:2px solid {PURPLE};padding-left:10px;">{cap}</div></div></div>')
+        elif it.get("caption"):
             pic += (f'<p style="margin:8px 2px 0;font-family:{FONT};font-size:12px;line-height:1.5;color:#444444;'
                     f'text-align:left;word-break:keep-all;">{"<br>".join(rich(it["caption"]))}</p>')
         cells += cell + pic + "</div>"
