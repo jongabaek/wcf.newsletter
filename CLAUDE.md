@@ -52,7 +52,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | speaker | 연사 소개(사진+발표 제목+연두 태그+이름+약력) | `headline`, `tag`, `name`, `desc`, `details[]`, `src`/`placeholder`, `reverse`(사진 오른쪽), `shade`(회색 배경) |
 | pill | 질문형 캡슐 + 프로그램 제목 + 한 줄 설명 (Vol.5 체험 섹션 머리) | `text`, `title`, `sub` |
 | photos | 사진 2~3장 가로 배열(둥근 모서리, 모바일에서도 한 줄 유지). `tag`/`name`을 주면 연보라 패널 + 연두 태그 + 보라 세로선 카드형 캡션 | `items: [{src 또는 placeholder, alt, tag, name, sub}]`, `h` |
-| sessions | 날짜별 세션 시간표(로고 + 시간 + 기관/연사) | `days: [{label, items: [{time, name, sub, logo 또는 logo_placeholder, alt}]}]` |
+| sessions | 날짜별 세션 시간표(로고 + 시간 + 기관/연사). `logos: false`면 로고 칸 없이 시간·제목·연사만 | `days: [{label, items: [{time, name, sub, logo 또는 logo_placeholder, alt}]}]`, `logos` |
 | explain | 설명 캡션 박스(연보라 패널 + 연두 라벨 제목 + 본문). 용어·프로그램 설명용 | `title`, `text`, `align` |
 | steps | 세션 진행 순서(Vol.4 카드 톤: 연보라 패널, 연두 STEP 태그, 보라 제목, 회색 영문, 보라 세로선) | `title`, `items: [{title, en, text}]` |
 
@@ -70,4 +70,4 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 - Vol.4–10은 티켓 블록 필수, Vol.11은 제외
 - 스폰서 배너: Vol.4 발송본 기준으로 본문 메인 CTA 다음·NEWS 앞에 600px 폭 이미지(`image` + `inset: true` + `link`), 바로 뒤에 `divider_top`
 - 일정 전제: 개막 11/11(수)~11/14(토), 얼리버드 마감 10/31(토) (10/26 사용자 확인)
-- 발송 순서(10/26 조정, 호수는 발송 순서대로): Vol.5 10/27(화) 챔피언 나스 자파 + 얼리버드 마감 D-4 · Vol.6 10/30(금) 오리진 디스커버리(+두 번째 챔피언) · 얼리버드 마감 D-1 · Vol.7 11/3(화) 더 세션즈 · Vol.8 11/5(목) 무물·Arrival Guide · Vol.9 11/9(월) 개막 D-2 · Vol.10 11/12(목) Day2 · Vol.11 11/14(토) 땡큐레터. 별도 Last Chance 호는 Vol.5·6에 흡수. 이미지는 계속 `assets/vol05/`를 같이 씀.
+- 발송 순서(10/26 조정, 호수는 발송 순서대로): Vol.5 10/27(화) 챔피언 나스 자파 + 얼리버드 마감 D-4 · Vol.6 10/30(금) 더 세션즈 & SCA 교육 · 얼리버드 마감 D-1(10/30 변경: 오리진은 Vol.5 합본에 발송됨, 세션즈·SCA 구매 저조로 홍보 당김) · Vol.7 11/3(화) [주제 미정 — 원래 더 세션즈] · Vol.8 11/5(목) 무물·Arrival Guide · Vol.9 11/9(월) 개막 D-2 · Vol.10 11/12(목) Day2 · Vol.11 11/14(토) 땡큐레터. 별도 Last Chance 호는 Vol.5·6에 흡수. 이미지는 계속 `assets/vol05/`를 같이 씀.
