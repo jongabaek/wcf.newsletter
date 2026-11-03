@@ -414,18 +414,19 @@ def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+
         for i, it in enumerate(day["items"]):
             border = f"border-top:1px solid {LINE};" if i else ""
             pics = ""
+            PS = b.get("photo", 60)       # 원형 사진 지름(px)
             for p in it.get("photos", []):
                 if p:
-                    pics += (f'<img src="{html.escape(url(p))}" width="40" height="40" alt="" style="display:inline-block;'
-                             f'width:40px;height:40px;border-radius:50%;border:0;margin-left:-6px;">')
+                    pics += (f'<img src="{html.escape(url(p))}" width="{PS}" height="{PS}" alt="" style="display:inline-block;'
+                             f'width:{PS}px;height:{PS}px;border-radius:50%;border:0;margin-left:-8px;vertical-align:middle;">')
                 else:
-                    pics += ('<div class="ph" style="display:inline-block;width:38px;height:38px;border-radius:50%;'
-                             'border:1.5px dashed #B7A4F0;background:#F1ECFF;margin-left:-6px;vertical-align:middle;"></div>')
+                    pics += (f'<div class="ph" style="display:inline-block;width:{PS - 2}px;height:{PS - 2}px;border-radius:50%;'
+                             f'border:1.5px dashed #B7A4F0;background:#F1ECFF;margin-left:-8px;vertical-align:middle;"></div>')
             desc = (f'<p style="margin:3px 0 0;font-size:12px;line-height:1.5;color:{GRAY};">{"<br>".join(rich(it["desc"]))}</p>'
                     if it.get("desc") else "")
             sub = (f'<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#444444;">{"<br>".join(rich(it["sub"]))}</p>'
                    if it.get("sub") else "")
-            pic_td = (f'<td width="{40 + 34 * (len(it["photos"]) - 1)}" style="padding:12px 0 12px 8px;vertical-align:middle;'
+            pic_td = (f'<td width="{PS + (PS - 8) * (len(it["photos"]) - 1)}" style="padding:12px 0 12px 8px;vertical-align:middle;'
                       f'text-align:right;white-space:nowrap;{border}">{pics}</td>') if it.get("photos") else ""
             rows += (f'<tr><td style="padding:12px 0 12px 12px;vertical-align:middle;{border}font-family:{FONT};word-break:keep-all;">'
                      f'<span style="display:inline-block;background:{LIME};padding:1px 7px;font-size:11.5px;line-height:1.5;'

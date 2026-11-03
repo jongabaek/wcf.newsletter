@@ -11,6 +11,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
   예외: `emails/vol03.html`은 실제 발송된 원본이라 빌드 대상이 아니며 수정 금지.
   예외: `emails/vol04_en.html`은 발송된 국문 Vol.4 원본을 번역한 영문판(손으로 관리). 원고 JSON에 blocks가 없어 빌드 대상이 아니고, 문구는 이 파일에서 직접 고칩니다.
 - `assets/` — 저장소에서 호스팅하는 이미지(예: `assets/en/vol04/` 영문판 이미지, `assets/vol05/` 로고·연사 사진). Pages 주소 `https://jongabaek.github.io/wcf.newsletter/assets/...`로 연결됩니다.
+- `tools/render_board_png.py` — 현황판(board) 데이터를 날짜별 투명 배경 PNG(1260px 폭, 연회색 둥근 패널)로 뽑음. 예: `python3 tools/render_board_png.py tools/data/vol06_sca_board.json assets/vol06/board_sca`. Vol.6 SCA 현황판 원본 데이터는 `tools/data/vol06_sca_board.json`(뉴스레터에는 PNG로 들어감).
 - `tools/make_blind_champion.py` — Vol.5 '두 번째 챔피언' 블라인드 이미지 생성기. 문구(TITLE/TAGS/BAR)를 고친 뒤 `python3 tools/make_blind_champion.py <Pretendard 폰트 폴더>`로 다시 만듭니다(폰트: `npm pack pretendard` → `package/dist/public/static`).
 - `stibee/volXX.html` — 빌드 결과(스티비 **HTML 코드 상자**용 본문 조각). 코드 상자는 `<html> <head> <body> <style> <script> <iframe> <meta> <form> <input> <button>` 등을 저장하지 않으므로 이 태그들을 뺀 버전입니다. build.py가 금지 태그가 남으면 에러를 냅니다.
 - `index.html` — 미리보기 페이지. `dist/preview-standalone.html`은 공유용 단일 파일(빌드 시 생성, git 제외).
@@ -56,7 +57,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | explain | 설명 캡션 박스(연보라 패널 + 연두 라벨 제목 + 본문). 용어·프로그램 설명용 | `title`, `text`, `align` |
 | steps | 세션 진행 순서(Vol.4 카드 톤: 연보라 패널, 연두 STEP 태그, 보라 제목, 회색 영문, 보라 세로선) | `title`, `items: [{title, en, text}]` |
 | infobar | 프로그램 인포 바(연보라 패널 · 보라 프로그램명 \| 날짜 · 장소 · 보라 알약 버튼). 5호 인포 바 이미지의 HTML판 | `name`, `date`, `place`, `cta`, `link` |
-| board | 현황판 시간표(day에 `title`·`lead`·`intro`를 주면 오른쪽 위에 과정 머리. 왼쪽 보라 날짜 블록 숫자+요일 · 연두 시간 태그 · 굵은 제목 · 연사 · 회색 한 줄 설명 · 오른쪽 원형 사진 40px). 사진 칸은 `photos` 배열 길이만큼, `null`이면 점선 원 자리 | `days: [{num, dow, title, lead, intro, items: [{time, title, sub, desc, photos}]}]`, `color` |
+| board | 현황판 시간표(day에 `title`·`lead`·`intro`를 주면 오른쪽 위에 과정 머리. 왼쪽 보라 날짜 블록 숫자+요일 · 연두 시간 태그 · 굵은 제목 · 연사 · 회색 한 줄 설명 · 오른쪽 원형 사진, 기본 지름 60px — `photo`로 조정). 사진 칸은 `photos` 배열 길이만큼, `null`이면 점선 원 자리 | `days: [{num, dow, title, lead, intro, items: [{time, title, sub, desc, photos}]}]`, `color` |
 
 이미지가 준비되면 `placeholder`를 지우고 `"src": "https://img2.stibee.com/..."`를 넣습니다
 (스티비에 이미지를 먼저 업로드해 URL을 받습니다).
