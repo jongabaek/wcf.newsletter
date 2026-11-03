@@ -427,7 +427,7 @@ def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+
                     if it.get("desc") else "")
             sub = (f'<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#444444;">{"<br>".join(rich(it["sub"]))}</p>'
                    if it.get("sub") else "")
-            pic_td = (f'<td width="{PS * len(it["photos"]) + 8 * (len(it["photos"]) - 1)}" style="padding:12px 0 12px 8px;vertical-align:middle;'
+            pic_td = (f'<td width="{PS * len(it["photos"]) + 8 * (len(it["photos"]) - 1)}" style="padding:12px 14px 12px 8px;vertical-align:middle;'
                       f'text-align:right;white-space:nowrap;{border}">{pics}</td>') if it.get("photos") else ""
             rows += (f'<tr><td style="padding:12px 0 12px 12px;vertical-align:middle;{border}font-family:{FONT};word-break:keep-all;">'
                      f'<span style="display:inline-block;background:{LIME};padding:1px 7px;font-size:11.5px;line-height:1.5;'
@@ -450,7 +450,7 @@ def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+
                 f'<div style="font-size:12px;line-height:1.4;padding-top:2px;">{html.escape(day["dow"])}</div></td>'
                 f'<td style="vertical-align:top;border-top:2px solid {C};border-bottom:2px solid {C};">'
                 f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></td></tr></table>')
-    return row(out, "6px 15px 12px")
+    return row(out, b.get("pad", "6px 15px 12px"))
 
 
 MODULES = {
