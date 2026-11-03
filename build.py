@@ -388,6 +388,60 @@ def m_explain(b):         # 설명 캡션 박스 (연보라 패널 + 연두 라�
                f'word-break:keep-all;">{title}{body}</div>', "6px 15px 10px")
 
 
+def m_infobar(b):         # 프로그램 인포 바 (5호 인포 바 톤: 연보라 패널 · 보라 프로그램명 | 날짜 · 장소 · 보라 알약 버튼)
+    left = (f'<p style="margin:0;font-size:15px;line-height:1.6;color:#111111;"><b style="color:{PURPLE};">'
+            f'{html.escape(b["name"])}</b>&nbsp;&nbsp;<span style="color:#BBBBBB;">|</span>&nbsp;&nbsp;{html.escape(b["date"])}</p>'
+            f'<p style="margin:2px 0 0;font-size:14px;line-height:1.6;color:#333333;">&#128205; {html.escape(b["place"])}</p>')
+    btn = ""
+    if b.get("cta"):
+        btn = (f'<a href="{html.escape(url(b.get("link", "TICKET")))}" target="_blank" style="display:inline-block;background:{PURPLE};'
+               f'border-radius:500px;padding:12px 20px;font-family:{FONT};font-size:14px;line-height:1;color:#ffffff;'
+               f'text-decoration:none;"><b>{html.escape(b["cta"])} &rarr;</b></a>')
+    cell = 'display:inline-block;vertical-align:middle;box-sizing:border-box;'
+    return row(f'<div style="background:#F1F0F7;border-radius:18px;padding:12px 10px;font-size:0;text-align:center;'
+               f'font-family:{FONT};word-break:keep-all;">'
+               f'<div style="{cell}width:58%;min-width:250px;padding:4px 10px;text-align:left;">{left}</div>'
+               f'<div style="{cell}width:42%;min-width:220px;padding:6px 10px;text-align:right;">{btn}</div></div>',
+               "6px 15px 10px")
+
+
+def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+요일) · 연두 시간 태그 · 굵은 제목 · 연사 · 오른쪽 원형 사진
+    C = b.get("color", PURPLE)
+    LINE = "#DCD8E8"
+    out = ""
+    for n, day in enumerate(b["days"]):
+        rows = ""
+        for i, it in enumerate(day["items"]):
+            border = f"border-top:1px solid {LINE};" if i else ""
+            pics = ""
+            for p in it.get("photos", []):
+                if p:
+                    pics += (f'<img src="{html.escape(url(p))}" width="40" height="40" alt="" style="display:inline-block;'
+                             f'width:40px;height:40px;border-radius:50%;border:0;margin-left:-6px;">')
+                else:
+                    pics += ('<div class="ph" style="display:inline-block;width:38px;height:38px;border-radius:50%;'
+                             'border:1.5px dashed #B7A4F0;background:#F1ECFF;margin-left:-6px;vertical-align:middle;"></div>')
+            desc = (f'<p style="margin:3px 0 0;font-size:12px;line-height:1.5;color:{GRAY};">{"<br>".join(rich(it["desc"]))}</p>'
+                    if it.get("desc") else "")
+            sub = (f'<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#444444;">{"<br>".join(rich(it["sub"]))}</p>'
+                   if it.get("sub") else "")
+            pic_td = (f'<td width="{40 + 34 * (len(it["photos"]) - 1)}" style="padding:12px 0 12px 8px;vertical-align:middle;'
+                      f'text-align:right;white-space:nowrap;{border}">{pics}</td>') if it.get("photos") else ""
+            rows += (f'<tr><td style="padding:12px 0 12px 12px;vertical-align:middle;{border}font-family:{FONT};word-break:keep-all;">'
+                     f'<span style="display:inline-block;background:{LIME};padding:1px 7px;font-size:11.5px;line-height:1.5;'
+                     f'color:#111111;"><b>{html.escape(it["time"])}</b></span>'
+                     f'<p style="margin:5px 0 0;font-size:15px;line-height:1.4;color:#111111;"><b>{"<br>".join(rich(it["title"]))}</b></p>'
+                     f'{sub}{desc}</td>{pic_td}</tr>')
+        gap = "" if n == 0 else "margin-top:10px;"
+        out += (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="{gap}border-collapse:collapse;">'
+                f'<tr><td width="56" style="width:56px;background:{C};vertical-align:middle;text-align:center;font-family:{FONT};color:#ffffff;">'
+                f'<div style="font-size:28px;line-height:1.1;"><b>{html.escape(day["num"])}</b></div>'
+                f'<div style="font-size:12px;line-height:1.4;padding-top:2px;">{html.escape(day["dow"])}</div></td>'
+                f'<td style="vertical-align:top;border-top:2px solid {C};border-bottom:2px solid {C};">'
+                f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table></td></tr></table>')
+    return row(out, "6px 15px 12px")
+
+
 MODULES = {
     "header": m_header, "image": m_image, "text": m_text, "spacer": m_spacer,
     "story": m_story, "body_cta": m_body_cta, "card": m_card, "ticket": m_ticket,
@@ -395,6 +449,7 @@ MODULES = {
     "qa": m_qa, "stats": m_stats, "notice": m_notice,
     "band": m_band, "speaker": m_speaker,
     "pill": m_pill, "explain": m_explain, "photos": m_photos, "sessions": m_sessions, "steps": m_steps,
+    "infobar": m_infobar, "board": m_board,
 }
 
 
