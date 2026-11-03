@@ -239,10 +239,11 @@
     },
     {
       "type": "ticket",
-      "banner": false,
       "headline": "온라인 사전등록, 11월 8일(일)까지",
       "text": "티켓 구매를 고민하고 있다면 지금이 마지막 기회!\n사전등록이 끝나면 현장에서만 구매할 수 있어요.",
-      "cta": "지금 사전등록하기"
+      "cta": "지금 사전등록하기",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol06/ticket_preregist_1108.png",
+      "alt": "온라인 사전등록 11월 8일 마감!"
     },
     {
       "type": "divider",
