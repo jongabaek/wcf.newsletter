@@ -221,8 +221,8 @@
               "sub": "박수인 · 오동준",
               "desc": "Discover the Flavor — 커피의 맛과 향을 탐색하며 감각을 깨우는 시간",
               "photos": [
-                null,
-                null
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/park_suin.png",
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/oh_dongjun.png"
               ]
             },
             {
@@ -231,8 +231,8 @@
               "sub": "김나연 · 이재원",
               "desc": "Define Your Taste — 다양한 커피를 경험하며 나만의 취향을 발견하는 시간",
               "photos": [
-                null,
-                null
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/kim_nayeon.png",
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lee_jaewon.png"
               ]
             },
             {
@@ -241,8 +241,8 @@
               "sub": "김경태 · 허정민",
               "desc": "Craft Your Cup — 발견한 취향으로 나만의 커피 한 잔을 완성하는 시간",
               "photos": [
-                null,
-                null
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/kim_kyungtae.png",
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/heo_jungmin.png"
               ]
             }
           ]
@@ -257,8 +257,8 @@
               "sub": "Peter Giuliano · Lulu Wei",
               "desc": "Q Instructor를 위한 Train-the-Trainer 프로그램",
               "photos": [
-                null,
-                null
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/peter_giuliano.png",
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lulu_wei.png"
               ]
             }
           ]
@@ -273,8 +273,8 @@
               "sub": "Lulu Wei · 이경윤",
               "desc": "다양한 스페셜티 커피를 비교하며 배우는 커핑의 기초",
               "photos": [
-                null,
-                null
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lulu_wei.png",
+                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lee_kyungyun.png"
               ]
             }
           ]
