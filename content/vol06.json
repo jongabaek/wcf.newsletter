@@ -193,100 +193,45 @@
       "h": 20
     },
     {
-      "type": "band",
-      "text": "국제 표준의 커피 지식, 직접 배우다"
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol06/band_sca.png",
+      "alt": "월커포에서 만나는 국제 표준 스페셜티 커피 커리큘럼"
     },
     {
-      "type": "infobar",
-      "name": "SCA 교육",
-      "date": "11. 12(목)–14(토)",
-      "place": "코엑스 컨퍼런스룸 317호",
-      "cta": "지금 사전등록하기",
-      "link": "TICKET"
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol06/info_sca.png",
+      "link": "TICKET",
+      "alt": "SCA 교육 · 11. 12(목)–14(토) · 코엑스 컨퍼런스룸 317호 · 지금 사전등록하기"
     },
     {
       "type": "text",
       "text": "스페셜티커피협회(SCA)의 공식 교육을 월드커피포럼 현장에서 만나요.\n\n커피 입문자를 위한 [[One Day Coffee Explorer]]와 [[Intro to Cupping]]부터\nQ 인스트럭터를 위한 전문 프로그램 [[All about Q]]까지! 🎓"
     },
     {
-      "type": "board",
-      "days": [
-        {
-          "num": "12",
-          "dow": "목 THU",
-          "title": "One Day Coffee Explorer (원데이 커피 익스플로러)",
-          "lead": "커피의 세계, 하루 만에 맛보기.",
-          "intro": "다양한 SCA 교육 콘텐츠와 핸즈온 액티비티를 경험하며 나에게 맞는 커피 분야를 찾아보세요.",
-          "items": [
-            {
-              "time": "1회차 10:00–12:00",
-              "title": "Mission 1 맛의 탐색",
-              "sub": "박수인 · 오동준",
-              "desc": "Introduction to Coffee + Barista Skills",
-              "photos": [
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/park_suin.png",
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/oh_dongjun.png"
-              ]
-            },
-            {
-              "time": "2회차 13:00–15:00",
-              "title": "Mission 2 취향의 발견",
-              "sub": "김나연 · 이재원",
-              "desc": "Sensory Skills + Green Coffee",
-              "photos": [
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/kim_nayeon.png",
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lee_jaewon.png"
-              ]
-            },
-            {
-              "time": "3회차 16:00–18:00",
-              "title": "Mission 3 내 컵의 완성",
-              "sub": "김경태 · 허정민",
-              "desc": "Roasting + Brewing",
-              "photos": [
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/kim_kyungtae.png",
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/heo_jungmin.png"
-              ]
-            }
-          ]
-        },
-        {
-          "num": "13",
-          "dow": "금 FRI",
-          "title": "All about Q (올 어바웃 Q)",
-          "lead": "이해를 넘어 적용까지.",
-          "intro": "직접 커피를 평가하고 결과의 차이를 비교하며, 왜 이러한 차이가 발생하는지 SCA Q의 원칙을 바탕으로 해석해보세요. 그리고 평가자의 관점에서 한 걸음 더 나아가 Q Instructor의 관점에서 무엇을 일관되게 적용해야 하는지, 어디에서 전문적인 판단이 필요한지 함께 고민해보세요.",
-          "items": [
-            {
-              "time": "09:30–18:00",
-              "title": "All about Q – 이해를 넘어 적용까지",
-              "sub": "Peter Giuliano & Lulu Wei",
-              "photos": [
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/peter_giuliano.png",
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lulu_wei.png"
-              ]
-            }
-          ]
-        },
-        {
-          "num": "14",
-          "dow": "토 SAT",
-          "title": "Intro to Cupping (인트로 투 커핑)",
-          "lead": "커핑은 전문가만 하는 것이 아닙니다.",
-          "intro": "다양한 스페셜티 커피를 직접 비교하며, 커핑의 기본부터 향미를 발견하는 법까지 쉽고 재미있게 배워보세요.",
-          "items": [
-            {
-              "time": "10:00–13:30",
-              "title": "Intro to Cupping",
-              "sub": "Lulu Wei · 이경윤",
-              "photos": [
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lulu_wei.png",
-                "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lee_kyungyun.png"
-              ]
-            }
-          ]
-        }
-      ]
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol06/board_sca_12.png",
+      "link": "https://wclforum.org/kr/program/sca.asp",
+      "alt": "11. 12(목) One Day Coffee Explorer — 1회차 10:00–12:00 Mission 1 맛의 탐색(박수인·오동준), 2회차 13:00–15:00 Mission 2 취향의 발견(김나연·이재원), 3회차 16:00–18:00 Mission 3 내 컵의 완성(김경태·허정민)"
+    },
+    {
+      "type": "spacer",
+      "h": 10
+    },
+    {
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol06/board_sca_13.png",
+      "link": "https://wclforum.org/kr/program/sca.asp",
+      "alt": "11. 13(금) All about Q — 09:30–18:00 이해를 넘어 적용까지(Peter Giuliano & Lulu Wei)"
+    },
+    {
+      "type": "spacer",
+      "h": 10
+    },
+    {
+      "type": "image",
+      "src": "https://jongabaek.github.io/wcf.newsletter/assets/vol06/board_sca_14.png",
+      "link": "https://wclforum.org/kr/program/sca.asp",
+      "alt": "11. 14(토) Intro to Cupping — 10:00–13:30(Lulu Wei · 이경윤)"
     },
     {
       "type": "text",
