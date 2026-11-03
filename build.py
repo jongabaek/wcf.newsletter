@@ -432,6 +432,14 @@ def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+
                      f'color:#111111;"><b>{html.escape(it["time"])}</b></span>'
                      f'<p style="margin:5px 0 0;font-size:15px;line-height:1.4;color:#111111;"><b>{"<br>".join(rich(it["title"]))}</b></p>'
                      f'{sub}{desc}</td>{pic_td}</tr>')
+        if day.get("title"):      # 과정 머리: 보라 과정명 + 굵은 한 줄 + 설명
+            lead = (f'<p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#111111;"><b>{"<br>".join(rich(day["lead"]))}</b></p>'
+                    if day.get("lead") else "")
+            intro = (f'<p style="margin:4px 0 0;font-size:13px;line-height:1.7;color:#444444;">{"<br>".join(rich(day["intro"]))}</p>'
+                     if day.get("intro") else "")
+            head = (f'<tr><td colspan="2" style="padding:14px 0 12px 12px;border-bottom:1px solid {LINE};font-family:{FONT};word-break:keep-all;">'
+                    f'<p style="margin:0;font-size:17px;line-height:1.4;color:{C};"><b>{html.escape(day["title"])}</b></p>{lead}{intro}</td></tr>')
+            rows = head + rows
         gap = "" if n == 0 else "margin-top:10px;"
         out += (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="{gap}border-collapse:collapse;">'
                 f'<tr><td width="56" style="width:56px;background:{C};vertical-align:middle;text-align:center;font-family:{FONT};color:#ffffff;">'
