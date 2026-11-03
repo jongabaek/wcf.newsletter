@@ -11,6 +11,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
   예외: `emails/vol03.html`은 실제 발송된 원본이라 빌드 대상이 아니며 수정 금지.
   예외: `emails/vol04_en.html`은 발송된 국문 Vol.4 원본을 번역한 영문판(손으로 관리). 원고 JSON에 blocks가 없어 빌드 대상이 아니고, 문구는 이 파일에서 직접 고칩니다.
 - `assets/` — 저장소에서 호스팅하는 이미지(예: `assets/en/vol04/` 영문판 이미지, `assets/vol05/` 로고·연사 사진). Pages 주소 `https://jongabaek.github.io/wcf.newsletter/assets/...`로 연결됩니다.
+- `tools/make_band_info.py` — 5호 띠·인포 바 원본에서 글자만 바꿔 새 띠·인포 바(630px 꽉 참)를 만듦. 예: `python3 tools/make_band_info.py assets/vol06/sessions "띠 문구" "더 세션즈" "11. 11(수) – 14(토)" "코엑스 컨퍼런스룸 301호"`.
 - `tools/render_board_png.py` — 현황판(board) 데이터를 날짜별 흰 배경 PNG로 뽑음(630px 폭에 꽉 참 = 1260px, 패널·좌우 여백 없음). 예: `python3 tools/render_board_png.py tools/data/vol06_sca_board.json assets/vol06/board_sca`. Vol.6 SCA 현황판 원본 데이터는 `tools/data/vol06_sca_board.json`(뉴스레터에는 PNG로 들어감).
 - `tools/make_blind_champion.py` — Vol.5 '두 번째 챔피언' 블라인드 이미지 생성기. 문구(TITLE/TAGS/BAR)를 고친 뒤 `python3 tools/make_blind_champion.py <Pretendard 폰트 폴더>`로 다시 만듭니다(폰트: `npm pack pretendard` → `package/dist/public/static`).
 - `stibee/volXX.html` — 빌드 결과(스티비 **HTML 코드 상자**용 본문 조각). 코드 상자는 `<html> <head> <body> <style> <script> <iframe> <meta> <form> <input> <button>` 등을 저장하지 않으므로 이 태그들을 뺀 버전입니다. build.py가 금지 태그가 남으면 에러를 냅니다.
