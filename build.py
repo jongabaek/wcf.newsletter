@@ -414,19 +414,20 @@ def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+
         for i, it in enumerate(day["items"]):
             border = f"border-top:1px solid {LINE};" if i else ""
             pics = ""
-            PS = b.get("photo", 60)       # 원형 사진 지름(px)
-            for p in it.get("photos", []):
+            PS = b.get("photo", 80)       # 원형 사진 지름(px)
+            for k, p in enumerate(it.get("photos", [])):
+                ml = "8px" if k else "0"     # 겹치지 않게 나란히
                 if p:
                     pics += (f'<img src="{html.escape(url(p))}" width="{PS}" height="{PS}" alt="" style="display:inline-block;'
-                             f'width:{PS}px;height:{PS}px;border-radius:50%;border:0;margin-left:-8px;vertical-align:middle;">')
+                             f'width:{PS}px;height:{PS}px;border-radius:50%;border:0;margin-left:{ml};vertical-align:middle;">')
                 else:
                     pics += (f'<div class="ph" style="display:inline-block;width:{PS - 2}px;height:{PS - 2}px;border-radius:50%;'
-                             f'border:1.5px dashed #B7A4F0;background:#F1ECFF;margin-left:-8px;vertical-align:middle;"></div>')
+                             f'border:1.5px dashed #B7A4F0;background:#F1ECFF;margin-left:{ml};vertical-align:middle;"></div>')
             desc = (f'<p style="margin:3px 0 0;font-size:12px;line-height:1.5;color:{GRAY};">{"<br>".join(rich(it["desc"]))}</p>'
                     if it.get("desc") else "")
             sub = (f'<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#444444;">{"<br>".join(rich(it["sub"]))}</p>'
                    if it.get("sub") else "")
-            pic_td = (f'<td width="{PS + (PS - 8) * (len(it["photos"]) - 1)}" style="padding:12px 0 12px 8px;vertical-align:middle;'
+            pic_td = (f'<td width="{PS * len(it["photos"]) + 8 * (len(it["photos"]) - 1)}" style="padding:12px 0 12px 8px;vertical-align:middle;'
                       f'text-align:right;white-space:nowrap;{border}">{pics}</td>') if it.get("photos") else ""
             rows += (f'<tr><td style="padding:12px 0 12px 12px;vertical-align:middle;{border}font-family:{FONT};word-break:keep-all;">'
                      f'<span style="display:inline-block;background:{LIME};padding:1px 7px;font-size:11.5px;line-height:1.5;'

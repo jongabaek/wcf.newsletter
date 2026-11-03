@@ -57,7 +57,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 | explain | 설명 캡션 박스(연보라 패널 + 연두 라벨 제목 + 본문). 용어·프로그램 설명용 | `title`, `text`, `align` |
 | steps | 세션 진행 순서(Vol.4 카드 톤: 연보라 패널, 연두 STEP 태그, 보라 제목, 회색 영문, 보라 세로선) | `title`, `items: [{title, en, text}]` |
 | infobar | 프로그램 인포 바(연보라 패널 · 보라 프로그램명 \| 날짜 · 장소 · 보라 알약 버튼). 5호 인포 바 이미지의 HTML판 | `name`, `date`, `place`, `cta`, `link` |
-| board | 현황판 시간표(day에 `title`·`lead`·`intro`를 주면 오른쪽 위에 과정 머리. 왼쪽 보라 날짜 블록 숫자+요일 · 연두 시간 태그 · 굵은 제목 · 연사 · 회색 한 줄 설명 · 오른쪽 원형 사진, 기본 지름 60px — `photo`로 조정). 사진 칸은 `photos` 배열 길이만큼, `null`이면 점선 원 자리 | `days: [{num, dow, title, lead, intro, items: [{time, title, sub, desc, photos}]}]`, `color` |
+| board | 현황판 시간표(day에 `title`·`lead`·`intro`를 주면 오른쪽 위에 과정 머리. 왼쪽 보라 날짜 블록 숫자+요일 · 연두 시간 태그 · 굵은 제목 · 연사 · 회색 한 줄 설명 · 오른쪽 원형 사진, 기본 지름 80px·간격 8px로 나란히 — `photo`로 조정). 사진 칸은 `photos` 배열 길이만큼, `null`이면 점선 원 자리 | `days: [{num, dow, title, lead, intro, items: [{time, title, sub, desc, photos}]}]`, `color` |
 
 이미지가 준비되면 `placeholder`를 지우고 `"src": "https://img2.stibee.com/..."`를 넣습니다
 (스티비에 이미지를 먼저 업로드해 URL을 받습니다).
