@@ -443,8 +443,9 @@ def m_board(b):           # 현황판 시간표 — 왼쪽 날짜 블록(숫자+
                     f'<p style="margin:0;font-size:17px;line-height:1.4;color:{C};"><b>{html.escape(day["title"])}</b></p>{lead}{intro}</td></tr>')
             rows = head + rows
         gap = "" if n == 0 else "margin-top:10px;"
-        out += (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="{gap}border-collapse:collapse;">'
-                f'<tr><td width="56" style="width:56px;background:{C};vertical-align:middle;text-align:center;font-family:{FONT};color:#ffffff;">'
+        out += (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="{gap}border-collapse:separate;border-spacing:0;">'
+                f'<tr><td width="56" style="width:56px;background:{C};border-top:2px solid {C};border-bottom:2px solid {C};'
+                f'vertical-align:middle;text-align:center;font-family:{FONT};color:#ffffff;">'
                 f'<div style="font-size:28px;line-height:1.1;"><b>{html.escape(day["num"])}</b></div>'
                 f'<div style="font-size:12px;line-height:1.4;padding-top:2px;">{html.escape(day["dow"])}</div></td>'
                 f'<td style="vertical-align:top;border-top:2px solid {C};border-bottom:2px solid {C};">'
