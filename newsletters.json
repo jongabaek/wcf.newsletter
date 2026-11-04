@@ -99,7 +99,7 @@
     "title": "개막 D-7 · SCA 교육 & 더 세션즈 (영문)",
     "main": "SCA 교육 · 더 세션즈",
     "status": "검토중",
-    "subject": "[Vol.6] Save the Date: World Coffee Forum D-7! Don't Miss Online Pre-registration, Closing This Sunday",
+    "subject": "[Vol.6] Time to Dive Deeper into Coffee. WCF D-7 & Online Pre-registration Closes This Sunday!",
     "preheader": "Register online by Sunday, November 8. After that, tickets are sold on-site only ☕",
     "note": "11/4 발송된 국문 Vol.6 스티비 원본(SCA 교육 → 더 세션즈 → NEWS 3종 → 사전등록 안내)을 번역한 영문판(emails/vol06_en.html, 빌드 대상 아님). 영문 이미지 12종(사전등록 배너, 띠 2, 인포 바 2, 현황판 7)은 assets/en/vol06/, #NEWS 제목은 vol04_en 재사용. 현황판 원본 데이터는 tools/data/vol06_en_*_board.json. 남은 것: 'MAKE YOUR SESSION PLAN' 카드의 한글 한 줄(원본 파일 필요 — 지금은 국문 이미지 그대로), MAGNET 스폰서 배너의 한글(스폰서 제공 이미지라 그대로). 링크는 영문 사이트, 네이버 예약은 regist2026.asp로 교체.",
     "assets": [],
