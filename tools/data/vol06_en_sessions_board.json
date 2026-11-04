@@ -1,0 +1,117 @@
+{
+  "days": [
+    {
+      "num": "11",
+      "dow": "WED",
+      "items": [
+        {
+          "time": "13:00–15:00",
+          "title": "Modulating Fermentation in Coffee Processing",
+          "sub": "Hoseok Song · Compass Coffee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/song_hoseok.png"
+          ]
+        },
+        {
+          "time": "15:30–17:30",
+          "title": "Practical Brewing Standards: Mastering Extraction Variables",
+          "sub": "Mikyoung Cha · Kunes Brewing Spot",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/cha_mikyung.png"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "12",
+      "dow": "THU",
+      "items": [
+        {
+          "time": "10:30–12:30",
+          "title": "An Engineering Approach to Roasting Delicious Coffee",
+          "sub": "Junseon Lee · Faabs Coffee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/lee_junseon.png"
+          ]
+        },
+        {
+          "time": "13:00–15:00",
+          "title": "Doduk & Kyubum: Why We Do Things Our Way",
+          "sub": "Kyubum Lee · Sunin Hong · Doduk&Kyubum",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/lee_kyubum.png",
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/hong_sunin.png"
+          ]
+        },
+        {
+          "time": "15:30–17:30",
+          "title": "Any Coffee, A Great Espresso",
+          "sub": "Hyuksoo Kwon · Tosung Village",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/kwon_hyuksoo.png"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "13",
+      "dow": "FRI",
+      "items": [
+        {
+          "time": "10:00–11:00",
+          "title": "The Personal Era of Coffee, and the Technology Behind It",
+          "sub": "Gilad Bechor, CEO · Coffi",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/gilad_bechor.png"
+          ]
+        },
+        {
+          "time": "11:30–12:30",
+          "title": "Great Coffee Doesn’t Happen by Chance: The Power of Data",
+          "sub": "Vasilis Apostolopoulos, CEO · bibe Coffee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/vasilis_apostolopoulos.png"
+          ]
+        },
+        {
+          "time": "13:00–15:00",
+          "title": "Designing Coffee Bar Layout and Workflow",
+          "sub": "Uiseong Kim · Bean Brothers",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/kim_euisung.png"
+          ]
+        },
+        {
+          "time": "15:30–17:30",
+          "title": "2027 Coffee Trends: A Preview",
+          "sub": "Junki Hong · Monthly Coffee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/hong_junki.png"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "14",
+      "dow": "SAT",
+      "items": [
+        {
+          "time": "10:30–12:30",
+          "title": "The Evolving Role of the Barista in a Changing World",
+          "sub": "Junghwan Lim · Aery Coffee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/lim_junghwan.png"
+          ]
+        },
+        {
+          "time": "13:00–15:00",
+          "title": "Buying Back Time",
+          "sub": "Chanho Hong · RoasteryFlow",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sessions/hong_chanho.png"
+          ]
+        }
+      ]
+    }
+  ]
+}

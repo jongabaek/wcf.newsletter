@@ -1,0 +1,80 @@
+{
+  "type": "board",
+  "days": [
+    {
+      "num": "12",
+      "dow": "THU",
+      "title": "One Day Coffee Explorer",
+      "lead": "Taste the world of coffee in a single day.",
+      "intro": "Explore a range of SCA education content and hands-on activities, and find the coffee field that suits you best.",
+      "items": [
+        {
+          "time": "Slot 1 10:00–12:00",
+          "title": "Mission 1 Discover the Flavor",
+          "sub": "Suin Park · Dongjun Oh",
+          "desc": "Introduction to Coffee + Barista Skills",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/park_suin.png",
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/oh_dongjun.png"
+          ]
+        },
+        {
+          "time": "Slot 2 13:00–15:00",
+          "title": "Mission 2 Define Your Taste",
+          "sub": "Tardis Kim · Kevin Lee",
+          "desc": "Sensory Skills + Green Coffee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/kim_nayeon.png",
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lee_jaewon.png"
+          ]
+        },
+        {
+          "time": "Slot 3 16:00–18:00",
+          "title": "Mission 3 Craft Your Cup",
+          "sub": "Kyungtae Kim · Jungmin Heo",
+          "desc": "Roasting + Brewing",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/kim_kyungtae.png",
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/heo_jungmin.png"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "13",
+      "dow": "FRI",
+      "title": "All about Q",
+      "lead": "From understanding to application.",
+      "intro": "Evaluate coffees yourself, compare the results, and interpret why the differences occur based on the principles of SCA Q.",
+      "items": [
+        {
+          "time": "09:30–18:00",
+          "title": "All about Q – From Understanding to Application",
+          "sub": "Peter Giuliano & Lulu Wei",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/peter_giuliano.png",
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lulu_wei.png"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "14",
+      "dow": "SAT",
+      "title": "Intro to Cupping",
+      "lead": "Cupping isn’t just for professionals.",
+      "intro": "Compare a variety of specialty coffees side by side and learn everything from cupping basics to discovering flavors — in an easy, fun way.",
+      "items": [
+        {
+          "time": "10:00–13:30",
+          "title": "Intro to Cupping",
+          "sub": "Lulu Wei · Kyungyun Lee",
+          "photos": [
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lulu_wei.png",
+            "https://jongabaek.github.io/wcf.newsletter/assets/vol06/sca/lee_kyungyun.png"
+          ]
+        }
+      ]
+    }
+  ]
+}

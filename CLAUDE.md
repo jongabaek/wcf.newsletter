@@ -9,6 +9,7 @@ GitHub Pages에 미리보기 페이지가 올라가 있고, main에 push하면 1
 - `build.py` — 원고를 `emails/volXX.html`과 `newsletters.json`으로 변환. 모듈(M1–M10) 템플릿이 들어 있음.
 - `emails/volXX.html` — 빌드 결과(완성형 HTML, 미리보기용). 직접 고치지 않습니다.
   예외: `emails/vol03.html`은 실제 발송된 원본이라 빌드 대상이 아니며 수정 금지.
+  예외: `emails/vol06_en.html`도 발송된 국문 Vol.6 스티비 원본을 번역한 영문판(손으로 관리, 빌드 대상 아님). 영문 이미지는 `assets/en/vol06/`, 현황판 영문 데이터는 `tools/data/vol06_en_*_board.json`.
   예외: `emails/vol04_en.html`은 발송된 국문 Vol.4 원본을 번역한 영문판(손으로 관리). 원고 JSON에 blocks가 없어 빌드 대상이 아니고, 문구는 이 파일에서 직접 고칩니다.
 - `assets/` — 저장소에서 호스팅하는 이미지(예: `assets/en/vol04/` 영문판 이미지, `assets/vol05/` 로고·연사 사진). Pages 주소 `https://jongabaek.github.io/wcf.newsletter/assets/...`로 연결됩니다.
 - `tools/make_band_info.py` — 5호 띠·인포 바 원본에서 글자만 바꿔 새 띠·인포 바(630px 꽉 참)를 만듦. 예: `python3 tools/make_band_info.py assets/vol06/sessions "띠 문구" "더 세션즈" "11. 11(수) – 14(토)" "코엑스 컨퍼런스룸 301호"`.
